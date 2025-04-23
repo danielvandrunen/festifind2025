@@ -3,9 +3,8 @@ const path = require('path');
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   experimental: {
-    appDir: true,
+    // App directory is no longer experimental in Next.js 15
   },
   // Disable the conflicting warning
   typescript: {
