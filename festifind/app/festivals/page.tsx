@@ -6,6 +6,7 @@ import FestivalTable from "@/components/festival/FestivalTable";
 import FestivalGrid from "@/components/festival/FestivalGrid";
 import MonthPaginator from "@/components/festival/MonthPaginator";
 import SourceFilter, { SourceOption } from "@/components/festival/SourceFilter";
+import LocationFilter, { LocationOption } from "@/components/festival/LocationFilter";
 import FestivalToggleView, { ViewMode } from "@/components/festival/FestivalToggleView";
 import FestivalStatusFilter, { StatusFilter } from "@/components/festival/FestivalStatusFilter";
 import { Toaster } from "sonner";
@@ -62,6 +63,10 @@ export default function FestivalsPage() {
   const [currentMonth, setCurrentMonth] = useState<Date>(startOfMonth(new Date()));
   const [sources, setSources] = useState<SourceOption[]>([]);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
+  
+  // New state for location filter
+  const [locations, setLocations] = useState<LocationOption[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   
   // New state for view mode toggle
   const [viewMode, setViewMode] = useState<ViewMode>('table');
@@ -125,7 +130,7 @@ export default function FestivalsPage() {
         
         // Extract unique sources for the filter
         const uniqueSources = Array.from(new Set(formattedFestivals.map((f: FestivalWithPreferences) => f.source.name)))
-          .map(name => {
+          .map((name: unknown) => {
             const count = formattedFestivals.filter((f: FestivalWithPreferences) => f.source.name === name).length;
             return {
               id: name as string,
@@ -134,8 +139,22 @@ export default function FestivalsPage() {
             } as SourceOption;
           });
         
+        // Extract unique countries for the location filter
+        const uniqueLocations = Array.from(new Set(formattedFestivals.map((f: FestivalWithPreferences) => f.location.country)))
+          .map((country: unknown) => {
+            const count = formattedFestivals.filter((f: FestivalWithPreferences) => f.location.country === country).length;
+            return {
+              id: country as string,
+              name: country as string,
+              count
+            } as LocationOption;
+          });
+        
         setSources(uniqueSources);
         setSelectedSources(uniqueSources.map(s => s.id)); // Select all sources by default
+        
+        setLocations(uniqueLocations);
+        setSelectedLocations(uniqueLocations.map(l => l.id)); // Select all locations by default
         
       } catch (err: any) {
         const errorMessage = err.message || 'Failed to load festivals';
@@ -154,6 +173,14 @@ export default function FestivalsPage() {
         ];
         setSources(fallbackSources);
         setSelectedSources(fallbackSources.map(s => s.id));
+        
+        // Set up fallback locations
+        const fallbackLocations = [
+          { id: 'Belgium', name: 'Belgium', count: 1 },
+          { id: 'United Kingdom', name: 'United Kingdom', count: 1 }
+        ];
+        setLocations(fallbackLocations);
+        setSelectedLocations(fallbackLocations.map(l => l.id));
       } finally {
         setLoading(false);
       }
@@ -283,6 +310,11 @@ export default function FestivalsPage() {
     setSelectedSources(newSources);
   };
 
+  // Handle location filter change
+  const handleLocationChange = (newLocations: string[]) => {
+    setSelectedLocations(newLocations);
+  };
+
   // Handle view mode change
   const handleViewModeChange = (mode: ViewMode) => {
     setViewMode(mode);
@@ -293,7 +325,7 @@ export default function FestivalsPage() {
     setStatusFilter(filter);
   };
 
-  // Filter festivals by month, selected sources, and status
+  // Filter festivals by month, selected sources, selected locations, and status
   const filteredFestivals = festivals.filter(festival => {
     const festivalStartDate = new Date(festival.startDate);
     const festivalEndDate = new Date(festival.endDate);
@@ -308,13 +340,16 @@ export default function FestivalsPage() {
     // Check if source is selected
     const isSourceSelected = selectedSources.includes(festival.source.name);
     
+    // Check if location is selected
+    const isLocationSelected = selectedLocations.includes(festival.location.country);
+    
     // Apply status filter
     const meetsStatusFilter = 
-      statusFilter === 'all' ||
-      (statusFilter === 'favorites' && festival.isFavorite) ||
-      (statusFilter === 'archived' && festival.isArchived);
+      (statusFilter === 'all' && !festival.isArchived) || // Show only unarchived in "All"
+      (statusFilter === 'favorites' && festival.isFavorite) || // Show all favorites, regardless of archive status
+      (statusFilter === 'archived' && festival.isArchived); // Show all archived
     
-    return isInMonth && isSourceSelected && meetsStatusFilter;
+    return isInMonth && isSourceSelected && isLocationSelected && meetsStatusFilter;
   });
 
   return (
@@ -362,6 +397,12 @@ export default function FestivalsPage() {
                 onSourcesChange={handleSourceChange}
               />
               
+              <LocationFilter
+                locations={locations}
+                selectedLocations={selectedLocations}
+                onLocationsChange={handleLocationChange}
+              />
+              
               <FestivalToggleView 
                 viewMode={viewMode}
                 onViewModeChange={handleViewModeChange}
@@ -382,6 +423,16 @@ export default function FestivalsPage() {
                   onFavoriteToggle={handleFavoriteToggle}
                   onArchiveToggle={handleArchiveToggle}
                   onNoteChange={handleNoteChange}
+                  onUpdateFestival={(updatedFestival) => {
+                    // Update the festival in the state
+                    setFestivals(prevFestivals =>
+                      prevFestivals.map(festival =>
+                        festival.id === updatedFestival.id
+                          ? updatedFestival
+                          : festival
+                      )
+                    );
+                  }}
                 />
               ) : (
                 <FestivalGrid
