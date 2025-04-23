@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd festifind && npx next build",
-  "outputDirectory": "festifind/.next",
+  "buildCommand": "npm install && npx next build",
+  "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "cd festifind && npm install",
-  "devCommand": "cd festifind && npx next dev"
+  "installCommand": "npm install",
+  "devCommand": "npx next dev"
 } 
