@@ -8,7 +8,7 @@ export async function POST(
   context: RouteParams
 ) {
   try {
-    const id = context.params.id;
+    const { id } = context.params;
     const { notes } = await request.json();
     
     // Validate input
