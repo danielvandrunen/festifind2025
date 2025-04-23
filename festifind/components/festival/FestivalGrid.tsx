@@ -5,12 +5,14 @@ interface FestivalGridProps {
   festivals: FestivalWithPreferences[];
   onFavoriteToggle?: (festivalId: string, isFavorite: boolean) => void;
   onArchiveToggle?: (festivalId: string, isArchived: boolean) => void;
+  onNoteChange?: (festivalId: string, note: string) => void;
 }
 
 export default function FestivalGrid({
   festivals,
   onFavoriteToggle,
-  onArchiveToggle
+  onArchiveToggle,
+  onNoteChange
 }: FestivalGridProps) {
   if (festivals.length === 0) {
     return (
@@ -29,6 +31,7 @@ export default function FestivalGrid({
           festival={festival}
           onFavoriteToggle={onFavoriteToggle}
           onArchiveToggle={onArchiveToggle}
+          onNoteChange={onNoteChange}
         />
       ))}
     </div>

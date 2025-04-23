@@ -1,20 +1,24 @@
+import { useState } from "react";
 import { format } from "date-fns";
-import { CalendarDays, MapPin, Heart, Archive, ExternalLink } from "lucide-react";
+import { CalendarDays, MapPin, Heart, Archive, ExternalLink, Save, X, FileTextIcon, Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
 import { FestivalWithPreferences } from "@/types/festival";
-import FestivalNotes from "./FestivalNotes";
+import { toast } from "sonner";
 
 interface FestivalCardProps {
   festival: FestivalWithPreferences;
   onFavoriteToggle?: (festivalId: string, isFavorite: boolean) => void;
   onArchiveToggle?: (festivalId: string, isArchived: boolean) => void;
+  onNoteChange?: (festivalId: string, note: string) => void;
 }
 
 export default function FestivalCard({
   festival,
   onFavoriteToggle,
-  onArchiveToggle
+  onArchiveToggle,
+  onNoteChange
 }: FestivalCardProps) {
   const {
     id,
@@ -27,6 +31,12 @@ export default function FestivalCard({
     isArchived,
     notes
   } = festival;
+
+  // State for editing notes
+  const [isEditingNotes, setIsEditingNotes] = useState(false);
+  const [noteContent, setNoteContent] = useState(notes);
+  // For optimistic UI update
+  const [displayedNotes, setDisplayedNotes] = useState(notes);
 
   // Format date function
   const formatDateRange = () => {
@@ -64,6 +74,32 @@ export default function FestivalCard({
     }
   };
 
+  // Handle edit notes click
+  const handleEditNotes = () => {
+    setNoteContent(displayedNotes);
+    setIsEditingNotes(true);
+  };
+
+  // Handle cancel edit
+  const handleCancelEdit = () => {
+    setIsEditingNotes(false);
+  };
+
+  // Handle save notes
+  const handleSaveNotes = () => {
+    if (onNoteChange) {
+      // Optimistic update
+      setDisplayedNotes(noteContent);
+      setIsEditingNotes(false);
+      
+      // Call API
+      onNoteChange(id, noteContent);
+      
+      // Show toast
+      toast.success("Note saved");
+    }
+  };
+
   return (
     <div className={`border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow 
       ${isArchived ? 'opacity-70 bg-gray-50' : 'bg-white'}`}>
@@ -95,8 +131,63 @@ export default function FestivalCard({
           </div>
         </div>
         
-        {/* Notes (if any) */}
-        <FestivalNotes notes={notes} />
+        {/* Notes section */}
+        <div className="mt-3 border-t pt-3">
+          <div className="flex items-center justify-between mb-2">
+            <h4 className="text-sm font-medium flex items-center text-gray-700">
+              <FileTextIcon className="h-3 w-3 mr-1" />
+              Notes
+            </h4>
+            {!isEditingNotes && (
+              <button
+                onClick={handleEditNotes}
+                className="text-xs text-blue-500 hover:text-blue-700 flex items-center"
+              >
+                <Edit className="h-3 w-3 mr-1" />
+                {displayedNotes ? 'Edit' : 'Add'}
+              </button>
+            )}
+          </div>
+          
+          {isEditingNotes ? (
+            <div className="space-y-2">
+              <Textarea 
+                value={noteContent}
+                onChange={(e) => setNoteContent(e.target.value)}
+                placeholder="Add your notes here..."
+                className="min-h-[80px] text-sm"
+                autoFocus
+              />
+              <div className="flex justify-end gap-1">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleCancelEdit}
+                >
+                  <X className="h-3 w-3 mr-1" />
+                  Cancel
+                </Button>
+                <Button 
+                  type="button"
+                  size="sm"
+                  onClick={handleSaveNotes}
+                >
+                  <Save className="h-3 w-3 mr-1" />
+                  Save
+                </Button>
+              </div>
+            </div>
+          ) : displayedNotes ? (
+            <div className="text-sm text-gray-600 bg-gray-50 p-2 rounded max-h-24 overflow-y-auto">
+              <p className="whitespace-pre-wrap line-clamp-3">{displayedNotes}</p>
+            </div>
+          ) : (
+            <div className="text-sm text-gray-400 italic p-2 bg-gray-50 rounded text-center">
+              No notes added
+            </div>
+          )}
+        </div>
         
         {/* Actions */}
         <div className="mt-4 pt-3 border-t flex justify-between items-center">

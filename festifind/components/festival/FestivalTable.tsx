@@ -5,7 +5,9 @@ import {
   ExternalLinkIcon,
   ChevronUpIcon,
   ChevronDownIcon,
-  PencilIcon
+  Save,
+  X,
+  FileTextIcon
 } from "lucide-react";
 import { format } from "date-fns";
 import {
@@ -17,13 +19,6 @@ import {
   TableCell
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
@@ -63,14 +58,16 @@ export default function FestivalTable({
 }: FestivalTableProps) {
   const [sortField, setSortField] = useState<SortField>('date');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
-  const [noteContent, setNoteContent] = useState<string>("");
-  const [activeFestivalId, setActiveFestivalId] = useState<string | null>(null);
-  const [isNoteDialogOpen, setIsNoteDialogOpen] = useState(false);
   
   // For optimistic UI updates
   const [optimisticNotes, setOptimisticNotes] = useState<Record<string, string>>({});
   const [optimisticFavorites, setOptimisticFavorites] = useState<Record<string, boolean>>({});
   const [optimisticArchived, setOptimisticArchived] = useState<Record<string, boolean>>({});
+  
+  // Track which festivals have their notes editor open
+  const [editingNotes, setEditingNotes] = useState<Record<string, boolean>>({});
+  // Keep track of current note content while editing
+  const [noteEdits, setNoteEdits] = useState<Record<string, string>>({});
 
   // Sort festivals based on current sort field and direction
   const sortedFestivals = useMemo(() => {
@@ -106,35 +103,51 @@ export default function FestivalTable({
     }
   };
 
-  // Handle opening note dialog
-  const handleNoteOpen = (festival: Festival) => {
+  // Handle opening notes editor
+  const handleEditNotes = (festival: Festival) => {
     const currentNote = optimisticNotes[festival.id] ?? festival.notes;
-    setNoteContent(currentNote);
-    setActiveFestivalId(festival.id);
-    setIsNoteDialogOpen(true);
+    setNoteEdits({
+      ...noteEdits,
+      [festival.id]: currentNote
+    });
+    setEditingNotes({
+      ...editingNotes,
+      [festival.id]: true
+    });
+  };
+
+  // Handle canceling notes edit
+  const handleCancelNoteEdit = (festivalId: string) => {
+    setEditingNotes({
+      ...editingNotes,
+      [festivalId]: false
+    });
   };
 
   // Handle saving a note with optimistic UI
-  const handleNoteSave = () => {
-    if (activeFestivalId && onNoteChange) {
+  const handleNoteSave = (festivalId: string) => {
+    if (onNoteChange) {
+      const noteContent = noteEdits[festivalId] || '';
+      
       // Optimistic update
       setOptimisticNotes(prev => ({
         ...prev,
-        [activeFestivalId]: noteContent
+        [festivalId]: noteContent
       }));
       
-      // Close dialog first for better UX
-      setIsNoteDialogOpen(false);
+      // Close editor
+      setEditingNotes({
+        ...editingNotes,
+        [festivalId]: false
+      });
       
       // Call API
-      onNoteChange(activeFestivalId, noteContent);
+      onNoteChange(festivalId, noteContent);
       
       // Show toast
       toast.success("Note saved", {
         description: "Your note has been updated."
       });
-      
-      setActiveFestivalId(null);
     }
   };
   
@@ -208,167 +221,173 @@ export default function FestivalTable({
   };
 
   return (
-    <>
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead 
-              className="cursor-pointer hover:bg-gray-50 min-w-[200px]" 
-              onClick={() => handleSort('name')}
-            >
-              <div className="flex items-center">
-                Name
-                {sortField === 'name' && (
-                  sortDirection === 'asc' 
-                    ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
-                    : <ChevronDownIcon className="h-4 w-4 ml-1" />
-                )}
-              </div>
-            </TableHead>
-            <TableHead 
-              className="cursor-pointer hover:bg-gray-50" 
-              onClick={() => handleSort('date')}
-            >
-              <div className="flex items-center">
-                Date
-                {sortField === 'date' && (
-                  sortDirection === 'asc' 
-                    ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
-                    : <ChevronDownIcon className="h-4 w-4 ml-1" />
-                )}
-              </div>
-            </TableHead>
-            <TableHead 
-              className="cursor-pointer hover:bg-gray-50" 
-              onClick={() => handleSort('location')}
-            >
-              <div className="flex items-center">
-                Location
-                {sortField === 'location' && (
-                  sortDirection === 'asc' 
-                    ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
-                    : <ChevronDownIcon className="h-4 w-4 ml-1" />
-                )}
-              </div>
-            </TableHead>
-            <TableHead 
-              className="cursor-pointer hover:bg-gray-50" 
-              onClick={() => handleSort('source')}
-            >
-              <div className="flex items-center">
-                Source
-                {sortField === 'source' && (
-                  sortDirection === 'asc' 
-                    ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
-                    : <ChevronDownIcon className="h-4 w-4 ml-1" />
-                )}
-              </div>
-            </TableHead>
-            <TableHead className="text-right">Actions</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {sortedFestivals.map(festival => {
-            // Get optimistic states if available
-            const isFavorite = optimisticFavorites[festival.id] ?? festival.isFavorite;
-            const isArchived = optimisticArchived[festival.id] ?? festival.isArchived;
-            const noteContent = optimisticNotes[festival.id] ?? festival.notes;
-            const hasNotes = noteContent && noteContent.trim() !== '';
-            
-            return (
-              <TableRow 
-                key={festival.id}
-                className={isArchived ? "opacity-60 bg-gray-50" : ""}
-              >
-                <TableCell className="font-medium">{festival.name}</TableCell>
-                <TableCell>{formatDateRange(festival.startDate, festival.endDate)}</TableCell>
-                <TableCell>{`${festival.location.city}, ${festival.location.country}`}</TableCell>
-                <TableCell>{festival.source.name}</TableCell>
-                <TableCell className="text-right">
-                  <div className="flex justify-end items-center space-x-2">
-                    <Button 
-                      variant="ghost" 
-                      size="icon"
-                      onClick={() => handleFavoriteToggle(festival)}
-                      className={isFavorite ? "text-red-500" : "text-gray-400 hover:text-red-400"}
-                      title={isFavorite ? "Remove from favorites" : "Add to favorites"}
-                    >
-                      <HeartIcon className="w-5 h-5" fill={isFavorite ? "currentColor" : "none"} />
-                    </Button>
-                    
-                    <Button 
-                      variant="ghost" 
-                      size="icon"
-                      onClick={() => handleArchiveToggle(festival)}
-                      className={isArchived ? "text-blue-500" : "text-gray-400 hover:text-blue-400"}
-                      title={isArchived ? "Unarchive" : "Archive"}
-                    >
-                      <ArchiveIcon className="w-5 h-5" />
-                    </Button>
-                    
-                    <Button 
-                      variant="ghost" 
-                      size="sm"
-                      onClick={() => handleNoteOpen(festival)}
-                      className={hasNotes ? "text-amber-500" : "text-gray-400 hover:text-amber-400"}
-                      title="Edit notes"
-                    >
-                      <PencilIcon className="w-4 h-4 mr-1" />
-                      {hasNotes ? "Notes" : "Add Notes"}
-                    </Button>
-                    
-                    <a 
-                      href={festival.source.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-500 hover:text-blue-700"
-                      title="Visit source website"
-                    >
-                      <ExternalLinkIcon className="w-4 h-4" />
-                    </a>
-                  </div>
-                </TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
-      
-      <Dialog open={isNoteDialogOpen} onOpenChange={setIsNoteDialogOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>
-              {activeFestivalId && 
-                `Notes for ${festivals.find(f => f.id === activeFestivalId)?.name}`
-              }
-            </DialogTitle>
-          </DialogHeader>
-          <form 
-            className="space-y-4" 
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleNoteSave();
-            }}
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead 
+            className="cursor-pointer hover:bg-gray-50 min-w-[200px] w-1/6" 
+            onClick={() => handleSort('name')}
           >
-            <Textarea 
-              value={noteContent}
-              onChange={(e) => setNoteContent(e.target.value)}
-              placeholder="Add your notes here..."
-              className="min-h-[120px]"
-            />
-            <div className="flex justify-between">
-              <Button 
-                type="button" 
-                variant="outline" 
-                onClick={() => setIsNoteDialogOpen(false)}
-              >
-                Cancel
-              </Button>
-              <Button type="submit">Save Notes</Button>
+            <div className="flex items-center">
+              Name
+              {sortField === 'name' && (
+                sortDirection === 'asc' 
+                  ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
+                  : <ChevronDownIcon className="h-4 w-4 ml-1" />
+              )}
             </div>
-          </form>
-        </DialogContent>
-      </Dialog>
-    </>
+          </TableHead>
+          <TableHead 
+            className="cursor-pointer hover:bg-gray-50 w-1/6" 
+            onClick={() => handleSort('date')}
+          >
+            <div className="flex items-center">
+              Date
+              {sortField === 'date' && (
+                sortDirection === 'asc' 
+                  ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
+                  : <ChevronDownIcon className="h-4 w-4 ml-1" />
+              )}
+            </div>
+          </TableHead>
+          <TableHead 
+            className="cursor-pointer hover:bg-gray-50 w-1/6" 
+            onClick={() => handleSort('location')}
+          >
+            <div className="flex items-center">
+              Location
+              {sortField === 'location' && (
+                sortDirection === 'asc' 
+                  ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
+                  : <ChevronDownIcon className="h-4 w-4 ml-1" />
+              )}
+            </div>
+          </TableHead>
+          <TableHead 
+            className="cursor-pointer hover:bg-gray-50 w-1/6" 
+            onClick={() => handleSort('source')}
+          >
+            <div className="flex items-center">
+              Source
+              {sortField === 'source' && (
+                sortDirection === 'asc' 
+                  ? <ChevronUpIcon className="h-4 w-4 ml-1" /> 
+                  : <ChevronDownIcon className="h-4 w-4 ml-1" />
+              )}
+            </div>
+          </TableHead>
+          <TableHead className="w-1/6">Notes</TableHead>
+          <TableHead className="text-right w-[120px]">Actions</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {sortedFestivals.map(festival => {
+          // Get optimistic states if available
+          const isFavorite = optimisticFavorites[festival.id] ?? festival.isFavorite;
+          const isArchived = optimisticArchived[festival.id] ?? festival.isArchived;
+          const noteContent = optimisticNotes[festival.id] ?? festival.notes;
+          const hasNotes = noteContent && noteContent.trim() !== '';
+          const isEditing = editingNotes[festival.id] ?? false;
+          
+          return (
+            <TableRow 
+              key={festival.id}
+              className={isArchived ? "opacity-60 bg-gray-50" : ""}
+            >
+              <TableCell className="font-medium">{festival.name}</TableCell>
+              <TableCell>{formatDateRange(festival.startDate, festival.endDate)}</TableCell>
+              <TableCell>{`${festival.location.city}, ${festival.location.country}`}</TableCell>
+              <TableCell>{festival.source.name}</TableCell>
+              <TableCell>
+                {isEditing ? (
+                  <div className="space-y-2">
+                    <Textarea 
+                      value={noteEdits[festival.id] || ''}
+                      onChange={(e) => setNoteEdits({
+                        ...noteEdits,
+                        [festival.id]: e.target.value
+                      })}
+                      placeholder="Add your notes here..."
+                      className="min-h-[80px] text-sm"
+                      autoFocus
+                    />
+                    <div className="flex justify-end gap-1">
+                      <Button 
+                        type="button" 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleCancelNoteEdit(festival.id)}
+                      >
+                        <X className="h-3 w-3 mr-1" />
+                        Cancel
+                      </Button>
+                      <Button 
+                        type="button"
+                        size="sm"
+                        onClick={() => handleNoteSave(festival.id)}
+                      >
+                        <Save className="h-3 w-3 mr-1" />
+                        Save
+                      </Button>
+                    </div>
+                  </div>
+                ) : hasNotes ? (
+                  <div 
+                    className="text-sm text-gray-600 cursor-pointer hover:bg-gray-50 p-2 rounded"
+                    onClick={() => handleEditNotes(festival)}
+                  >
+                    <div className="flex items-start gap-2">
+                      <FileTextIcon className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                      <div className="line-clamp-2 whitespace-pre-wrap">{noteContent}</div>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => handleEditNotes(festival)}
+                    className="text-gray-400 hover:text-blue-500 text-sm flex items-center p-2 rounded hover:bg-gray-50 w-full justify-center"
+                  >
+                    <FileTextIcon className="h-4 w-4 mr-1" />
+                    Add notes
+                  </button>
+                )}
+              </TableCell>
+              <TableCell className="text-right">
+                <div className="flex justify-end items-center space-x-2">
+                  <Button 
+                    variant="ghost" 
+                    size="icon"
+                    onClick={() => handleFavoriteToggle(festival)}
+                    className={isFavorite ? "text-red-500" : "text-gray-400 hover:text-red-400"}
+                    title={isFavorite ? "Remove from favorites" : "Add to favorites"}
+                  >
+                    <HeartIcon className="w-5 h-5" fill={isFavorite ? "currentColor" : "none"} />
+                  </Button>
+                  
+                  <Button 
+                    variant="ghost" 
+                    size="icon"
+                    onClick={() => handleArchiveToggle(festival)}
+                    className={isArchived ? "text-blue-500" : "text-gray-400 hover:text-blue-400"}
+                    title={isArchived ? "Unarchive" : "Archive"}
+                  >
+                    <ArchiveIcon className="w-5 h-5" />
+                  </Button>
+                  
+                  <a 
+                    href={festival.source.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-500 hover:text-blue-700"
+                    title="Visit source website"
+                  >
+                    <ExternalLinkIcon className="w-4 h-4" />
+                  </a>
+                </div>
+              </TableCell>
+            </TableRow>
+          );
+        })}
+      </TableBody>
+    </Table>
   );
 } 

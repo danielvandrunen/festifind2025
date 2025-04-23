@@ -7,6 +7,7 @@ import FestivalGrid from "@/components/festival/FestivalGrid";
 import MonthPaginator from "@/components/festival/MonthPaginator";
 import SourceFilter, { SourceOption } from "@/components/festival/SourceFilter";
 import FestivalToggleView, { ViewMode } from "@/components/festival/FestivalToggleView";
+import FestivalStatusFilter, { StatusFilter } from "@/components/festival/FestivalStatusFilter";
 import { Toaster } from "sonner";
 import { FestivalWithPreferences } from "@/types/festival";
 
@@ -57,13 +58,16 @@ export default function FestivalsPage() {
   const [error, setError] = useState<string | null>(null);
   const [usingFallbackData, setUsingFallbackData] = useState(false);
   
-  // New state for filter components
+  // State for filter components
   const [currentMonth, setCurrentMonth] = useState<Date>(startOfMonth(new Date()));
   const [sources, setSources] = useState<SourceOption[]>([]);
   const [selectedSources, setSelectedSources] = useState<string[]>([]);
   
   // New state for view mode toggle
   const [viewMode, setViewMode] = useState<ViewMode>('table');
+  
+  // New state for status filter
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
 
   // Load festivals from API on component mount
   useEffect(() => {
@@ -283,8 +287,13 @@ export default function FestivalsPage() {
   const handleViewModeChange = (mode: ViewMode) => {
     setViewMode(mode);
   };
+  
+  // Handle status filter change
+  const handleStatusFilterChange = (filter: StatusFilter) => {
+    setStatusFilter(filter);
+  };
 
-  // Filter festivals by month and selected sources
+  // Filter festivals by month, selected sources, and status
   const filteredFestivals = festivals.filter(festival => {
     const festivalStartDate = new Date(festival.startDate);
     const festivalEndDate = new Date(festival.endDate);
@@ -299,7 +308,13 @@ export default function FestivalsPage() {
     // Check if source is selected
     const isSourceSelected = selectedSources.includes(festival.source.name);
     
-    return isInMonth && isSourceSelected;
+    // Apply status filter
+    const meetsStatusFilter = 
+      statusFilter === 'all' ||
+      (statusFilter === 'favorites' && festival.isFavorite) ||
+      (statusFilter === 'archived' && festival.isArchived);
+    
+    return isInMonth && isSourceSelected && meetsStatusFilter;
   });
 
   return (
@@ -335,7 +350,12 @@ export default function FestivalsPage() {
               />
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <FestivalStatusFilter 
+                currentFilter={statusFilter}
+                onFilterChange={handleStatusFilterChange}
+              />
+              
               <SourceFilter
                 sources={sources}
                 selectedSources={selectedSources}
@@ -351,7 +371,7 @@ export default function FestivalsPage() {
           
           {filteredFestivals.length === 0 ? (
             <div className="text-center py-10 bg-gray-50 rounded-lg">
-              <p className="text-gray-600">No festivals found for the selected month and filters.</p>
+              <p className="text-gray-600">No festivals found for the selected filters.</p>
               <p className="text-sm mt-2">Try changing your filter settings or month selection.</p>
             </div>
           ) : (
@@ -368,6 +388,7 @@ export default function FestivalsPage() {
                   festivals={filteredFestivals}
                   onFavoriteToggle={handleFavoriteToggle}
                   onArchiveToggle={handleArchiveToggle}
+                  onNoteChange={handleNoteChange}
                 />
               )}
             </div>
