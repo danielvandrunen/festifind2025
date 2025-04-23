@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -14,6 +16,14 @@ const nextConfig = {
   },
   // Output standalone build for better Vercel compatibility
   output: 'standalone',
+  // Resolve module path aliases
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname),
+    };
+    return config;
+  },
 };
 
 module.exports = nextConfig; 
