@@ -3,9 +3,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "public": true,
-  "buildCommand": "CI=false next build",
+  "buildCommand": "npm install && CI=false next build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm install --force",
   "outputDirectory": ".next",
   "ignoreCommand": "exit 0"
 } 
