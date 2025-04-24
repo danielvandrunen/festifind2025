@@ -19,7 +19,7 @@ async function insertMockData() {
   console.log('Starting to insert mock data into database...');
 
   // Convert our mock data to match the database schema
-  const festivals = mockFestivals.map(festival => ({
+  const festivals = mockFestivals.map((festival: any) => ({
     name: festival.name,
     start_date: festival.startDate,
     end_date: festival.endDate,

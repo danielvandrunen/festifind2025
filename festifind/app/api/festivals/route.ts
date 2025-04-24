@@ -1,71 +1,71 @@
 import { NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
+// Main festivals endpoint to get all festivals
 export async function GET() {
   try {
     console.log('API: Fetching festivals from database...');
     
-    // Test database connection first
-    const { error: connectionError } = await supabase.from('festivals').select('count').limit(1);
-    if (connectionError) {
-      console.error('API: Database connection error:', connectionError);
-      return new NextResponse(JSON.stringify({ error: 'Database connection error' }), { 
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      });
-    }
+    // Check if Supabase environment variables are set
+    const isSupabaseConfigured = 
+      process.env.NEXT_PUBLIC_SUPABASE_URL && 
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     
-    // Fetch all festivals
-    const { data, error } = await supabase
+    // If Supabase is not configured, return mock data for deployment
+    if (!isSupabaseConfigured) {
+      console.log('API: Supabase is not configured, returning mock data');
+      return NextResponse.json(
+        { 
+          festivals: [
+            { 
+              id: 'mock-id-1', 
+              name: 'Mock Festival 1', 
+              start_date: '2025-07-01', 
+              end_date: '2025-07-03',
+              location: 'Mock Location 1',
+              favorite: false,
+              archived: false,
+              notes: ''
+            },
+            { 
+              id: 'mock-id-2', 
+              name: 'Mock Festival 2', 
+              start_date: '2025-08-15', 
+              end_date: '2025-08-17',
+              location: 'Mock Location 2',
+              favorite: true,
+              archived: false,
+              notes: 'Mock notes'
+            }
+          ] 
+        },
+        { status: 200 }
+      );
+    }
+
+    // Query the database
+    const { data: festivals, error } = await supabase
       .from('festivals')
       .select('*')
       .order('start_date', { ascending: true });
-
-    if (error) {
-      console.error('API: Error fetching festivals:', error);
-      return new NextResponse(JSON.stringify({ error: error.message }), { 
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        }
-      });
-    }
-
-    console.log(`API: Found ${data?.length || 0} festivals in database`);
     
-    return new NextResponse(JSON.stringify({
-      count: data?.length || 0,
-      festivals: data
-    }), {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      }
-    });
+    if (error) {
+      console.log('API: Database connection error:', error);
+      return NextResponse.json(
+        { error: 'Database connection error', details: error },
+        { status: 500 }
+      );
+    }
+    
+    console.log(`API: Found ${festivals?.length || 0} festivals in database`);
+    
+    return NextResponse.json({ festivals }, { status: 200 });
   } catch (err) {
-    console.error('API: Exception in festivals endpoint:', err);
-    return new NextResponse(JSON.stringify({ 
-      error: 'Internal Server Error', 
-      details: err instanceof Error ? err.message : String(err) 
-    }), { 
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      }
-    });
+    console.error('API: Error fetching festivals:', err);
+    return NextResponse.json(
+      { error: 'Failed to fetch festivals' },
+      { status: 500 }
+    );
   }
 }
 

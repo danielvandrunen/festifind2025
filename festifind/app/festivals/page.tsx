@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { startOfMonth } from "date-fns";
-import FestivalTable from "@/components/festival/FestivalTable";
-import FestivalGrid from "@/components/festival/FestivalGrid";
-import MonthPaginator from "@/components/festival/MonthPaginator";
-import SourceFilter, { SourceOption } from "@/components/festival/SourceFilter";
-import LocationFilter, { LocationOption } from "@/components/festival/LocationFilter";
-import FestivalToggleView, { ViewMode } from "@/components/festival/FestivalToggleView";
-import FestivalStatusFilter, { StatusFilter } from "@/components/festival/FestivalStatusFilter";
+import FestivalTable from "../../components/festival/FestivalTable";
+import FestivalGrid from "../../components/festival/FestivalGrid";
+import MonthPaginator from "../../components/festival/MonthPaginator";
+import SourceFilter, { SourceOption } from "../../components/festival/SourceFilter";
+import LocationFilter, { LocationOption } from "../../components/festival/LocationFilter";
+import FestivalToggleView, { ViewMode } from "../../components/festival/FestivalToggleView";
+import FestivalStatusFilter, { StatusFilter } from "../../components/festival/FestivalStatusFilter";
 import { Toaster } from "sonner";
-import { FestivalWithPreferences } from "@/types/festival";
+import { FestivalWithPreferences } from "../../types/festival";
 
 // Define the type for the API response item
 interface FestivalApiResponse {
