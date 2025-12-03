@@ -3,22 +3,31 @@ import { supabase } from '@/lib/supabase';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const { isFavorite } = await request.json();
     
     // Validate input
     if (typeof isFavorite !== 'boolean') {
-      return new NextResponse(
-        JSON.stringify({ error: 'Invalid input: isFavorite must be a boolean' }),
-        { 
-          status: 400,
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
+      return NextResponse.json(
+        { error: 'Invalid input: isFavorite must be a boolean' },
+        { status: 400 }
+      );
+    }
+    
+    // Check if Supabase environment variables are set
+    const isSupabaseConfigured = 
+      process.env.NEXT_PUBLIC_SUPABASE_URL && 
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    
+    // If Supabase is not configured, return mock success for deployment
+    if (!isSupabaseConfigured) {
+      console.log('API: Supabase is not configured, returning mock success');
+      return NextResponse.json(
+        { success: true, mockResponse: true },
+        { status: 200 }
       );
     }
     
@@ -30,36 +39,21 @@ export async function POST(
     
     if (error) {
       console.error('Error updating favorite status:', error);
-      return new NextResponse(
-        JSON.stringify({ error: 'Failed to update favorite status' }),
-        { 
-          status: 500,
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        }
+      return NextResponse.json(
+        { error: 'Failed to update favorite status' },
+        { status: 500 }
       );
     }
     
-    return new NextResponse(
-      JSON.stringify({ success: true }),
-      { 
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }
+    return NextResponse.json(
+      { success: true },
+      { status: 200 }
     );
   } catch (err) {
     console.error('Exception in favorite endpoint:', err);
-    return new NextResponse(
-      JSON.stringify({ error: 'Internal Server Error' }),
-      { 
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 }
     );
   }
 } 

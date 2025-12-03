@@ -1,95 +1,36 @@
-# FestiFind
-
-FestiFind is a festival aggregator application that scrapes data from multiple festival websites, stores it in a centralized database, and displays it through a modern web interface.
-
-## Features
-
-- Browse festivals from multiple sources
-- Filter by month and source
-- Favorite and archive festivals
-- Add notes to festivals
-- Developer tools for scraping and monitoring
-
-## Technology Stack
-
-- Frontend: React with Next.js
-- UI Library: shadcn/ui components
-- Database: Supabase
-- Scraping: Custom scrapers for 5 festival websites
-- Testing: Jest for unit tests, CLI-based testing for components
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### Prerequisites
+First, run the development server:
 
-- Node.js 18.x or higher
-- npm (included with Node.js)
-- Supabase account
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd festifind
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Set up environment variables:
-   Create a `.env.local` file in the root directory with the following variables:
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   SUPABASE_SERVICE_KEY=your_supabase_service_key
-   ```
-
-4. Set up the database:
-   Run the SQL script in `sql/schema.sql` in your Supabase SQL Editor.
-
-5. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Project Structure
-
-```
-festifind/
-├── src/
-│   ├── components/
-│   │   ├── ui/            # shadcn UI components
-│   │   ├── festival/      # Festival-specific components
-│   │   ├── dev-tools/     # Developer tools components
-│   │   └── layout/        # Layout components
-│   ├── lib/
-│   │   ├── scrapers/      # Scraper modules
-│   │   ├── supabase/      # Supabase client and helpers
-│   │   ├── utils/         # Utility functions
-│   │   └── types.ts       # TypeScript type definitions
-│   ├── app/
-│   │   ├── page.tsx       # Main page
-│   │   ├── dev-tools/     # Dev tools routes
-│   │   └── layout.tsx     # Root layout
-│   └── styles/            # CSS/styling files
-├── tests/                 # Test files
-├── scripts/               # CLI scripts and utilities
-└── public/                # Static assets
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Development Workflow
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Create feature branches from `main`
-2. Follow the test-driven development approach
-3. Test components via CLI before browser testing
-4. Create pull requests for review
-5. Tag significant milestones with semantic versioning
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## License
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-[MIT](LICENSE) 
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
