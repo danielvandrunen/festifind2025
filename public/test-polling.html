@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Research Polling</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .button { padding: 10px 20px; margin: 5px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        .status { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .pending { background: #fff3cd; border-color: #ffeaa7; }
+        .complete { background: #d4edda; border-color: #c3e6cb; }
+        .failed { background: #f8d7da; border-color: #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Research Polling Test</h1>
+    
+    <div>
+        <h3>Test Festival: IJsbeelden Festival</h3>
+        <button class="button" onclick="startResearch('openai')">Start OpenAI Research</button>
+        <button class="button" onclick="startResearch('perplexity')">Start Perplexity Research</button>
+        <button class="button" onclick="checkStatus()">Check Status</button>
+    </div>
+    
+    <div id="status" class="status">Ready to test...</div>
+    <div id="polling-info"></div>
+
+    <script>
+        const festivalId = '891913d7-e8c1-47ee-ba9e-c57fd79b03f4';
+        let pollingInterval = null;
+        
+        async function startResearch(aiService) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = 'status pending';
+            statusDiv.innerHTML = `Starting ${aiService} research...`;
+            
+            try {
+                const response = await fetch(`/api/festivals/${festivalId}/research`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ aiService })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'pending') {
+                    statusDiv.innerHTML = `Research initiated with ${aiService}! Status: ${data.status}`;
+                    startPolling();
+                } else if (data.status === 'complete') {
+                    statusDiv.className = 'status complete';
+                    statusDiv.innerHTML = `Research already complete!`;
+                } else {
+                    statusDiv.innerHTML = `Response: ${JSON.stringify(data)}`;
+                }
+            } catch (error) {
+                statusDiv.className = 'status failed';
+                statusDiv.innerHTML = `Error: ${error.message}`;
+            }
+        }
+        
+        async function checkStatus() {
+            try {
+                const response = await fetch(`/api/festivals/${festivalId}/research`);
+                const data = await response.json();
+                
+                const statusDiv = document.getElementById('status');
+                statusDiv.className = `status ${data.status}`;
+                statusDiv.innerHTML = `
+                    <strong>Status:</strong> ${data.status}<br>
+                    <strong>AI Service:</strong> ${data.ai_service || 'N/A'}<br>
+                    <strong>Updated:</strong> ${data.updated_at}<br>
+                    ${data.status === 'complete' ? '<strong>Research completed!</strong>' : ''}
+                `;
+            } catch (error) {
+                const statusDiv = document.getElementById('status');
+                statusDiv.className = 'status failed';
+                statusDiv.innerHTML = `Error: ${error.message}`;
+            }
+        }
+        
+        function startPolling() {
+            if (pollingInterval) return;
+            
+            const pollingInfo = document.getElementById('polling-info');
+            pollingInfo.innerHTML = '<strong>Polling active...</strong>';
+            
+            pollingInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/api/festivals/${festivalId}/research`);
+                    const data = await response.json();
+                    
+                    pollingInfo.innerHTML = `<strong>Polling:</strong> Checking... Status: ${data.status}`;
+                    
+                    if (data.status === 'complete' || data.status === 'failed') {
+                        stopPolling();
+                        checkStatus(); // Update the main status
+                    }
+                } catch (error) {
+                    pollingInfo.innerHTML = `<strong>Polling Error:</strong> ${error.message}`;
+                }
+            }, 2000); // Poll every 2 seconds
+        }
+        
+        function stopPolling() {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+                document.getElementById('polling-info').innerHTML = '<strong>Polling stopped</strong>';
+            }
+        }
+        
+        // Initial status check
+        checkStatus();
+    </script>
+</body>
+</html> 

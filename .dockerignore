@@ -1,0 +1,87 @@
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Dependencies (these will be installed in container)
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Next.js build outputs and cache
+.next
+out
+.next/cache
+*.tsbuildinfo
+.swc
+
+# Environment and config files that change frequently
+.env*
+!.env.example
+
+# Logs and temporary files
+logs
+*.log
+tmp
+temp
+*.tmp
+*.temp
+coverage
+.nyc_output
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.history
+
+# Build and deployment files
+.vercel
+.docker-dev-hash
+docker/
+*.dockerfile
+docker-compose.prod.yml
+docker-compose.test.yml
+vercel.json
+
+# Development and testing files
+output
+*.local
+test-*.html
+debug-*.html
+
+# Documentation and scripts (frequently changing)
+*.md
+!README.md
+*.sh
+*.json.backup
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.zip
+*.tar.gz
+
+# Cache directories
+.cache
+.parcel-cache
+.eslintcache
+
+# Chrome extension files
+chrome-extension/
+*.crx
+*.zip

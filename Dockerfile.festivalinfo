@@ -1,0 +1,54 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install Playwright dependencies
+RUN apk add --no-cache \
+    chromium \
+    ffmpeg \
+    libwebp \
+    libstdc++ \
+    g++ \
+    ca-certificates \
+    harfbuzz \
+    nss \
+    freetype \
+    ttf-freefont \
+    font-noto-emoji \
+    wqy-zenhei
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Install Playwright with system browser
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+ENV PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+# Set Playwright timeouts for better reliability
+ENV PLAYWRIGHT_TIMEOUT=120000
+ENV PLAYWRIGHT_NAVIGATION_TIMEOUT=90000
+
+# Copy source code
+COPY . .
+
+# Set up log directory
+RUN mkdir -p logs
+
+# Set up data directory with proper permissions
+RUN mkdir -p data
+RUN chmod 777 data
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV DOCKER=true
+ENV FESTIVALINFO_EXTRACT_DETAILS=true
+ENV FESTIVALINFO_MAX_PAGES=0
+ENV FESTIVALINFO_DELAY=3000
+ENV FESTIVALINFO_DETAIL_DELAY=2000
+
+# Use our enhanced run script
+CMD ["node", "scrapers/festivalinfo/run.js"] 

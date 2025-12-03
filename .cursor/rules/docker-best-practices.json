@@ -1,0 +1,47 @@
+{
+  "name": "Docker Best Practices",
+  "description": "Rules to enforce Docker best practices for the FestiFind project",
+  "rules": [
+    {
+      "name": "dockerignore-exists",
+      "description": "Ensure a .dockerignore file exists when using Docker",
+      "pattern": {
+        "type": "file",
+        "glob": "**/Dockerfile"
+      },
+      "on_match": {
+        "enforce_companion": {
+          "glob": "${dirname}/.dockerignore",
+          "message": "Please create a .dockerignore file to exclude unnecessary files from Docker builds."
+        }
+      }
+    },
+    {
+      "name": "docker-compose-exists",
+      "description": "Ensure docker-compose.yml exists for multi-service setups",
+      "pattern": {
+        "type": "file",
+        "glob": "**/Dockerfile"
+      },
+      "on_match": {
+        "enforce_companion": {
+          "glob": "${dirname}/docker-compose.yml",
+          "message": "Consider creating a docker-compose.yml file for easier development and deployment"
+        }
+      }
+    },
+    {
+      "name": "git-push-after-docker-test",
+      "description": "Reminder to commit and push changes after successful Docker tests",
+      "pattern": {
+        "type": "file",
+        "glob": "**/docker/test-deploy.sh"
+      },
+      "on_match": {
+        "show_message": {
+          "message": "Remember to commit and push your changes after successful Docker tests. Use: git add . && git commit -m \"Docker test successful\" && git push"
+        }
+      }
+    }
+  ]
+}

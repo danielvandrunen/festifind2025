@@ -1,0 +1,64 @@
+import { NextResponse } from 'next/server';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execPromise = promisify(exec);
+
+export async function POST() {
+  try {
+    console.log('Starting to build festivalinfo Docker image');
+    
+    // Get current directory
+    const currentDir = process.cwd();
+    console.log('Current working directory:', currentDir);
+    
+    // Build the Docker image
+    const buildCommand = 'docker-compose build festivalinfo-scraper';
+    
+    try {
+      console.log(`Executing command: ${buildCommand}`);
+      const { stdout, stderr } = await execPromise(buildCommand, { timeout: 300000 }); // 5-minute timeout
+      
+      console.log('Image build completed successfully');
+      
+      // Check if the image was successfully built
+      const { stdout: imageList } = await execPromise('docker images --format "{{.Repository}}:{{.Tag}}" | grep -i festivalinfo');
+      const images = imageList.trim().split('\n').filter(Boolean);
+      
+      if (images.length > 0) {
+        return NextResponse.json({ 
+          success: true, 
+          message: 'Docker image built successfully',
+          images: images,
+          logs: stdout,
+          stderr: stderr
+        });
+      } else {
+        console.error('Image build apparently succeeded, but no matching images found');
+        return NextResponse.json({ 
+          success: false, 
+          error: 'No festivalinfo images found after build',
+          message: 'Build command completed but no images were found',
+          logs: stdout,
+          stderr: stderr
+        }, { status: 500 });
+      }
+    } catch (error) {
+      console.error('Error building Docker image:', error);
+      return NextResponse.json({ 
+        success: false, 
+        error: error.message || 'Unknown error',
+        message: 'Failed to build Docker image',
+        stdout: error.stdout || '',
+        stderr: error.stderr || ''
+      }, { status: 500 });
+    }
+  } catch (error) {
+    console.error('Error in build API:', error);
+    return NextResponse.json({ 
+      success: false, 
+      error: error.message || 'Unknown error',
+      message: 'Internal server error'
+    }, { status: 500 });
+  }
+} 

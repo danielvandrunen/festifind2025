@@ -1,0 +1,21 @@
+{
+  "name": "FestiFind",
+  "short_name": "FestiFind",
+  "description": "Track and discover festivals around the world",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+} 

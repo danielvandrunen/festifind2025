@@ -1,0 +1,76 @@
+{
+  "festivals": {
+    "columns": [
+      {
+        "column": "id",
+        "type": "string"
+      },
+      {
+        "column": "name",
+        "type": "string"
+      },
+      {
+        "column": "start_date",
+        "type": "string"
+      },
+      {
+        "column": "end_date",
+        "type": "string"
+      },
+      {
+        "column": "location",
+        "type": "string"
+      },
+      {
+        "column": "country",
+        "type": "string"
+      },
+      {
+        "column": "url",
+        "type": "string"
+      },
+      {
+        "column": "source",
+        "type": "string"
+      },
+      {
+        "column": "created_at",
+        "type": "string"
+      },
+      {
+        "column": "updated_at",
+        "type": "string"
+      },
+      {
+        "column": "archived",
+        "type": "boolean"
+      },
+      {
+        "column": "favorite",
+        "type": "boolean"
+      },
+      {
+        "column": "notes",
+        "type": "string"
+      }
+    ],
+    "rowCount": 1,
+    "sample": [
+      {
+        "id": "8c1acad3-e336-44f2-b043-0d236f2e244b",
+        "name": "Tomorrowland",
+        "start_date": "2025-07-18",
+        "end_date": "2025-07-27",
+        "location": "Boom",
+        "country": "Belgium",
+        "url": "https://www.tomorrowland.com",
+        "source": "Tomorrowland Official",
+        "created_at": "2025-04-23T14:47:22.169731+00:00",
+        "updated_at": "2025-04-23T14:47:22.169731+00:00",
+        "archived": false,
+        "favorite": true,
+        "notes": "Need to buy tickets early, they sell out fast!"
+      }
+    ]
+  }
+}

@@ -3,6 +3,14 @@ description: Project guidelines for FestiFind festival aggregator application
 
 # FestiFind Project Guidelines
 
+## lessons from the time before
+Use a single, clean Next.js project structure
+Properly set up environment variables before deployment
+Test the build process locally before deployment
+Create separate branches for experimental changes
+
+THIS MUST BE FOLLOWED ALWAYS otherwise we end up with junk code again. 
+
 ## Project Overview
 FestiFind is a festival aggregator application that scrapes data from multiple festival websites, stores it in a centralized database, and displays it through a modern web interface. Users can browse, filter, favorite, and archive festivals.
 

@@ -1,35 +1,41 @@
-// Test script for Supabase connection
-const { createClient } = require('@supabase/supabase-js');
+// Simple script to test Supabase connection
+import { createClient } from '@supabase/supabase-js';
 
-// Using the same credentials from the app
+// Use the keys from config files
 const supabaseUrl = 'https://sxdbptmmvhluyxrlzgmh.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NTQxNjAwNSwiZXhwIjoyMDYwOTkyMDA1fQ.xZnyf5iqVRnfzbp5a0bDFCWDQ66Vfdbi1pZG7yhL5VU';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY';
 
-// Create Supabase client
+console.log('Testing connection to Supabase...');
+console.log('URL:', supabaseUrl);
+console.log('Key type: anon');
+
+// Initialize Supabase client
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Test query
-async function testConnection() {
+async function testSupabaseConnection() {
   console.log('Testing Supabase connection...');
+  console.log(`URL: ${supabaseUrl}`);
+  console.log(`Key: ${supabaseKey.substring(0, 10)}...`);
   
   try {
+    // Fetch festivals from Supabase
     const { data, error } = await supabase
       .from('festivals')
       .select('*')
-      .limit(1);
+      .order('start_date', { ascending: true });
     
     if (error) {
-      console.error('Supabase connection error:', error);
+      console.error('Error connecting to Supabase:', error);
       return;
     }
     
-    console.log('Connection successful! Sample data:');
-    console.log(JSON.stringify(data, null, 2));
-    console.log(`Retrieved ${data.length} records`);
-  } catch (err) {
-    console.error('Exception during Supabase test:', err);
+    console.log(`Found ${data.length} festivals:`);
+    data.forEach((festival, i) => {
+      console.log(`${i+1}. ${festival.name} (${festival.id})`);
+    });
+  } catch (error) {
+    console.error('Exception when connecting to Supabase:', error);
   }
 }
 
-// Run the test
-testConnection(); 
+testSupabaseConnection(); 

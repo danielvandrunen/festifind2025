@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vier De Lente Festival – Dansen en sjansen in de bollenvelden</title>
+</head>
+<body>
+    <h1>Vier De Lente Festival</h1>
+    
+    <div class="countdown">
+        <h2>Tot volgend jaar</h2>
+        <div class="date">11 April 2026</div>
+    </div>
+    
+    <div class="festival-info">
+        <h3>Vier de Lente in Hillegom!</h3>
+        <p>Dansen en sjansen midden tussen de tulpenvelden</p>
+        
+        <div class="location">
+            <p>Veenenburgerlaan 69, Hillegom</p>
+        </div>
+        
+        <div class="contact">
+            <p>Contact: info@vierdelente.com</p>
+        </div>
+    </div>
+    
+    <div class="newsletter">
+        <h3>Schrijf je in voor de nieuwsbrief</h3>
+        <p>Wil je als eerste op de hoogte zijn van het laatste nieuws en van speciale acties? Schrijf je dan in voor de nieuwsbrief!</p>
+    </div>
+    
+    <script>
+        console.log('🎵 Vier De Lente test page loaded');
+        console.log('📍 URL:', window.location.href);
+        
+        // Check if content script is loaded
+        setTimeout(() => {
+            if (window.festifindContentScriptLoaded) {
+                console.log('✅ FestiFind content script is loaded and ready to test!');
+            } else {
+                console.log('❌ FestiFind content script NOT loaded - check extension installation');
+            }
+        }, 2000);
+        
+        // Log HTML length for debugging
+        setTimeout(() => {
+            const htmlLength = document.documentElement.outerHTML.length;
+            console.log(`📄 Full HTML length: ${htmlLength} characters`);
+            console.log('🎯 This should match what FestiFind sends to Perplexity');
+        }, 1000);
+    </script>
+</body>
+</html> 

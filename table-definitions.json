@@ -1,0 +1,118 @@
+{
+  "user_preferences": {
+    "required": [
+      "id",
+      "user_id",
+      "created_at",
+      "updated_at"
+    ],
+    "properties": {
+      "id": {
+        "default": "extensions.uuid_generate_v4()",
+        "description": "Note:\nThis is a Primary Key.<pk/>",
+        "format": "uuid",
+        "type": "string"
+      },
+      "user_id": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "selected_sources": {
+        "format": "text[]",
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "view_mode": {
+        "default": "all",
+        "format": "text",
+        "type": "string"
+      },
+      "created_at": {
+        "default": "now()",
+        "format": "timestamp with time zone",
+        "type": "string"
+      },
+      "updated_at": {
+        "default": "now()",
+        "format": "timestamp with time zone",
+        "type": "string"
+      }
+    },
+    "type": "object"
+  },
+  "festivals": {
+    "required": [
+      "id",
+      "name",
+      "start_date",
+      "source",
+      "created_at",
+      "updated_at",
+      "archived",
+      "favorite"
+    ],
+    "properties": {
+      "id": {
+        "default": "extensions.uuid_generate_v4()",
+        "description": "Note:\nThis is a Primary Key.<pk/>",
+        "format": "uuid",
+        "type": "string"
+      },
+      "name": {
+        "format": "text",
+        "type": "string"
+      },
+      "start_date": {
+        "format": "date",
+        "type": "string"
+      },
+      "end_date": {
+        "format": "date",
+        "type": "string"
+      },
+      "location": {
+        "format": "text",
+        "type": "string"
+      },
+      "country": {
+        "format": "text",
+        "type": "string"
+      },
+      "url": {
+        "format": "text",
+        "type": "string"
+      },
+      "source": {
+        "format": "text",
+        "type": "string"
+      },
+      "created_at": {
+        "default": "now()",
+        "format": "timestamp with time zone",
+        "type": "string"
+      },
+      "updated_at": {
+        "default": "now()",
+        "format": "timestamp with time zone",
+        "type": "string"
+      },
+      "archived": {
+        "default": false,
+        "format": "boolean",
+        "type": "boolean"
+      },
+      "favorite": {
+        "default": false,
+        "format": "boolean",
+        "type": "boolean"
+      },
+      "notes": {
+        "format": "text",
+        "type": "string"
+      }
+    },
+    "type": "object"
+  }
+}

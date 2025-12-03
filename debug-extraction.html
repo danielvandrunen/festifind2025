@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Festival Extraction</title>
+</head>
+<body>
+    <h1>Test Festival 2025</h1>
+    <p><strong>Date:</strong> July 15-17, 2025</p>
+    <p><strong>Location:</strong> Amsterdam, Netherlands</p>
+    <p><strong>Contact:</strong> info@testfestival.com</p>
+    
+    <script>
+        // Open browser console and check these logs
+        console.log('Debug page loaded');
+        console.log('Location:', window.location.href);
+        
+        // Add test for content script loading
+        setTimeout(() => {
+            if (window.festifindContentScriptLoaded) {
+                console.log('✅ FestiFind content script is loaded');
+            } else {
+                console.log('❌ FestiFind content script NOT loaded');
+            }
+        }, 2000);
+        
+        // Add manual test function
+        window.testExtraction = function() {
+            console.log('🧪 Testing manual extraction...');
+            
+            // Test direct Perplexity call
+            fetch('http://localhost:3005/api/extract/html', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer festifind-perplexity-service-2025'
+                },
+                body: JSON.stringify({
+                    html: document.documentElement.outerHTML,
+                    url: window.location.href
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('🤖 Direct Perplexity result:', data);
+            })
+            .catch(error => {
+                console.error('❌ Direct Perplexity error:', error);
+            });
+        };
+        
+        console.log('Type testExtraction() in console to test direct API call');
+    </script>
+</body>
+</html> 

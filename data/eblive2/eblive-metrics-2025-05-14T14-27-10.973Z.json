@@ -1,0 +1,15 @@
+{
+  "totalFestivals": 116,
+  "uniqueFestivals": 74,
+  "duplicates": 42,
+  "errors": 0,
+  "startTime": "2025-05-14T14:26:32.309Z",
+  "endTime": "2025-05-14T14:27:10.967Z",
+  "pages": 3,
+  "festivalsByPage": {
+    "1": 26,
+    "2": 24,
+    "3": 24
+  },
+  "timeElapsed": "38.66s"
+}

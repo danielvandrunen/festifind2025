@@ -1,0 +1,184 @@
+# FestiFind Development Rules
+
+## CRITICAL PRINCIPLES - ALWAYS FOLLOW
+- Use a single, clean Next.js project structure
+- Properly set up environment variables before deployment
+- Test the build process locally before deployment
+- Create separate branches for experimental changes
+- THIS MUST BE FOLLOWED ALWAYS otherwise we end up with junk code again
+
+## Docker Development Environment - Escalation System
+
+### **LEVEL 1: Ultra-Fast Development (Primary)**
+- Use `./dev-ultra-fast.sh` for rapid iteration and quick testing
+- Minimal safety checks, maximum speed (5-10 second startup)
+- Use when: Making frequent small changes, rapid prototyping
+- Test at: `http://localhost:3005`
+
+### **LEVEL 2: Standard Docker Development (Default)**
+- Use `./dev-fast.sh` for balanced development with safety checks
+- Optimized builds with caching (15-30 second startup)
+- Use when: Regular development, after dependency changes
+- Test at: `http://localhost:3005`
+
+### **LEVEL 3: Full Docker Rebuild (When needed)**
+- Use `rm .docker-dev-hash && ./dev-fast.sh` for complete rebuild
+- Full dependency refresh and image rebuild (1-3 minute startup)
+- Use when: Major dependency changes, Docker issues, first-time setup
+- Test at: `http://localhost:3005`
+
+### **LEVEL 4: Native Development (Fallback)**
+- Use `npm run dev` ONLY when Docker is unavailable or broken
+- Direct Node.js execution without containerization
+- Use when: Docker daemon issues, quick debugging, emergency fixes
+- Test at: `http://localhost:3000`
+- **⚠️ WARNING**: Results may differ from production environment
+
+### **LEVEL 5: Production-like Testing (Pre-deployment)**
+- Use `npm run build && npm start` for production verification
+- Full build testing before deployment
+- Use when: Pre-deployment testing, investigating production issues
+- Test at: `http://localhost:3000`
+
+### **Escalation Rules:**
+1. **Start with Level 1** for daily development
+2. **Escalate to Level 2** if Level 1 fails or after dependency changes
+3. **Escalate to Level 3** if Docker images are corrupted or major updates
+4. **Escalate to Level 4** only if Docker is completely broken
+5. **Use Level 5** before any deployment to production
+
+### **Auto-escalation Triggers:**
+- Docker daemon not running → Escalate to Level 4
+- Build cache corrupted → Escalate to Level 3  
+- New dependencies added → Escalate to Level 2
+- Container won't start → Escalate through levels 1→2→3→4
+- Pre-deployment → Always use Level 5
+
+## Development Workflow
+
+### **Standard Development Cycle:**
+1. Make code changes
+2. Start with **Level 1**: `./dev-ultra-fast.sh` 
+3. Test at `http://localhost:3005`
+4. If issues occur, escalate according to escalation rules
+5. Use Docker logs for debugging: `docker compose -f docker-compose.dev.yml logs -f`
+
+### **Advanced Development Scenarios:**
+- **New dependencies**: Start with Level 2 (`./dev-fast.sh`)
+- **Docker problems**: Auto-escalate to Level 4 (`npm run dev`)
+- **Pre-deployment**: Always use Level 5 (`npm run build && npm start`)
+- **Emergency fixes**: Level 4 is acceptable for quick patches
+
+### **Development Principles:**
+6. Test-driven development where possible
+7. CLI testing before browser testing  
+8. Incremental feature implementation
+9. Regular version tagging with Git
+10. Always test at the appropriate escalation level for your changes
+
+## Port Usage by Development Level
+- **Levels 1-3 (Docker)**: localhost:3005 - Containerized environment
+- **Levels 4-5 (Native)**: localhost:3000 - Direct Node.js execution  
+- **Perplexity Extractor**: localhost:3005 (handle conflicts appropriately)
+- **Production/Vercel**: Standard HTTPS ports
+
+## Stagewise Toolbar Integration
+- Stagewise toolbar is integrated via `components/StagewiseToolbar.tsx`
+- Only loads in development mode (`NODE_ENV === 'development'`)
+- Uses dynamic imports to avoid SSR issues
+- Do NOT modify the stagewise integration unless specifically requested
+- Toolbar appears automatically in development at localhost:3000 or localhost:3005
+
+## Technology Stack Requirements
+- **Frontend**: React with Next.js
+- **UI Library**: shadcn/ui components
+- **Database**: Supabase
+- **Scraping**: Custom scrapers for festival websites
+- **Testing**: Jest for unit tests, CLI-based testing for components
+
+## Next.js Specific Rules
+- No duplicate page files that could cause routing conflicts
+- Ensure .env files are never committed and have .env.example templates
+- Avoid deprecated Next.js config options (appDir, serverComponentsExternalPackages)
+- Use proper async/await in all API routes
+- Handle params correctly: `const id = await context.params.id;`
+- Implement proper error handling that works in serverless environment
+
+## Code Organization
+```
+festifind/
+├── app/                   # Next.js app directory
+├── components/            # React components
+│   ├── ui/               # shadcn UI components
+│   ├── festival/         # Festival-specific components
+│   ├── dev-tools/        # Developer tools components
+│   └── layout/           # Layout components
+├── lib/                  # Utilities and helpers
+│   ├── scrapers/         # Scraper modules
+│   ├── supabase/         # Supabase client and helpers
+│   └── utils/            # Utility functions
+├── scripts/              # CLI scripts and utilities
+└── tests/                # Test files
+```
+
+## Testing Approach
+- Use CLI for all testable functionality before visual browser testing
+- Leverage Chrome DevTools only for UI/visual debugging
+- Write Jest tests for all utility functions and scrapers
+- Log extensively during scraper development
+- Create CLI test scripts in `scripts/` directory
+- Run tests via npm scripts
+- Use proper exit codes to indicate success/failure
+
+## UI Testing Requirements
+- **MANDATORY**: When any UI code is updated, test via CLI or automated tooling FIRST
+- Use `npm run build` to verify components compile without errors
+- Run `npm run lint` to check for code quality issues
+- Test component logic with Jest before browser testing
+- Use CLI component testing scripts when available
+- Only proceed to manual browser testing after automated tests pass
+- Create unit tests for any new UI components or logic changes
+- Verify TypeScript compilation succeeds before manual testing
+
+## Error Handling
+- Implement robust error handling in scrapers
+- Add detailed logging for all scraping operations
+- Validate all data before database insertion
+- Handle edge cases gracefully
+
+## Database Integration
+- Use Supabase client for all database operations
+- Implement proper error handling
+- Use transactions for data integrity
+- Include data validation before insertion
+
+## Deployment Rules
+- Always push to Git before deploying
+- Run a local build test with `npm run build`
+- Use deployment scripts: `./vercel-deploy-simple.sh`
+- Create Git tags for releases: `git tag -a vX.Y.Z -m "Description"`
+- Monitor application after deployment
+- Verify environment variables in Vercel dashboard
+
+## Data Format Requirements
+- All dates must be in ISO format (YYYY-MM-DD)
+- Festival names should be properly formatted and sanitized
+- Location information should be structured consistently
+- Source website attribution must be included for all festivals
+- Favorite and archive functionality must persist across sessions
+
+## Component Development
+- Each component should have a single responsibility
+- Include inline documentation
+- Be tested independently
+- Include proper TypeScript typing
+- Follow shadcn/ui design patterns
+- Implement responsive design from the start
+
+## Environment Variables
+- All environment variables must be defined in `.env.local` for local development
+- Add new variables to both `.env.local` and Vercel dashboard
+- Maintain `.env.example` for documentation
+- Required variables:
+  - `NEXT_PUBLIC_SUPABASE_URL`
+  - `NEXT_PUBLIC_SUPABASE_ANON_KEY` 

@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "always_test_in_docker": {
+      "description": "Always test in the Docker environment instead of the dev server",
+      "message": "Use Docker environment for testing by running 'docker-compose -f docker-compose-dev.yml up' instead of 'npm run dev'",
+      "severity": "warning",
+      "pattern": "npm run dev",
+      "recommendation": "docker-compose -f docker-compose-dev.yml up"
+    }
+  }
+} 

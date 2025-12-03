@@ -1,59 +1,61 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../../../../../lib/supabase-client';
+
+interface Params {
+  id: string;
+}
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<Params> }
 ) {
+  const { id } = await params;
+  
   try {
-    const { id } = await params;
-    const { isFavorite } = await request.json();
+    // Parse the request body
+    const body = await request.json();
     
-    // Validate input
-    if (typeof isFavorite !== 'boolean') {
-      return NextResponse.json(
-        { error: 'Invalid input: isFavorite must be a boolean' },
-        { status: 400 }
-      );
+    // Support both parameter formats
+    const favorite = body.favorite !== undefined ? body.favorite : body.isFavorite;
+    
+    if (typeof favorite !== 'boolean') {
+      console.error('Invalid input type for favorite:', favorite);
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Invalid input. "favorite" must be a boolean value.' 
+      }, { status: 400 });
     }
     
-    // Check if Supabase environment variables are set
-    const isSupabaseConfigured = 
-      process.env.NEXT_PUBLIC_SUPABASE_URL && 
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    
-    // If Supabase is not configured, return mock success for deployment
-    if (!isSupabaseConfigured) {
-      console.log('API: Supabase is not configured, returning mock success');
-      return NextResponse.json(
-        { success: true, mockResponse: true },
-        { status: 200 }
-      );
-    }
-    
-    // Update the favorite status in database
-    const { error } = await supabase
+    // Update the festival favorite status in the database
+    const { data, error } = await supabase
       .from('festivals')
-      .update({ favorite: isFavorite })
-      .eq('id', id);
+      .update({ favorite })
+      .eq('id', id)
+      .select()
+      .single();
     
     if (error) {
       console.error('Error updating favorite status:', error);
-      return NextResponse.json(
-        { error: 'Failed to update favorite status' },
-        { status: 500 }
-      );
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Database error when updating favorite status',
+        error: error.message,
+        details: error
+      }, { status: 500 });
     }
     
-    return NextResponse.json(
-      { success: true },
-      { status: 200 }
-    );
-  } catch (err) {
-    console.error('Exception in favorite endpoint:', err);
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ 
+      success: true, 
+      message: `Festival ${favorite ? 'added to' : 'removed from'} favorites`,
+      data 
+    });
+    
+  } catch (error: any) {
+    console.error('Error processing favorite update:', error);
+    return NextResponse.json({ 
+      success: false, 
+      message: 'Error processing request',
+      error: error.message
+    }, { status: 500 });
   }
-} 
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vier De Lente Festival – Dansen en sjansen in de bollenvelden</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .error { color: red; font-weight: bold; }
+        .success { color: green; font-weight: bold; }
+        .info { color: blue; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🧪 FestiFind Extension Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Festival Information to Extract:</h2>
+        <h3>Vier De Lente Festival</h3>
+        <p><strong>Date:</strong> 11 April 2026</p>
+        <p><strong>Location:</strong> Hillegom, Netherlands</p>
+        <p><strong>Address:</strong> Veenenburgerlaan 69, Hillegom</p>
+        <p><strong>Contact:</strong> info@vierdelente.com</p>
+        <p>Dansen en sjansen midden tussen de tulpenvelden</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔍 Extension Tests</h2>
+        <div id="test-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>📊 Live Test Results</h2>
+        <button onclick="runTests()" style="padding: 10px 20px; font-size: 16px; background: #007cba; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            🚀 Run All Tests
+        </button>
+        <div id="live-results" style="margin-top: 15px;"></div>
+    </div>
+
+    <script>
+        console.log('🧪 Extension test page loaded');
+        
+        // Test results container
+        const resultsDiv = document.getElementById('test-results');
+        const liveDiv = document.getElementById('live-results');
+        
+        function logTest(message, isError = false) {
+            console.log(message);
+            const div = document.createElement('div');
+            div.innerHTML = message;
+            div.className = isError ? 'error' : 'success';
+            resultsDiv.appendChild(div);
+            liveDiv.appendChild(div.cloneNode(true));
+        }
+        
+        // Test 1: Check if content script is loaded
+        setTimeout(() => {
+            if (window.festifindContentScriptLoaded) {
+                logTest('✅ FestiFind content script is loaded');
+            } else {
+                logTest('❌ FestiFind content script NOT loaded - extension not installed/enabled', true);
+            }
+        }, 1000);
+        
+        // Test 2: Check HTML length
+        setTimeout(() => {
+            const htmlLength = document.documentElement.outerHTML.length;
+            logTest(`📄 Full HTML length: ${htmlLength} characters`);
+            
+            if (htmlLength < 1000) {
+                logTest(`⚠️ HTML seems short for a real page`, true);
+            } else {
+                logTest(`✅ HTML length looks good`);
+            }
+        }, 1500);
+        
+        // Test 3: Test ping communication
+        function testPing() {
+            if (typeof chrome !== 'undefined' && chrome.runtime) {
+                chrome.runtime.sendMessage({action: 'ping'}, (response) => {
+                    if (response) {
+                        logTest(`✅ Ping successful: ${JSON.stringify(response)}`);
+                    } else {
+                        logTest(`❌ Ping failed - no response`, true);
+                    }
+                });
+            } else {
+                logTest(`❌ Chrome extension API not available`, true);
+            }
+        }
+        
+        // Test 4: Test direct Perplexity service
+        async function testPerplexityService() {
+            try {
+                logTest(`🔄 Testing Perplexity service directly...`);
+                
+                const response = await fetch('http://localhost:3005/health');
+                if (response.ok) {
+                    logTest(`✅ Perplexity service is responding`);
+                } else {
+                    logTest(`❌ Perplexity service returned ${response.status}`, true);
+                }
+            } catch (error) {
+                logTest(`❌ Perplexity service unreachable: ${error.message}`, true);
+            }
+        }
+        
+        // Test 5: Manual extraction test
+        function testManualExtraction() {
+            logTest(`🔄 Testing manual extraction...`);
+            
+            // Test if we can call the extraction function directly
+            if (window.extractWithPerplexity) {
+                const html = document.documentElement.outerHTML;
+                window.extractWithPerplexity(html, window.location.href)
+                    .then(result => {
+                        if (result) {
+                            logTest(`✅ Manual extraction successful: ${JSON.stringify(result.data)}`);
+                        } else {
+                            logTest(`❌ Manual extraction returned null`, true);
+                        }
+                    })
+                    .catch(error => {
+                        logTest(`❌ Manual extraction failed: ${error.message}`, true);
+                    });
+            } else {
+                logTest(`❌ extractWithPerplexity function not available`, true);
+            }
+        }
+        
+        // Run all tests
+        async function runTests() {
+            liveDiv.innerHTML = '<div class="info">🚀 Running tests...</div>';
+            
+            // Test content script
+            setTimeout(() => {
+                if (window.festifindContentScriptLoaded) {
+                    logTest('✅ Content script loaded');
+                } else {
+                    logTest('❌ Content script missing', true);
+                    return;
+                }
+                
+                // Test ping
+                testPing();
+                
+                // Test Perplexity service
+                testPerplexityService();
+                
+                // Test manual extraction
+                testManualExtraction();
+                
+            }, 500);
+        }
+        
+        // Auto-run tests after page load
+        setTimeout(() => {
+            logTest('🔄 Auto-running initial tests...');
+            runTests();
+        }, 2000);
+        
+        // Log HTML content for debugging
+        setTimeout(() => {
+            console.log('📝 HTML Preview (first 500 chars):');
+            console.log(document.documentElement.outerHTML.substring(0, 500));
+            console.log('📝 HTML End (last 200 chars):');
+            const html = document.documentElement.outerHTML;
+            console.log(html.substring(html.length - 200));
+        }, 1000);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,80 @@
+// @ts-nocheck
+// Force ESM mode
+
+import { NextResponse } from 'next/server';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execPromise = promisify(exec);
+
+export async function GET() {
+  try {
+    console.log('Testing Docker functionality');
+    
+    const results = {
+      currentDir: process.cwd(),
+      dockerVersion: null,
+      composeVersion: null,
+      simpleDockerCommand: null,
+      dockerPs: null,
+      error: null
+    };
+    
+    // Test 1: Check current directory
+    console.log('Current directory:', results.currentDir);
+    
+    // Test 2: Check Docker version
+    try {
+      const { stdout } = await execPromise('docker --version');
+      results.dockerVersion = stdout.trim();
+      console.log('Docker version:', results.dockerVersion);
+    } catch (error) {
+      console.error('Docker not available:', error.message);
+      results.error = `Docker not available: ${error.message}`;
+      return NextResponse.json(results);
+    }
+    
+    // Test 3: Check Docker Compose version
+    try {
+      const { stdout } = await execPromise('docker-compose --version');
+      results.composeVersion = stdout.trim();
+      console.log('Docker Compose version:', results.composeVersion);
+    } catch (error) {
+      console.error('Docker Compose not available:', error.message);
+      results.error = `Docker Compose not available: ${error.message}`;
+      return NextResponse.json(results);
+    }
+    
+    // Test 4: Run simple Docker command (list images)
+    try {
+      const { stdout } = await execPromise('docker images --format "{{.Repository}}"');
+      results.simpleDockerCommand = stdout.trim().split('\n');
+      console.log('Docker images:', results.simpleDockerCommand);
+    } catch (error) {
+      console.error('Error running simple Docker command:', error.message);
+      results.error = `Error running simple Docker command: ${error.message}`;
+      return NextResponse.json(results);
+    }
+    
+    // Test 5: Check running containers
+    try {
+      const { stdout } = await execPromise('docker ps');
+      results.dockerPs = stdout.trim();
+      console.log('Docker ps output:', results.dockerPs);
+    } catch (error) {
+      console.error('Error checking Docker containers:', error.message);
+      results.error = `Error checking Docker containers: ${error.message}`;
+      return NextResponse.json(results);
+    }
+    
+    // Return all results
+    return NextResponse.json(results);
+  } catch (error) {
+    console.error('Error in Docker test API:', error);
+    return NextResponse.json({ 
+      success: false, 
+      error: error.message || 'Unknown error',
+      message: 'Docker test failed'
+    }, { status: 500 });
+  }
+} 

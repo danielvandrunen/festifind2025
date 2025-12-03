@@ -1,0 +1,56 @@
+services:
+  nextjs-dev:
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile.dev
+      cache_from:
+        - nextjs-dev:latest
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    ports:
+      - "3005:3000"
+    volumes:
+      # Mount source code for hot reloading - optimized for performance
+      - .:/app:cached
+      - node_modules_cache:/app/node_modules  # Use named volume for better performance
+      - next_cache:/app/.next                 # Use named volume for .next cache
+      - ./output:/app/output:delegated        # Delegated for better write performance
+      - /tmp/festifind_temp_data:/tmp/festifind_temp_data:delegated
+    env_file:
+      - .env.local
+      - .env
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_SUPABASE_URL=https://sxdbptmmvhluyxrlzgmh.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY
+      - NEXT_TELEMETRY_DISABLED=1
+      - NODE_OPTIONS=--max_old_space_size=2048
+      - PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - CHROME_BIN=/usr/bin/chromium-browser
+      - HOST_ROOT=/app
+      - CHOKIDAR_USEPOLLING=true  # Enable file watching in Docker
+      - WATCHPACK_POLLING=true     # Enable webpack polling
+    command: npm run dev
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    # Resource limits for better performance
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
+
+# Named volumes for better performance and persistence
+volumes:
+  node_modules_cache:
+    driver: local
+  next_cache:
+    driver: local 

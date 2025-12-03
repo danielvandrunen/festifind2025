@@ -1,3 +1,60 @@
 {
-  "framework": "nextjs"
-}
+  "version": 2,
+  "buildCommand": "next build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "regions": ["sfo1"],
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/process-research",
+      "schedule": "*/2 * * * *"
+    }
+  ],
+  "env": {
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://sxdbptmmvhluyxrlzgmh.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY"
+  },
+  "headers": [
+    {
+      "source": "/api/festivals",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=600"
+        },
+        {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        }
+      ]
+    },
+    {
+      "source": "/api/festivals/(.*)/(research|archive|favorite|notes)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/api/festivals/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, s-maxage=120"
+        }
+      ]
+    }
+  ]
+} 

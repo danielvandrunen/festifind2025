@@ -1,0 +1,99 @@
+// @ts-nocheck
+// Force ESM mode
+
+// FestiFind Perplexity API - HTML Extraction Endpoint for Vercel (Next.js App Router)
+import cors from 'cors';
+import { NextResponse } from 'next/server';
+import { authenticateRequest } from '../../../../../lib/perplexity-auth';
+import { processHTML } from '../../../../../lib/html-processor';
+import { extractWithPerplexity } from '../../../../../lib/perplexity-extractor';
+
+// Configure CORS
+const corsOptions = {
+  origin: [
+    'chrome-extension://*',
+    'moz-extension://*',
+    'http://localhost:*',
+    'https://*.vercel.app',
+    'https://festifind2025.vercel.app'
+  ],
+  methods: ['POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
+};
+
+// Handle CORS preflight
+export async function OPTIONS(request) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    }
+  });
+}
+
+export async function POST(request) {
+  try {
+    console.log('🚀 Perplexity extraction request received');
+    
+    // Add CORS headers
+    const headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    };
+    
+    // Authenticate request
+    const authResult = authenticateRequest(request);
+    if (!authResult.success) {
+      console.log('❌ Authentication failed:', authResult.error);
+      return NextResponse.json({
+        success: false,
+        error: authResult.error
+      }, { status: 401, headers });
+    }
+
+    const body = await request.json();
+    const { html, url } = body;
+    
+    if (!html) {
+      return NextResponse.json({
+        success: false,
+        error: 'HTML content is required'
+      }, { status: 400, headers });
+    }
+
+    console.log(`📄 Processing HTML (${html.length} chars) from: ${url || 'unknown'}`);
+    
+    // Process HTML to optimize for AI
+    const processedContent = processHTML(html);
+    console.log(`🔄 Processed HTML: ${processedContent.length} chars (${Math.round((1 - processedContent.length / html.length) * 100)}% reduction)`);
+    
+    // Extract with Perplexity AI
+    const result = await extractWithPerplexity(processedContent, url);
+    
+    if (result.success) {
+      console.log('✅ Extraction successful');
+      return NextResponse.json(result, { status: 200, headers });
+    } else {
+      console.log('❌ Extraction failed:', result.error);
+      return NextResponse.json(result, { status: 500, headers });
+    }
+    
+  } catch (error) {
+    console.error('❌ Extraction endpoint error:', error);
+    return NextResponse.json({
+      success: false,
+      error: 'Internal server error'
+    }, { 
+      status: 500, 
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+    });
+  }
+} 

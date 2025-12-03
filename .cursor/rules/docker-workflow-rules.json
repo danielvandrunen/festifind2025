@@ -1,0 +1,20 @@
+{
+  "name": "Docker Workflow Rules",
+  "description": "Rules to enforce Docker best practices and proper Git workflow",
+  "rules": [
+    {
+      "name": "enforce-dockerignore",
+      "description": "Ensure Dockerfile has a companion .dockerignore file",
+      "pattern": {
+        "type": "file",
+        "glob": "**/Dockerfile"
+      },
+      "on_match": {
+        "enforce_companion": {
+          "glob": "${dirname}/.dockerignore",
+          "message": "Dockerfile should have a companion .dockerignore file to exclude unnecessary files from the build context"
+        }
+      }
+    },
+    {
+      "name": "enforce-docker-compose",

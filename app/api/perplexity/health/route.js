@@ -1,0 +1,68 @@
+// @ts-nocheck
+// Force ESM mode
+
+// FestiFind Perplexity API - Health Check Endpoint for Vercel (Next.js App Router)
+import { NextResponse } from 'next/server';
+
+// Handle CORS preflight
+export async function OPTIONS(request) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    }
+  });
+}
+
+export async function GET(request) {
+  try {
+    const healthData = {
+      success: true,
+      status: 'healthy',
+      service: 'festifind-perplexity-extractor',
+      version: '1.0.0',
+      timestamp: new Date().toISOString(),
+      environment: 'vercel',
+      endpoints: [
+        '/api/perplexity/extract/html',
+        '/api/perplexity/extract/url',
+        '/api/perplexity/health'
+      ],
+      features: [
+        'HTML content extraction',
+        'URL content fetching', 
+        'AI-powered event data extraction',
+        'Cost-optimized processing',
+        'Multi-language support'
+      ]
+    };
+
+    console.log('✅ Health check successful');
+    
+    return NextResponse.json(healthData, {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+    });
+    
+  } catch (error) {
+    console.error('❌ Health check error:', error);
+    return NextResponse.json({
+      success: false,
+      status: 'error',
+      error: 'Health check failed'
+    }, {
+      status: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      }
+    });
+  }
+} 

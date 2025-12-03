@@ -1,0 +1,1110 @@
+### Dockerfile
+
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements file
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy source code
+COPY . .
+
+# Create volume for data persistence
+VOLUME /app/data
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV SCRAPER_CONFIG=/app/config/config.yaml
+
+# Set entrypoint
+ENTRYPOINT ["python", "src/main.py"]
+
+# Default command (can be overridden)
+CMD []
+```
+
+### docker-compose.yml
+
+```yaml
+version: '3'
+
+services:
+  scraper:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - SCRAPER_CONFIG=/app/config/config.yaml
+    # Command line arguments can be passed here
+    # command: --max-pages 5 --format json
+    restart: on-failure
+
+volumes:
+  data:
+  logs:
+```
+
+### requirements.txt
+
+```
+beautifulsoup4==4.12.2
+requests==2.31.0
+pyyaml==6.0.1
+python-dotenv==1.0.0
+tenacity==8.2.2
+lxml==4.9.3
+# Add these for more robust html parsing
+html5lib==1.1
+soupsieve==2.5
+# For proxy rotation if needed
+requests[socks]==2.31.0
+```
+
+### config/config.yaml
+
+```yaml
+scraper:
+  base_url: https://www.festivalinfo.nl/festivals/
+  page_param: page
+  start_page: 1
+  max_pages: null  # Set to null to scrape all pages
+  min_request_delay: 3  # Minimum time in seconds between requests
+  max_request_delay: 7  # Maximum time for random delays
+  timeout: 30
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+    - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
+    - "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0"
+    - "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+    - "Mozilla/5.0 (iPad; CPU OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+  # Uncomment and add proxies if needed
+  # proxies:
+  #   - "http://username:password@proxy1.example.com:8080"
+  #   - "http://username:password@proxy2.example.com:8080"
+
+storage:
+  type: json  # Options: json, csv
+  file_path: data/festivals.json  # For file-based storage
+
+logging:
+  level: INFO
+  file: logs/scraper.log
+```
+
+### Usage Instructions
+
+#### Building and Running with Docker
+
+1. **Build the Docker image**:
+   ```bash
+   docker-compose build
+   ```
+
+2. **Run the scraper**:
+   ```bash
+   docker-compose up
+   ```
+
+3. **Run with custom parameters**:
+   ```bash
+   docker-compose run scraper --max-pages 5 --format json --output data/custom_output.json
+   ```
+
+4. **View the logs**:
+   ```bash
+   docker-compose logs scraper
+   ```
+
+#### Running Without Docker
+
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the scraper**:
+   ```bash
+   python src/main.py
+   ```
+
+3. **Run with custom parameters**:
+   ```bash
+   python src/main.py --max-pages 5 --format json --output data/custom_output.json
+   ```
+
+### Anti-Scraping Measures
+
+This scraper implements the following measures to avoid being blocked:
+
+1. **User Agent Rotation**: Randomly changes browser fingerprints
+2. **Timing Variation**: Adds random delays between requests
+3. **Request Throttling**: Respects rate limits with progressively increasing delays
+4. **Referrer Spoofing**: Sets realistic referrer headers
+5. **Session Management**: Maintains cookies and session state
+6. **Proxy Rotation** (optional): Can use multiple proxies if configured
+7. **Human-like Behavior**: Occasionally visits the homepage first
+8. **Exponential Backoff**: Increases wait time on failed requests
+9. **Detection Evasion**: Detects and handles blocking/CAPTCHA challenges
+
+### Data Extraction Strategy
+
+The scraper uses a multi-strategy approach to extract data:
+
+1. First tries to extract data from the overview page
+2. Only visits festival detail pages when necessary (when critical information is missing)
+3. Uses multiple selectors for each data point to handle variations in page structure
+4. Falls back to regex extraction when structured parsing fails
+5. Validates and normalizes data before saving
+
+### Next Steps
+
+- **Monitoring**: Add monitoring for long-running scraper instances
+- **API Integration**: Add functionality to upload to database/API
+- **Notification**: Add email/Slack notifications on completion or errors
+- **Scheduling**: Implement scheduling for periodic scraping# Festival Info Scraper Tool
+
+This document provides a complete scraper implementation for extracting festival data from [festivalinfo.nl](https://www.festivalinfo.nl/festivals/). The solution is designed to run in a Docker environment for ease of deployment and portability.
+
+## Overview
+
+The scraper will:
+1. Extract festival information from the main listing page
+2. Handle pagination to get all festivals
+3. Store data in a structured format (JSON by default)
+4. Run within a Docker container
+5. Include error handling and responsible scraping practices
+
+## Technical Architecture
+
+### Stack
+
+- **Python 3.9+** - Main programming language
+- **BeautifulSoup4** - HTML parsing
+- **Requests** - HTTP requests
+- **Docker** - Containerization
+- **JSON/CSV** - Data storage
+
+### Directory Structure
+
+```
+festival-scraper/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── scraper.py
+│   ├── parser.py
+│   ├── storage.py
+│   └── utils.py
+├── config/
+│   └── config.yaml
+├── data/
+│   └── .gitkeep
+└── README.md
+```
+
+## Implementation Details
+
+Below are the complete code implementations for each module of the scraper.
+
+### 1. Scraper Module (`src/scraper.py`)
+
+```python
+import time
+import random
+import logging
+import requests
+import re
+import json
+from tenacity import retry, stop_after_attempt, wait_fixed, wait_random_exponential, retry_if_exception_type
+from requests.exceptions import RequestException, TooManyRedirects, ConnectionError, Timeout
+from urllib.parse import urljoin
+
+class FestivalScraper:
+    def __init__(self, config):
+        self.config = config
+        self.session = requests.Session()
+        self.logger = logging.getLogger(__name__)
+        self.request_count = 0
+        self.last_request_time = 0
+        self.proxies = self.config.get('proxies', [])
+        self.current_proxy_index = 0
+        
+        # Initialize with random user agent
+        self.rotate_user_agent()
+        
+        # Initialize cookies and headers
+        self._setup_initial_session()
+        
+    def _setup_initial_session(self):
+        """Setup initial session with cookies and headers to mimic a browser."""
+        # Common headers to make requests look more like a browser
+        self.session.headers.update({
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Cache-Control': 'max-age=0',
+        })
+        
+    def rotate_user_agent(self):
+        """Rotate user agents to avoid being blocked."""
+        user_agents = self.config['scraper']['user_agents']
+        chosen_agent = random.choice(user_agents)
+        self.session.headers.update({'User-Agent': chosen_agent})
+        return chosen_agent
+        
+    def rotate_proxy(self):
+        """Rotate proxies if available."""
+        if not self.proxies:
+            return None
+            
+        self.current_proxy_index = (self.current_proxy_index + 1) % len(self.proxies)
+        current_proxy = self.proxies[self.current_proxy_index]
+        
+        self.session.proxies = {
+            'http': current_proxy,
+            'https': current_proxy
+        }
+        
+        self.logger.info(f"Rotated to proxy: {self.current_proxy_index + 1}/{len(self.proxies)}")
+        return current_proxy
+        
+    def _respect_rate_limits(self):
+        """Ensure we don't make requests too quickly to avoid rate limiting."""
+        min_delay = self.config['scraper']['min_request_delay']
+        max_delay = self.config['scraper']['max_request_delay']
+        
+        # Calculate time since last request
+        time_since_last = time.time() - self.last_request_time
+        
+        # If we've made a request recently, wait until min_delay has passed
+        if time_since_last < min_delay:
+            wait_time = min_delay - time_since_last
+            # Add jitter to appear more human-like
+            wait_time += random.uniform(0, 1)
+            time.sleep(wait_time)
+            
+        # After every 10 requests, take a longer pause
+        if self.request_count > 0 and self.request_count % 10 == 0:
+            pause_time = random.uniform(max_delay * 2, max_delay * 3)
+            self.logger.info(f"Taking a longer pause after {self.request_count} requests: {pause_time:.2f}s")
+            time.sleep(pause_time)
+            
+        # Update the last request time
+        self.last_request_time = time.time()
+        self.request_count += 1
+        
+    def _add_referer_header(self, url):
+        """Add a referer header to make the request look more natural."""
+        if 'festivalinfo.nl' in url:
+            self.session.headers.update({
+                'Referer': 'https://www.festivalinfo.nl/'
+            })
+        else:
+            # Use a generic referer or a search engine
+            referers = [
+                'https://www.google.com/',
+                'https://www.bing.com/',
+                'https://duckduckgo.com/'
+            ]
+            self.session.headers.update({
+                'Referer': random.choice(referers)
+            })
+            
+    @retry(
+        stop=stop_after_attempt(5),  # More retries for resilience
+        wait=wait_random_exponential(multiplier=1, max=60),  # Exponential backoff
+        retry=retry_if_exception_type((RequestException, ConnectionError, Timeout))
+    )
+    def fetch_page(self, url):
+        """Fetch a page with advanced retry logic and anti-blocking measures."""
+        # Respect rate limits
+        self._respect_rate_limits()
+        
+        # Rotate user agent occasionally (every 3-7 requests)
+        if self.request_count % random.randint(3, 7) == 0:
+            self.rotate_user_agent()
+            
+        # If we have proxies and hit certain request thresholds, rotate
+        if self.proxies and (self.request_count % 15 == 0):
+            self.rotate_proxy()
+            
+        # Add appropriate referer
+        self._add_referer_header(url)
+        
+        self.logger.info(f"Fetching: {url}")
+        
+        try:
+            # To avoid bot detection, sometimes we want to visit the homepage first
+            if random.random() < 0.2 and 'festivalinfo.nl/festival' in url and 'festivalinfo.nl' != url:
+                self.logger.info("Visiting homepage first to appear more natural")
+                homepage_url = 'https://www.festivalinfo.nl/'
+                # Don't count this visit against our rate limits to avoid slowing down too much
+                _ = self.session.get(homepage_url, timeout=self.config['scraper']['timeout'])
+                time.sleep(random.uniform(1, 3))  # Wait a bit after visiting homepage
+            
+            # Sometimes vary the timeout slightly
+            timeout = self.config['scraper']['timeout'] + random.uniform(-1, 1)
+            timeout = max(5, timeout)  # Ensure timeout isn't too low
+            
+            response = self.session.get(url, timeout=timeout)
+            
+            # Check if we might be blocked or redirected to a CAPTCHA
+            if self._is_blocked(response):
+                self.logger.warning("Possible blocking detected! Taking evasive action.")
+                self._handle_blocking()
+                # Retry with a different configuration
+                raise RequestException("Possible blocking detected")
+                
+            response.raise_for_status()
+            
+            # Sometimes simulate a human by waiting after getting a page
+            # as if they were reading it
+            if random.random() < 0.3:
+                read_time = random.uniform(3, 8)
+                self.logger.info(f"Simulating page reading time: {read_time:.2f}s")
+                time.sleep(read_time)
+                
+            return response.text
+            
+        except RequestException as e:
+            self.logger.error(f"Error fetching {url}: {str(e)}")
+            raise
+            
+    def _is_blocked(self, response):
+        """Check if we might be blocked or facing a CAPTCHA."""
+        # Check status code first
+        if response.status_code in (403, 429):
+            return True
+            
+        # Check content for signs of blocking or CAPTCHA
+        content = response.text.lower()
+        block_indicators = [
+            'captcha',
+            'security check',
+            'access denied',
+            'blocked',
+            'too many requests',
+            'rate limit',
+            'please wait',
+            'robot',
+            'automated'
+        ]
+        
+        return any(indicator in content for indicator in block_indicators)
+        
+    def _handle_blocking(self):
+        """Handle potential blocking by changing behavior."""
+        self.logger.warning("Taking measures to handle potential blocking")
+        
+        # Reset the session with new cookies
+        self.session = requests.Session()
+        self._setup_initial_session()
+        
+        # Force a user agent rotation
+        self.rotate_user_agent()
+        
+        # Rotate proxy if available
+        if self.proxies:
+            self.rotate_proxy()
+            
+        # Take a long break
+        sleep_time = random.uniform(60, 180)
+        self.logger.info(f"Sleeping for {sleep_time:.2f}s to avoid blocking")
+        time.sleep(sleep_time)
+        
+    def get_festival_listing_pages(self):
+        """Get all festival listing pages with pagination detection."""
+        base_url = self.config['scraper']['base_url']
+        page_param = self.config['scraper']['page_param']
+        start_page = self.config['scraper']['start_page']
+        max_pages = self.config['scraper']['max_pages']
+        
+        current_page = start_page
+        all_html_contents = []
+        
+        while True:
+            # Construct URL for current page
+            if current_page == 1:
+                url = base_url
+            else:
+                url = f"{base_url}?{page_param}={current_page}"
+                
+            html_content = self.fetch_page(url)
+            all_html_contents.append(html_content)
+            
+            # Check if we've reached the maximum pages
+            if max_pages and current_page >= max_pages:
+                self.logger.info(f"Reached configured max pages limit: {max_pages}")
+                break
+                
+            # Check if there's a next page by looking for pagination links
+            if not self._has_next_page(html_content, current_page):
+                self.logger.info(f"No more pages found after page {current_page}")
+                break
+                
+            current_page += 1
+            
+        self.logger.info(f"Fetched {len(all_html_contents)} pages of festival listings")
+        return all_html_contents
+        
+    def _has_next_page(self, html_content, current_page):
+        """Check if there's a next page by analyzing pagination elements."""
+        # Common patterns for pagination detection
+        next_page = current_page + 1
+        
+        # Search for pagination links with the next page number
+        patterns = [
+            f'href="[^"]*[?&]{self.config["scraper"]["page_param"]}={next_page}[^"]*"',
+            f'href="[^"]*page/{next_page}[^"]*"',
+            f'href="[^"]*\\?page={next_page}[^"]*"',
+            f'<a[^>]*>\\s*{next_page}\\s*</a>',
+            'href="[^"]*"[^>]*>\\s*Next\\s*</a>',
+            'href="[^"]*"[^>]*>\\s*Volgende\\s*</a>',  # Dutch for "Next"
+            '<a[^>]*class="[^"]*next[^"]*"[^>]*>'
+        ]
+        
+        for pattern in patterns:
+            if re.search(pattern, html_content, re.IGNORECASE):
+                return True
+                
+        # If no pagination pattern matched, check if we have a reasonable number of festivals
+        # on the current page. If fewer than normal, it might be the last page.
+        soup = BeautifulSoup(html_content, 'html.parser')
+        festival_links = soup.select('a[href*="/festival/"]')
+        
+        # If very few festival links, might be the last page
+        return len(festival_links) >= 5  # Assuming at least 5 festivals per page
+```
+```
+
+### 2. Parser Module (`src/parser.py`)
+
+```python
+import re
+import logging
+import requests
+import time
+import random
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
+class FestivalParser:
+    def __init__(self, config, scraper=None):
+        self.config = config
+        self.base_url = config['scraper']['base_url']
+        self.logger = logging.getLogger(__name__)
+        self.scraper = scraper  # Store reference to scraper for fetching detail pages
+        
+    def parse_festival_listings(self, html_content):
+        """Parse the festival listings page to extract festival data."""
+        soup = BeautifulSoup(html_content, 'html.parser')
+        festivals = []
+        
+        # Using advanced patterns to match the actual structure of festivalinfo.nl
+        # First looking for the table structure with festivals
+        festival_links = soup.select('a[href*="/festival/"]')
+        
+        # Process unique festivals only (removing duplicates)
+        processed_urls = set()
+        
+        for link in festival_links:
+            try:
+                # Get the URL and check if we've already processed this festival
+                relative_url = link.get('href', '')
+                if not relative_url or relative_url in processed_urls:
+                    continue
+                    
+                processed_urls.add(relative_url)
+                
+                # For each festival link, find its container to extract all data
+                # This might be a table row or another container element
+                container = self._find_festival_container(link)
+                
+                if container:
+                    festival = self._extract_festival_data(container, link)
+                    if festival:
+                        festivals.append(festival)
+            except Exception as e:
+                self.logger.error(f"Error parsing festival link {link}: {str(e)}")
+                continue
+                
+        return festivals
+        
+    def _find_festival_container(self, link_element):
+        """Find the container element (row or div) that contains all festival info."""
+        # Try different container strategies based on site structure
+        
+        # Strategy 1: Link is inside a table row
+        container = link_element.find_parent('tr')
+        if container:
+            return container
+            
+        # Strategy 2: Link is inside a div with specific class
+        container = link_element.find_parent('div', class_=lambda c: c and 'festival' in c.lower())
+        if container:
+            return container
+            
+        # Strategy 3: Just use the link's parent as container
+        return link_element.parent
+        
+    def _extract_festival_data(self, container, link_element):
+        """Extract data for a single festival from its container element."""
+        try:
+            # Get festival name and URL
+            name = link_element.text.strip()
+            relative_url = link_element.get('href', '')
+            full_url = urljoin(self.base_url, relative_url)
+            
+            # Extract festival ID from URL using regex
+            festival_id_match = re.search(r'/festival/(\d+)', relative_url)
+            festival_id = festival_id_match.group(1) if festival_id_match else None
+            
+            # Initialize the festival data dictionary
+            festival_data = {
+                'id': festival_id,
+                'name': name,
+                'url': full_url,
+                'city': None,
+                'country': None,
+                'duration': None,
+                'num_acts': None,
+                'date': None,
+                'has_camping': False,
+                'is_sold_out': False,
+                'is_free': False,
+                'genres': [],
+                'logo_url': None,
+                'ticket_url': None,
+                'scraped_at': time.strftime('%Y-%m-%d %H:%M:%S')
+            }
+            
+            # Look for an image/logo
+            logo_img = container.select_one('img[src*="logo"]') or container.select_one('img:not([src*="trans.png"])')
+            if logo_img and 'src' in logo_img.attrs:
+                logo_src = logo_img['src']
+                if logo_src and 'trans.png' not in logo_src:
+                    festival_data['logo_url'] = urljoin(self.base_url, logo_src)
+            
+            # Extract location info
+            self._extract_location_info(container, festival_data)
+            
+            # Extract duration and acts info
+            self._extract_duration_acts(container, festival_data)
+            
+            # Check for special tags/icons
+            self._extract_special_tags(container, festival_data)
+            
+            # Extract date information
+            self._extract_date_info(container, festival_data)
+            
+            # If information is still missing, try to get it from text content
+            self._extract_from_text_content(container, festival_data)
+            
+            # If we're still missing critical info, fetch the detail page
+            if self._should_fetch_detail_page(festival_data) and self.scraper:
+                self._enhance_with_detail_page(festival_data)
+                
+            return festival_data
+            
+        except Exception as e:
+            self.logger.error(f"Error extracting festival data: {str(e)}")
+            return None
+            
+    def _extract_location_info(self, container, festival_data):
+        """Extract location information from container."""
+        # Try different selectors for location
+        location_selectors = [
+            'td:nth-of-type(2)',  # Typical table structure
+            '.location', 
+            '*[class*="location"]',
+            'p:contains("Nederland")',
+            'p:contains("België")'
+        ]
+        
+        for selector in location_selectors:
+            try:
+                location_element = container.select_one(selector)
+                if location_element and location_element.text.strip():
+                    location = location_element.text.strip()
+                    
+                    # Split location into city and country if possible
+                    if ',' in location:
+                        location_parts = location.split(',', 1)
+                        festival_data['city'] = location_parts[0].strip()
+                        festival_data['country'] = location_parts[1].strip()
+                    else:
+                        # Try to extract country based on known countries
+                        if "Nederland" in location:
+                            festival_data['country'] = "Nederland"
+                            festival_data['city'] = location.replace("Nederland", "").strip()
+                        elif "België" in location:
+                            festival_data['country'] = "België"
+                            festival_data['city'] = location.replace("België", "").strip()
+                        else:
+                            festival_data['city'] = location
+                    
+                    # If we successfully extracted location info, break out of the loop
+                    if festival_data['city'] or festival_data['country']:
+                        break
+            except Exception:
+                continue
+        
+        # If we couldn't find location info with selectors, try regex on the entire container text
+        if not festival_data['city'] and not festival_data['country']:
+            try:
+                container_text = container.get_text()
+                # Look for cities and countries with regex patterns
+                city_match = re.search(r'([A-Z][a-z]+)\s*,\s*(Nederland|België)', container_text)
+                if city_match:
+                    festival_data['city'] = city_match.group(1)
+                    festival_data['country'] = city_match.group(2)
+            except Exception:
+                pass
+    
+    def _extract_duration_acts(self, container, festival_data):
+        """Extract duration and number of acts information."""
+        # Try to find duration information
+        duration_selectors = [
+            'td:nth-of-type(3)',
+            '*[class*="duration"]',
+            'span:contains("dag")',
+            'span:contains("dagen")'
+        ]
+        
+        for selector in duration_selectors:
+            try:
+                duration_element = container.select_one(selector)
+                if duration_element and duration_element.text.strip():
+                    duration_text = duration_element.text.strip()
+                    festival_data['duration'] = duration_text
+                    
+                    # Try to extract the number of days as an integer
+                    days_match = re.search(r'(\d+)\s*dag(en)?', duration_text)
+                    if days_match:
+                        festival_data['duration_days'] = int(days_match.group(1))
+                    elif '1 dag' in duration_text.lower():
+                        festival_data['duration_days'] = 1
+                    
+                    break
+            except Exception:
+                continue
+        
+        # Try to find acts information
+        acts_selectors = [
+            'td:nth-of-type(4)',
+            '*[class*="acts"]',
+            'span:contains("act")',
+            'span:contains("acts")'
+        ]
+        
+        for selector in acts_selectors:
+            try:
+                acts_element = container.select_one(selector)
+                if acts_element and acts_element.text.strip():
+                    acts_text = acts_element.text.strip()
+                    acts_match = re.search(r'(\d+)', acts_text)
+                    if acts_match:
+                        festival_data['num_acts'] = int(acts_match.group(1))
+                        break
+            except Exception:
+                continue
+        
+        # Look for acts info in any text containing a number followed by "acts"
+        if festival_data['num_acts'] is None:
+            try:
+                container_text = container.get_text()
+                acts_match = re.search(r'(\d+)\s*acts', container_text)
+                if acts_match:
+                    festival_data['num_acts'] = int(acts_match.group(1))
+            except Exception:
+                pass
+    
+    def _extract_special_tags(self, container, festival_data):
+        """Extract special tags like camping, sold out, free."""
+        # Check for camping icon or text
+        camping_indicators = [
+            'img[alt*="camping"]',
+            'img[title*="camping"]',
+            'span:contains("camping")',
+            '*[class*="camping"]'
+        ]
+        
+        for indicator in camping_indicators:
+            if container.select_one(indicator):
+                festival_data['has_camping'] = True
+                break
+        
+        # Check for sold out indicators
+        soldout_indicators = [
+            'img[alt*="sold out"]',
+            'img[alt*="uitverkocht"]',
+            'span:contains("uitverkocht")',
+            'span:contains("Sold Out")',
+            '*[class*="sold-out"]',
+            '*[class*="uitverkocht"]'
+        ]
+        
+        for indicator in soldout_indicators:
+            if container.select_one(indicator):
+                festival_data['is_sold_out'] = True
+                break
+        
+        # Check for free festival indicators
+        free_indicators = [
+            'img[alt*="gratis"]',
+            'img[alt*="free"]',
+            'span:contains("gratis")',
+            'span:contains("free")',
+            '*[class*="free"]',
+            '*[class*="gratis"]'
+        ]
+        
+        for indicator in free_indicators:
+            if container.select_one(indicator):
+                festival_data['is_free'] = True
+                break
+    
+    def _extract_date_info(self, container, festival_data):
+        """Extract date information."""
+        # Try different date selectors
+        date_selectors = [
+            'td.date',
+            '*[class*="date"]',
+            'span:contains("-2025")',
+            'span:contains("/2025")'
+        ]
+        
+        for selector in date_selectors:
+            try:
+                date_element = container.select_one(selector)
+                if date_element and date_element.text.strip():
+                    date_text = date_element.text.strip()
+                    festival_data['date'] = date_text
+                    break
+            except Exception:
+                continue
+                
+        # If we couldn't find date with selectors, try regex on container text
+        if not festival_data['date']:
+            try:
+                container_text = container.get_text()
+                # Look for dates in various formats
+                date_patterns = [
+                    r'(\d{1,2}[-/]\d{1,2}[-/]2025)',
+                    r'(\d{1,2}\s+[a-z]+\s+2025)',
+                    r'([A-Z][a-z]+\s+\d{1,2},\s*2025)'
+                ]
+                
+                for pattern in date_patterns:
+                    date_match = re.search(pattern, container_text, re.IGNORECASE)
+                    if date_match:
+                        festival_data['date'] = date_match.group(1)
+                        break
+            except Exception:
+                pass
+    
+    def _extract_from_text_content(self, container, festival_data):
+        """Extract any missing information from text content."""
+        container_text = container.get_text(separator=' ', strip=True)
+        
+        # Try to extract any missing information using regex patterns
+        if not festival_data['city'] or not festival_data['country']:
+            city_country_pattern = r'([A-Z][a-z\-]+),\s*(Nederland|België)'
+            city_country_match = re.search(city_country_pattern, container_text)
+            if city_country_match:
+                festival_data['city'] = city_country_match.group(1)
+                festival_data['country'] = city_country_match.group(2)
+        
+        # Look for duration if still missing
+        if not festival_data['duration']:
+            duration_pattern = r'(\d+)\s*dag(en)?'
+            duration_match = re.search(duration_pattern, container_text)
+            if duration_match:
+                days = duration_match.group(1)
+                festival_data['duration'] = f"{days} dag{'en' if int(days) > 1 else ''}"
+                festival_data['duration_days'] = int(days)
+        
+        # Look for number of acts if still missing
+        if festival_data['num_acts'] is None:
+            acts_pattern = r'(\d+)\s*acts'
+            acts_match = re.search(acts_pattern, container_text)
+            if acts_match:
+                festival_data['num_acts'] = int(acts_match.group(1))
+    
+    def _should_fetch_detail_page(self, festival_data):
+        """Determine if we should fetch the festival detail page for more info."""
+        # Define which fields are critical for deciding whether to fetch details
+        critical_fields = ['city', 'country', 'date', 'num_acts']
+        
+        # Check if any critical field is missing
+        for field in critical_fields:
+            if not festival_data.get(field):
+                return True
+                
+        return False
+        
+    def _enhance_with_detail_page(self, festival_data):
+        """Fetch and parse the festival detail page to enhance data."""
+        try:
+            if not festival_data['url']:
+                return
+                
+            self.logger.info(f"Fetching detail page for {festival_data['name']}")
+            detail_html = self.scraper.fetch_page(festival_data['url'])
+            detail_soup = BeautifulSoup(detail_html, 'html.parser')
+            
+            # Extract additional information from the detail page
+            
+            # Look for more accurate date information
+            date_elements = detail_soup.select('.date, .festival-date, *[class*="date"]')
+            for date_element in date_elements:
+                date_text = date_element.text.strip()
+                if date_text and re.search(r'\d{1,2}[-/\s][a-zA-Z]+|\d{1,2}[-/]\d{1,2}', date_text):
+                    festival_data['date'] = date_text
+                    break
+            
+            # Look for location information
+            location_elements = detail_soup.select('.location, *[class*="location"], *[class*="venue"]')
+            for location_element in location_elements:
+                location_text = location_element.text.strip()
+                if location_text and (',' in location_text or 'Nederland' in location_text or 'België' in location_text):
+                    if ',' in location_text:
+                        location_parts = location_text.split(',', 1)
+                        festival_data['city'] = location_parts[0].strip()
+                        festival_data['country'] = location_parts[1].strip()
+                    else:
+                        if 'Nederland' in location_text:
+                            festival_data['country'] = 'Nederland'
+                        elif 'België' in location_text:
+                            festival_data['country'] = 'België'
+                    break
+            
+            # Look for genre information
+            genre_elements = detail_soup.select('.genre, *[class*="genre"], *[class*="category"]')
+            for genre_element in genre_elements:
+                genre_text = genre_element.text.strip()
+                if genre_text:
+                    # Split and clean genre text
+                    genres = [g.strip() for g in re.split(r'[,/&]', genre_text) if g.strip()]
+                    if genres:
+                        festival_data['genres'] = genres
+                        break
+            
+            # Look for ticket URL
+            ticket_links = detail_soup.select('a[href*="ticket"], a[href*="tickets"], .tickets a, *[class*="ticket"] a')
+            for ticket_link in ticket_links:
+                ticket_url = ticket_link.get('href')
+                if ticket_url:
+                    festival_data['ticket_url'] = urljoin(festival_data['url'], ticket_url)
+                    break
+                    
+            # Add detail page scraping timestamp
+            festival_data['detail_scraped_at'] = time.strftime('%Y-%m-%d %H:%M:%S')
+            
+            # Wait a random time to avoid overloading the server
+            time.sleep(random.uniform(1, 3))
+            
+        except Exception as e:
+            self.logger.error(f"Error enhancing with detail page for {festival_data['url']}: {str(e)}")
+            
+    def parse_all_pages(self, html_contents):
+        """Parse multiple pages of festival listings."""
+        all_festivals = []
+        
+        for html_content in html_contents:
+            festivals = self.parse_festival_listings(html_content)
+            all_festivals.extend(festivals)
+            
+        # Remove any potential duplicates based on festival ID
+        seen_ids = set()
+        unique_festivals = []
+        
+        for festival in all_festivals:
+            if festival['id'] not in seen_ids:
+                seen_ids.add(festival['id'])
+                unique_festivals.append(festival)
+                
+        return unique_festivals
+```
+
+### 3. Storage Module (`src/storage.py`)
+
+```python
+import os
+import json
+import csv
+import logging
+from datetime import datetime
+
+class FestivalStorage:
+    def __init__(self, config):
+        self.config = config
+        self.storage_type = config['storage']['type']
+        self.file_path = config['storage']['file_path']
+        self.logger = logging.getLogger(__name__)
+        
+    def save_festivals(self, festivals):
+        """Save festivals to the configured storage type."""
+        if not festivals:
+            self.logger.warning("No festivals to save")
+            return
+            
+        # Create directory if it doesn't exist
+        os.makedirs(os.path.dirname(self.file_path), exist_ok=True)
+        
+        if self.storage_type == 'json':
+            self._save_to_json(festivals)
+        elif self.storage_type == 'csv':
+            self._save_to_csv(festivals)
+        else:
+            self.logger.error(f"Unsupported storage type: {self.storage_type}")
+            
+    def _save_to_json(self, festivals):
+        """Save festivals to a JSON file."""
+        try:
+            # Add metadata to the output
+            output = {
+                'metadata': {
+                    'count': len(festivals),
+                    'timestamp': datetime.now().isoformat(),
+                    'source': self.config['scraper']['base_url']
+                },
+                'festivals': festivals
+            }
+            
+            with open(self.file_path, 'w', encoding='utf-8') as f:
+                json.dump(output, f, ensure_ascii=False, indent=2)
+                
+            self.logger.info(f"Saved {len(festivals)} festivals to {self.file_path}")
+        except Exception as e:
+            self.logger.error(f"Error saving to JSON: {str(e)}")
+            
+    def _save_to_csv(self, festivals):
+        """Save festivals to a CSV file."""
+        try:
+            if not festivals:
+                return
+                
+            # Get field names from the first festival
+            fieldnames = festivals[0].keys()
+            
+            with open(self.file_path, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(festivals)
+                
+            self.logger.info(f"Saved {len(festivals)} festivals to {self.file_path}")
+        except Exception as e:
+            self.logger.error(f"Error saving to CSV: {str(e)}")
+```
+
+### 4. Main Application (`src/main.py`)
+
+```python
+import os
+import sys
+import logging
+import yaml
+import traceback
+from datetime import datetime
+
+# Add the parent directory to sys.path to allow importing from the src package
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.scraper import FestivalScraper
+from src.parser import FestivalParser
+from src.storage import FestivalStorage
+
+def setup_logging(config):
+    """Set up logging configuration."""
+    log_level = getattr(logging, config['logging']['level'])
+    log_file = config['logging']['file']
+    
+    # Create directory for log file if it doesn't exist
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+    
+    logging.basicConfig(
+        level=log_level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()
+        ]
+    )
+    
+    return logging.getLogger(__name__)
+
+def load_config():
+    """Load configuration from YAML file."""
+    config_path = os.environ.get('SCRAPER_CONFIG', 'config/config.yaml')
+    
+    try:
+        with open(config_path, 'r') as f:
+            config = yaml.safe_load(f)
+        return config
+    except Exception as e:
+        print(f"Error loading config: {str(e)}")
+        sys.exit(1)
+
+def main():
+    """Main entry point for the scraper."""
+    try:
+        # Load configuration
+        config = load_config()
+        
+        # Set up logging
+        logger = setup_logging(config)
+        logger.info("Starting Festival Info scraper")
+        
+        # Initialize components
+        scraper = FestivalScraper(config)
+        parser = FestivalParser(config)
+        storage = FestivalStorage(config)
+        
+        # Fetch festival listing pages
+        logger.info("Fetching festival listing pages")
+        html_contents = scraper.get_festival_listing_pages()
+        
+        # Parse festivals
+        logger.info("Parsing festivals")
+        festivals = parser.parse_all_pages(html_contents)
+        logger.info(f"Found {len(festivals)} festivals")
+        
+        # Save festivals
+        logger.info("Saving festivals")
+        storage.save_festivals(festivals)
+        
+        logger.info("Festival scraping completed successfully")
+        
+    except Exception as e:
+        logger.error(f"Unhandled exception: {str(e)}")
+        logger.error(traceback.format_exc())
+        sys.exit

@@ -1,0 +1,116 @@
+{
+  "rowFilter.user_preferences.id": {
+    "name": "id",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.user_preferences.user_id": {
+    "name": "user_id",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.user_preferences.selected_sources": {
+    "name": "selected_sources",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.user_preferences.view_mode": {
+    "name": "view_mode",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.user_preferences.created_at": {
+    "name": "created_at",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.user_preferences.updated_at": {
+    "name": "updated_at",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.id": {
+    "name": "id",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.name": {
+    "name": "name",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.start_date": {
+    "name": "start_date",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.end_date": {
+    "name": "end_date",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.location": {
+    "name": "location",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.country": {
+    "name": "country",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.url": {
+    "name": "url",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.source": {
+    "name": "source",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.created_at": {
+    "name": "created_at",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.updated_at": {
+    "name": "updated_at",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.archived": {
+    "name": "archived",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.favorite": {
+    "name": "favorite",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  },
+  "rowFilter.festivals.notes": {
+    "name": "notes",
+    "required": false,
+    "in": "query",
+    "type": "string"
+  }
+}

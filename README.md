@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FestiFind 2025
+
+A Next.js application for tracking and discovering festivals around the world. This project allows users to browse festivals, manage favorites, and get the latest data from various festival sources.
+
+## Features
+
+- Festival discovery and tracking
+- Favorites and archiving system
+- Multiple data sources integration
+- Responsive design for all devices
+- Docker support for consistent development environments
+- AI-powered festival research capabilities
+
+## Tech Stack
+
+- Next.js 15.3
+- React 19
+- Tailwind CSS
+- Supabase (database & auth)
+- Docker for containerization
+- OpenAI integration for research
 
 ## Getting Started
 
-First, run the development server:
+### Development
+
+⚠️ **IMPORTANT**: We use Docker for all testing and development to ensure a consistent environment. Please follow the Docker instructions below instead of using `npm run dev` directly.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies (only needed for IDE support)
+npm install
+
+# Start the Docker development environment (recommended)
+npm run docker:dev
+# OR use the convenience script
+./docker-dev.sh
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Using Docker
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start development environment with npm scripts
+npm run docker:dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Start detached (background mode)
+npm run docker:dev:detached
 
-## Learn More
+# View logs
+npm run docker:logs
 
-To learn more about Next.js, take a look at the following resources:
+# Access shell inside container
+npm run docker:shell
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Stop containers
+npm run docker:stop
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+See the [DOCKER.md](DOCKER.md) file for detailed Docker setup and usage instructions.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Simple deployment to Vercel
+./vercel-deploy-simple.sh
+
+# Release with versioning and optional deployment
+./release.sh --patch -d  # Create patch release and deploy
+./release.sh --minor     # Create minor release (no deployment)
+./release.sh --major -d  # Create major release and deploy
+```
+
+### Docker Deployment
+
+```bash
+# Deploy to Docker
+./docker/deploy.sh --target docker
+```
+
+## Project Structure
+
+- `app/` - Next.js application routes and pages
+- `components/` - React components 
+- `lib/` - Utility functions and shared code
+- `public/` - Static assets
+- `scrapers/` - Festival data scraper implementations
+- `docker/` - Docker configuration files and scripts
+
+## Scripts
+
+- `release.sh` - Create versioned releases with Git tags
+- `vercel-deploy-simple.sh` - Simple Vercel deployment
+- `docker/cli.sh` - Docker operations CLI
+- `docker/deploy.sh` - Unified deployment script (Vercel/Docker)
+- `docker-dev.sh` - Convenience script for Docker development
+
+## Development Rules
+
+We have set up a Cursor IDE rule to ensure consistent development practices:
+
+- **Always Test in Docker**: When testing locally, always use the Docker environment rather than running `npm run dev` directly. This ensures consistent behavior across all developer machines.
+
+For CI/CD process details, see [.cursor/rules/CI_CD_PROCESS.md](.cursor/rules/CI_CD_PROCESS.md). 

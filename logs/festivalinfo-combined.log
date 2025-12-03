@@ -1,0 +1,793 @@
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:26.210Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:26.212Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:26.804Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.632Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.638Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.638Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.639Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.645Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.646Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo_2025-05-14T18-35-29.647Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.647Z"}
+{"level":"info","message":"Scrape completed in 0m 3s","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.648Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.648Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.648Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:35:29.648Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:11.908Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:11.910Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:12.309Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.958Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.961Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.962Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.962Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.969Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.970Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo_2025-05-14T18-37-14.970Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.971Z"}
+{"level":"info","message":"Scrape completed in 0m 3s","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.971Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.971Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.971Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:37:14.972Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:01.412Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:01.414Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:14.601Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:14.603Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:15.117Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.919Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.925Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.925Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.926Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.942Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.943Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo_2025-05-14T18-45-17.943Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.944Z"}
+{"level":"info","message":"Scrape completed in 0m 3s","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.944Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.944Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.944Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:45:17.944Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:53:41.761Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:53:41.763Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:53:52.190Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:53:52.192Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:53:58.886Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T18:53:58.888Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:11.258Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:11.260Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:40.951Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:40.952Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:40.953Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:42.636Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.457Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.465Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.466Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.466Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.488Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.490Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-02-45.490Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.492Z"}
+{"level":"info","message":"Scrape completed in 0m 5s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.493Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.493Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.493Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:02:45.494Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:00.811Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:00.813Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:00.813Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:02.016Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.808Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.844Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.845Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.845Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.871Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.874Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-03-04.874Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.876Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.877Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.877Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.878Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:03:04.878Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:36.175Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:36.183Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:36.183Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:36.631Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.478Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.489Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.489Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.489Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.498Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.499Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo_2025-05-14T19-06-39.499Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.500Z"}
+{"level":"info","message":"Scrape completed in 0m 3s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.501Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.501Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.501Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:06:39.501Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:10.393Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:10.395Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:10.396Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:11.785Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.682Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.693Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.694Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.694Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.714Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.717Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-08-14.717Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.718Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.719Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.720Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.721Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:14.721Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:34.484Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:34.486Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:34.487Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:35.363Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.001Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.019Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.019Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.019Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.035Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.038Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-08-38.038Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.040Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.042Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.042Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.043Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:38.043Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:43.300Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:43.301Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:43.302Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:43.808Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.068Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.077Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.077Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.078Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.089Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.091Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-08-46.091Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.092Z"}
+{"level":"info","message":"Scrape completed in 0m 3s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.093Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.093Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.093Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:46.093Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:53.326Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:53.327Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:53.328Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:54.037Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.854Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.865Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.866Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.866Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.885Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.887Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-08-56.887Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.889Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.890Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.890Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.890Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:08:56.890Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:11:23.739Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:11:23.740Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:11:23.741Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:29.174Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:29.176Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:29.176Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:30.325Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.410Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.443Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.444Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.444Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.477Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.480Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-12-33.481Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.482Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.483Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.483Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.484Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:12:33.484Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:10.610Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:10.612Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:10.613Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:11.698Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.448Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.459Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.459Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.460Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.477Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.483Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-15-14.483Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.486Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.487Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.487Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.487Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:14.488Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:57.957Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:57.960Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:57.960Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:15:58.916Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.183Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.215Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.216Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.217Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.270Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.278Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-16-02.278Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.292Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.297Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.298Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.299Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:02.299Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:19.572Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:19.574Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:16:19.574Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:00.901Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:00.902Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:00.903Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:39.662Z"}
+{"level":"info","message":"Running in Docker container","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:39.664Z"}
+{"level":"info","message":"Using browser at: /usr/bin/chromium-browser","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:39.664Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:40.887Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.686Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.698Z"}
+{"level":"info","message":"Will scrape 1 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.699Z"}
+{"level":"info","message":"Processing page 1/1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.699Z"}
+{"level":"info","message":"Found 40 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.738Z"}
+{"level":"info","message":"Saving 20 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.744Z"}
+{"level":"info","message":"Successfully saved festivals to /app/data/festivalinfo_2025-05-14T19-20-43.746Z.json","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.749Z"}
+{"level":"info","message":"Scrape completed in 0m 4s","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.750Z"}
+{"level":"info","message":"Total festivals found: 40","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.750Z"}
+{"level":"info","message":"Unique festivals: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.751Z"}
+{"level":"info","message":"Duplicates: 20","service":"festivalinfo-scraper","timestamp":"2025-05-14T19:20:43.751Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:01.383Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:01.389Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:01.390Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:01.922Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.376Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.380Z"}
+{"level":"info","message":"Pagination check result: 0","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.383Z"}
+{"level":"info","message":"Using minimum page count (40) since detection found only 1 pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.383Z"}
+{"level":"info","message":"Will scrape 2 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.383Z"}
+{"level":"info","message":"Processing page 1/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.384Z"}
+{"level":"info","message":"Navigating to page 1: https://www.festivalinfo.nl/festivals/","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:06.384Z"}
+{"level":"info","message":"Found 41 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:08.459Z"}
+{"level":"info","message":"Waiting 1000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:08.462Z"}
+{"level":"info","message":"Processing page 2/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:09.463Z"}
+{"level":"info","message":"Navigating to page 2: https://www.festivalinfo.nl/festivals/?page=2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:09.463Z"}
+{"level":"info","message":"Found 122 festivals on page 2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:10.780Z"}
+{"level":"info","message":"Extracting details from 50 festival pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:10.781Z"}
+{"level":"info","message":"Extracting details for The Great Escape Festival (1/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:10.781Z"}
+{"level":"error","message":"Error extracting details for The Great Escape Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:16.374Z"}
+{"level":"info","message":"Extracting details for Les Nuits Botanique (2/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:16.375Z"}
+{"level":"error","message":"Error extracting details for Les Nuits Botanique: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:17.994Z"}
+{"level":"info","message":"Extracting details for FRISFEST (3/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:17.995Z"}
+{"level":"error","message":"Error extracting details for FRISFEST: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:19.775Z"}
+{"level":"info","message":"Extracting details for London Calling #1 (4/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:19.776Z"}
+{"level":"error","message":"Error extracting details for London Calling #1: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:21.100Z"}
+{"level":"info","message":"Extracting details for TREK Tilburg (5/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:21.100Z"}
+{"level":"error","message":"Error extracting details for TREK Tilburg: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:22.665Z"}
+{"level":"info","message":"Extracting details for Sonic Whip (6/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:22.666Z"}
+{"level":"error","message":"Error extracting details for Sonic Whip: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:24.318Z"}
+{"level":"info","message":"Extracting details for Ik Zie U Graag ... (7/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:24.318Z"}
+{"level":"error","message":"Error extracting details for Ik Zie U Graag ...: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:25.595Z"}
+{"level":"info","message":"Extracting details for LEGENDS of ROCK Tribute Festival (8/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:25.595Z"}
+{"level":"error","message":"Error extracting details for LEGENDS of ROCK Tribute Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:27.122Z"}
+{"level":"info","message":"Extracting details for Midnight Masquerade (9/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:27.122Z"}
+{"level":"error","message":"Error extracting details for Midnight Masquerade: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:28.687Z"}
+{"level":"info","message":"Extracting details for Ibiza festival (10/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:28.687Z"}
+{"level":"error","message":"Error extracting details for Ibiza festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:30.264Z"}
+{"level":"info","message":"Extracting details for Awakenings Upclose (11/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:30.264Z"}
+{"level":"error","message":"Error extracting details for Awakenings Upclose: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:32.680Z"}
+{"level":"info","message":"Extracting details for Snertpop (12/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:32.680Z"}
+{"level":"error","message":"Error extracting details for Snertpop: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:34.667Z"}
+{"level":"info","message":"Extracting details for Lakedance #1 (13/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:34.667Z"}
+{"level":"error","message":"Error extracting details for Lakedance #1: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:36.078Z"}
+{"level":"info","message":"Extracting details for Groove Garden (14/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:36.078Z"}
+{"level":"error","message":"Error extracting details for Groove Garden: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:37.598Z"}
+{"level":"info","message":"Extracting details for London Calling Maastricht (15/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:37.598Z"}
+{"level":"error","message":"Error extracting details for London Calling Maastricht: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:38.706Z"}
+{"level":"info","message":"Extracting details for Supercharged Festival (16/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:38.706Z"}
+{"level":"error","message":"Error extracting details for Supercharged Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:39.922Z"}
+{"level":"info","message":"Extracting details for Too Many Keys (17/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:39.922Z"}
+{"level":"error","message":"Error extracting details for Too Many Keys: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:41.020Z"}
+{"level":"info","message":"Extracting details for ASM Festival (18/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:41.020Z"}
+{"level":"error","message":"Error extracting details for ASM Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:42.637Z"}
+{"level":"info","message":"Extracting details for Peteyfest (19/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:42.637Z"}
+{"level":"error","message":"Error extracting details for Peteyfest: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:44.040Z"}
+{"level":"info","message":"Extracting details for Storioni Festival (20/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:44.040Z"}
+{"level":"error","message":"Error extracting details for Storioni Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:45.992Z"}
+{"level":"info","message":"Extracting details for South OfHeaven OpenAir (21/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:45.992Z"}
+{"level":"error","message":"Error extracting details for South OfHeaven OpenAir: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:47.572Z"}
+{"level":"info","message":"Extracting details for Spring Performing Arts Festival (22/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:47.573Z"}
+{"level":"error","message":"Error extracting details for Spring Performing Arts Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:49.133Z"}
+{"level":"info","message":"Extracting details for For Every Young (23/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:49.133Z"}
+{"level":"error","message":"Error extracting details for For Every Young: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:51.230Z"}
+{"level":"info","message":"Extracting details for Meifestival (24/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:51.230Z"}
+{"level":"error","message":"Error extracting details for Meifestival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:52.796Z"}
+{"level":"info","message":"Extracting details for Lolliepop rock 'n' roll festival (25/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:52.796Z"}
+{"level":"error","message":"Error extracting details for Lolliepop rock 'n' roll festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:54.902Z"}
+{"level":"info","message":"Extracting details for BRIDGE (26/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:54.902Z"}
+{"level":"error","message":"Error extracting details for BRIDGE: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:56.748Z"}
+{"level":"info","message":"Extracting details for Heaven Open Air (27/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:56.749Z"}
+{"level":"error","message":"Error extracting details for Heaven Open Air: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:59.094Z"}
+{"level":"info","message":"Extracting details for Het Weekend van de Rollende Keukens (28/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:42:59.094Z"}
+{"level":"error","message":"Error extracting details for Het Weekend van de Rollende Keukens: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:00.217Z"}
+{"level":"info","message":"Extracting details for KOZ Festival (29/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:00.218Z"}
+{"level":"error","message":"Error extracting details for KOZ Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:01.935Z"}
+{"level":"info","message":"Extracting details for Schanspop Siddeburen (30/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:01.935Z"}
+{"level":"error","message":"Error extracting details for Schanspop Siddeburen: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:04.338Z"}
+{"level":"info","message":"Extracting details for Bronckhorster Farm Festival (31/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:04.338Z"}
+{"level":"error","message":"Error extracting details for Bronckhorster Farm Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:06.202Z"}
+{"level":"info","message":"Extracting details for Festival RockStreet (32/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:06.202Z"}
+{"level":"error","message":"Error extracting details for Festival RockStreet: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:07.759Z"}
+{"level":"info","message":"Extracting details for Urpop (33/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:07.759Z"}
+{"level":"error","message":"Error extracting details for Urpop: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:09.056Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Dordrecht (34/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:09.056Z"}
+{"level":"error","message":"Error extracting details for Lepeltje Lepeltje Dordrecht: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:10.863Z"}
+{"level":"info","message":"Extracting details for Double D Festival (35/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:10.863Z"}
+{"level":"error","message":"Error extracting details for Double D Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:12.471Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Zwolle (36/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:12.471Z"}
+{"level":"error","message":"Error extracting details for Lepeltje Lepeltje Zwolle: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:14.061Z"}
+{"level":"info","message":"Extracting details for Green Vibrations (37/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:14.061Z"}
+{"level":"error","message":"Error extracting details for Green Vibrations: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:15.091Z"}
+{"level":"info","message":"Extracting details for 3e Klaphekfestival (38/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:15.091Z"}
+{"level":"error","message":"Error extracting details for 3e Klaphekfestival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:16.679Z"}
+{"level":"info","message":"Extracting details for Breda Jazz Festival (39/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:16.679Z"}
+{"level":"error","message":"Error extracting details for Breda Jazz Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:18.270Z"}
+{"level":"info","message":"Extracting details for Graauwrock (40/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:18.270Z"}
+{"level":"error","message":"Error extracting details for Graauwrock: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:19.816Z"}
+{"level":"info","message":"Extracting details for Oerrock Festival (41/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:19.817Z"}
+{"level":"error","message":"Error extracting details for Oerrock Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:21.931Z"}
+{"level":"info","message":"Extracting details for Yes In My Backyard (42/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:21.931Z"}
+{"level":"error","message":"Error extracting details for Yes In My Backyard: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:23.568Z"}
+{"level":"info","message":"Extracting details for Slam Dunk Festival Netherlands (43/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:23.568Z"}
+{"level":"error","message":"Error extracting details for Slam Dunk Festival Netherlands: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:25.592Z"}
+{"level":"info","message":"Extracting details for Randrock (44/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:25.593Z"}
+{"level":"error","message":"Error extracting details for Randrock: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:27.224Z"}
+{"level":"info","message":"Extracting details for Mijl op Zeven Festival (45/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:27.224Z"}
+{"level":"error","message":"Error extracting details for Mijl op Zeven Festival: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:28.731Z"}
+{"level":"info","message":"Extracting details for TREK Maastricht (46/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:28.731Z"}
+{"level":"error","message":"Error extracting details for TREK Maastricht: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:29.767Z"}
+{"level":"info","message":"Extracting details for Twister Fest (47/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:29.767Z"}
+{"level":"error","message":"Error extracting details for Twister Fest: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:31.375Z"}
+{"level":"info","message":"Extracting details for Zomerfeesten de Hoeve (48/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:31.375Z"}
+{"level":"error","message":"Error extracting details for Zomerfeesten de Hoeve: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:33.177Z"}
+{"level":"info","message":"Extracting details for Helmond Live (49/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:33.177Z"}
+{"level":"error","message":"Error extracting details for Helmond Live: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:34.288Z"}
+{"level":"info","message":"Extracting details for TAPT Festival Amersfoort (50/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:34.289Z"}
+{"level":"error","message":"Error extracting details for TAPT Festival Amersfoort: page.evaluate: SyntaxError: Failed to execute 'querySelector' on 'Document': 'h2:contains(\"REISINFORMATIE\") + p, .location' is not a valid selector.\n    at eval (eval at evaluate (:313:29), <anonymous>:65:38)\n    at UtilityScript.evaluate (<anonymous>:315:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.801Z"}
+{"level":"info","message":"Saving 82 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.801Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo-test/festivalinfo_2025-05-15T06-43-35.801Z_82festivals.json","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.803Z"}
+{"level":"info","message":"Scrape completed in 1m 34s","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.803Z"}
+{"level":"info","message":"Total festivals found: 163","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.803Z"}
+{"level":"info","message":"Unique festivals: 82","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.803Z"}
+{"level":"info","message":"Duplicates: 81","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:43:35.803Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:53.146Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:53.155Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:53.155Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:53.626Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.284Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.289Z"}
+{"level":"info","message":"Pagination check result: 0","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.292Z"}
+{"level":"info","message":"Using minimum page count (40) since detection found only 1 pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.292Z"}
+{"level":"info","message":"Will scrape 2 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.293Z"}
+{"level":"info","message":"Processing page 1/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.293Z"}
+{"level":"info","message":"Navigating to page 1: https://www.festivalinfo.nl/festivals/","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:56.293Z"}
+{"level":"info","message":"Found 41 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:57.359Z"}
+{"level":"info","message":"Waiting 1000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:57.360Z"}
+{"level":"info","message":"Processing page 2/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:58.361Z"}
+{"level":"info","message":"Navigating to page 2: https://www.festivalinfo.nl/festivals/?page=2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:58.362Z"}
+{"level":"info","message":"Found 122 festivals on page 2","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:59.552Z"}
+{"level":"info","message":"Extracting details from 50 festival pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:59.553Z"}
+{"level":"info","message":"Extracting details for The Great Escape Festival (1/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:58:59.553Z"}
+{"level":"info","message":"Extracting details for Les Nuits Botanique (2/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:02.257Z"}
+{"level":"info","message":"Extracting details for FRISFEST (3/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:04.029Z"}
+{"level":"info","message":"Extracting details for London Calling #1 (4/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:05.917Z"}
+{"level":"info","message":"Extracting details for TREK Tilburg (5/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:07.311Z"}
+{"level":"info","message":"Extracting details for Sonic Whip (6/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:09.339Z"}
+{"level":"info","message":"Extracting details for Ik Zie U Graag ... (7/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:11.472Z"}
+{"level":"info","message":"Extracting details for LEGENDS of ROCK Tribute Festival (8/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:12.989Z"}
+{"level":"info","message":"Extracting details for Midnight Masquerade (9/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:15.123Z"}
+{"level":"info","message":"Extracting details for Ibiza festival (10/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:17.127Z"}
+{"level":"info","message":"Extracting details for Awakenings Upclose (11/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:19.011Z"}
+{"level":"info","message":"Extracting details for Snertpop (12/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:21.109Z"}
+{"level":"info","message":"Extracting details for Lakedance #1 (13/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:22.974Z"}
+{"level":"info","message":"Extracting details for Groove Garden (14/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:24.454Z"}
+{"level":"info","message":"Extracting details for London Calling Maastricht (15/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:26.598Z"}
+{"level":"info","message":"Extracting details for Supercharged Festival (16/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:28.083Z"}
+{"level":"info","message":"Extracting details for Too Many Keys (17/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:29.553Z"}
+{"level":"info","message":"Extracting details for ASM Festival (18/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:30.894Z"}
+{"level":"info","message":"Extracting details for Peteyfest (19/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:32.938Z"}
+{"level":"info","message":"Extracting details for Storioni Festival (20/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:34.408Z"}
+{"level":"info","message":"Extracting details for South OfHeaven OpenAir (21/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:36.319Z"}
+{"level":"info","message":"Extracting details for Spring Performing Arts Festival (22/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:37.695Z"}
+{"level":"info","message":"Extracting details for For Every Young (23/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:39.744Z"}
+{"level":"info","message":"Extracting details for Meifestival (24/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:41.830Z"}
+{"level":"info","message":"Extracting details for Lolliepop rock 'n' roll festival (25/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:43.317Z"}
+{"level":"info","message":"Extracting details for BRIDGE (26/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:45.221Z"}
+{"level":"info","message":"Extracting details for Heaven Open Air (27/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:47.077Z"}
+{"level":"info","message":"Extracting details for Het Weekend van de Rollende Keukens (28/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:48.892Z"}
+{"level":"info","message":"Extracting details for KOZ Festival (29/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:50.307Z"}
+{"level":"info","message":"Extracting details for Schanspop Siddeburen (30/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:52.417Z"}
+{"level":"info","message":"Extracting details for Bronckhorster Farm Festival (31/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:54.482Z"}
+{"level":"info","message":"Extracting details for Festival RockStreet (32/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:56.538Z"}
+{"level":"info","message":"Extracting details for Urpop (33/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T06:59:58.621Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Dordrecht (34/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:00.105Z"}
+{"level":"info","message":"Extracting details for Double D Festival (35/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:01.997Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Zwolle (36/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:04.441Z"}
+{"level":"info","message":"Extracting details for Green Vibrations (37/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:06.488Z"}
+{"level":"info","message":"Extracting details for 3e Klaphekfestival (38/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:07.999Z"}
+{"level":"info","message":"Extracting details for Breda Jazz Festival (39/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:10.148Z"}
+{"level":"info","message":"Extracting details for Graauwrock (40/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:12.287Z"}
+{"level":"info","message":"Extracting details for Oerrock Festival (41/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:14.346Z"}
+{"level":"info","message":"Extracting details for Yes In My Backyard (42/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:16.435Z"}
+{"level":"info","message":"Extracting details for Slam Dunk Festival Netherlands (43/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:18.609Z"}
+{"level":"info","message":"Extracting details for Randrock (44/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:20.645Z"}
+{"level":"info","message":"Extracting details for Mijl op Zeven Festival (45/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:22.766Z"}
+{"level":"info","message":"Extracting details for TREK Maastricht (46/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:24.825Z"}
+{"level":"info","message":"Extracting details for Twister Fest (47/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:26.325Z"}
+{"level":"info","message":"Extracting details for Zomerfeesten de Hoeve (48/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:28.216Z"}
+{"level":"info","message":"Extracting details for Helmond Live (49/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:30.141Z"}
+{"level":"info","message":"Extracting details for TAPT Festival Amersfoort (50/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:31.638Z"}
+{"level":"info","message":"Saving 82 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:34.003Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo-test/festivalinfo_2025-05-15T07-00-34.003Z_82festivals.json","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:34.008Z"}
+{"level":"info","message":"Scrape completed in 1m 40s","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:34.008Z"}
+{"level":"info","message":"Total festivals found: 163","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:34.008Z"}
+{"level":"info","message":"Unique festivals: 82","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:34.008Z"}
+{"level":"info","message":"Duplicates: 81","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:00:34.008Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:24.475Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:24.477Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:24.477Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:24.916Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.178Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.185Z"}
+{"level":"info","message":"Pagination check result: 0","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.188Z"}
+{"level":"info","message":"Using minimum page count (40) since detection found only 1 pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.188Z"}
+{"level":"info","message":"Will scrape 2 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.188Z"}
+{"level":"info","message":"Processing page 1/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.189Z"}
+{"level":"info","message":"Navigating to page 1: https://www.festivalinfo.nl/festivals/","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:27.189Z"}
+{"level":"info","message":"Found 41 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:28.244Z"}
+{"level":"info","message":"Waiting 1000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:28.246Z"}
+{"level":"info","message":"Processing page 2/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:29.248Z"}
+{"level":"info","message":"Navigating to page 2: https://www.festivalinfo.nl/festivals/?page=2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:29.248Z"}
+{"level":"info","message":"Found 122 festivals on page 2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:30.385Z"}
+{"level":"info","message":"Extracting details from 50 festival pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:30.386Z"}
+{"level":"info","message":"Extracting details for The Great Escape Festival (1/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:30.386Z"}
+{"level":"info","message":"Extracting details for Les Nuits Botanique (2/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:33.386Z"}
+{"level":"info","message":"Extracting details for FRISFEST (3/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:34.869Z"}
+{"level":"info","message":"Extracting details for London Calling #1 (4/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:36.905Z"}
+{"level":"info","message":"Extracting details for TREK Tilburg (5/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:38.302Z"}
+{"level":"info","message":"Extracting details for Sonic Whip (6/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:40.566Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:42.022Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:42.024Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:42.025Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:42.313Z"}
+{"level":"info","message":"Extracting details for Ik Zie U Graag ... (7/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:42.666Z"}
+{"level":"info","message":"Extracting details for LEGENDS of ROCK Tribute Festival (8/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.293Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.557Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.560Z"}
+{"level":"info","message":"Pagination check result: 0","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.562Z"}
+{"level":"info","message":"Using minimum page count (40) since detection found only 1 pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.562Z"}
+{"level":"info","message":"Will scrape 2 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.562Z"}
+{"level":"info","message":"Processing page 1/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.563Z"}
+{"level":"info","message":"Navigating to page 1: https://www.festivalinfo.nl/festivals/","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:44.563Z"}
+{"level":"info","message":"Found 41 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:45.647Z"}
+{"level":"info","message":"Waiting 1000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:45.648Z"}
+{"level":"info","message":"Extracting details for Midnight Masquerade (9/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:46.120Z"}
+{"level":"info","message":"Processing page 2/2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:46.649Z"}
+{"level":"info","message":"Navigating to page 2: https://www.festivalinfo.nl/festivals/?page=2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:46.649Z"}
+{"level":"info","message":"Found 122 festivals on page 2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:47.754Z"}
+{"level":"info","message":"Extracting details from 50 festival pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:47.755Z"}
+{"level":"info","message":"Extracting details for The Great Escape Festival (1/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:47.755Z"}
+{"level":"info","message":"Extracting details for Ibiza festival (10/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:48.265Z"}
+{"level":"info","message":"Extracting details for Awakenings Upclose (11/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:50.731Z"}
+{"level":"info","message":"Extracting details for Les Nuits Botanique (2/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:50.884Z"}
+{"level":"info","message":"Extracting details for FRISFEST (3/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:52.413Z"}
+{"level":"info","message":"Extracting details for Snertpop (12/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:52.835Z"}
+{"level":"info","message":"Extracting details for London Calling #1 (4/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:54.532Z"}
+{"level":"info","message":"Extracting details for Lakedance #1 (13/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:54.719Z"}
+{"level":"info","message":"Extracting details for Groove Garden (14/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:56.290Z"}
+{"level":"info","message":"Extracting details for TREK Tilburg (5/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:56.394Z"}
+{"level":"info","message":"Extracting details for Sonic Whip (6/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:57.547Z"}
+{"level":"info","message":"Extracting details for London Calling Maastricht (15/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:58.173Z"}
+{"level":"info","message":"Extracting details for Ik Zie U Graag ... (7/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:58.608Z"}
+{"level":"info","message":"Extracting details for Supercharged Festival (16/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:59.432Z"}
+{"level":"info","message":"Extracting details for LEGENDS of ROCK Tribute Festival (8/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:01:59.667Z"}
+{"level":"info","message":"Extracting details for Too Many Keys (17/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:00.561Z"}
+{"level":"info","message":"Extracting details for Midnight Masquerade (9/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:00.758Z"}
+{"level":"info","message":"Extracting details for ASM Festival (18/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:01.617Z"}
+{"level":"info","message":"Extracting details for Ibiza festival (10/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:01.850Z"}
+{"level":"info","message":"Extracting details for Peteyfest (19/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:02.700Z"}
+{"level":"info","message":"Extracting details for Awakenings Upclose (11/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:02.939Z"}
+{"level":"info","message":"Extracting details for Storioni Festival (20/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:03.758Z"}
+{"level":"info","message":"Extracting details for Snertpop (12/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:04.149Z"}
+{"level":"info","message":"Extracting details for South OfHeaven OpenAir (21/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:04.827Z"}
+{"level":"info","message":"Extracting details for Lakedance #1 (13/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:05.254Z"}
+{"level":"info","message":"Extracting details for Spring Performing Arts Festival (22/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:05.906Z"}
+{"level":"info","message":"Extracting details for Groove Garden (14/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:06.324Z"}
+{"level":"info","message":"Extracting details for For Every Young (23/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:06.956Z"}
+{"level":"info","message":"Extracting details for London Calling Maastricht (15/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:08.145Z"}
+{"level":"info","message":"Extracting details for Meifestival (24/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:08.875Z"}
+{"level":"info","message":"Extracting details for Supercharged Festival (16/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:09.724Z"}
+{"level":"info","message":"Extracting details for Lolliepop rock 'n' roll festival (25/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:10.441Z"}
+{"level":"info","message":"Extracting details for Too Many Keys (17/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:11.197Z"}
+{"level":"info","message":"Extracting details for BRIDGE (26/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:12.313Z"}
+{"level":"info","message":"Extracting details for ASM Festival (18/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:12.697Z"}
+{"level":"info","message":"Extracting details for Heaven Open Air (27/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:14.219Z"}
+{"level":"info","message":"Extracting details for Peteyfest (19/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:14.929Z"}
+{"level":"info","message":"Extracting details for Het Weekend van de Rollende Keukens (28/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:16.059Z"}
+{"level":"info","message":"Extracting details for Storioni Festival (20/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:16.438Z"}
+{"level":"info","message":"Extracting details for KOZ Festival (29/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:17.543Z"}
+{"level":"info","message":"Extracting details for South OfHeaven OpenAir (21/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:18.323Z"}
+{"level":"info","message":"Extracting details for Schanspop Siddeburen (30/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:19.363Z"}
+{"level":"info","message":"Extracting details for Spring Performing Arts Festival (22/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:19.694Z"}
+{"level":"info","message":"Extracting details for Bronckhorster Farm Festival (31/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:20.474Z"}
+{"level":"info","message":"Extracting details for For Every Young (23/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:20.770Z"}
+{"level":"info","message":"Extracting details for Festival RockStreet (32/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:21.536Z"}
+{"level":"info","message":"Extracting details for Meifestival (24/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:21.976Z"}
+{"level":"info","message":"Extracting details for Urpop (33/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:22.594Z"}
+{"level":"info","message":"Extracting details for Lolliepop rock 'n' roll festival (25/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:23.073Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Dordrecht (34/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:23.653Z"}
+{"level":"info","message":"Extracting details for BRIDGE (26/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:24.133Z"}
+{"level":"info","message":"Extracting details for Double D Festival (35/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:24.708Z"}
+{"level":"info","message":"Extracting details for Heaven Open Air (27/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:25.191Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Zwolle (36/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:25.766Z"}
+{"level":"info","message":"Extracting details for Het Weekend van de Rollende Keukens (28/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:26.252Z"}
+{"level":"info","message":"Extracting details for Green Vibrations (37/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:26.827Z"}
+{"level":"info","message":"Extracting details for KOZ Festival (29/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:27.311Z"}
+{"level":"info","message":"Extracting details for 3e Klaphekfestival (38/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:27.885Z"}
+{"level":"info","message":"Extracting details for Schanspop Siddeburen (30/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:28.374Z"}
+{"level":"info","message":"Extracting details for Breda Jazz Festival (39/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:28.948Z"}
+{"level":"info","message":"Extracting details for Bronckhorster Farm Festival (31/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:29.434Z"}
+{"level":"info","message":"Extracting details for Graauwrock (40/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:30.002Z"}
+{"level":"info","message":"Extracting details for Festival RockStreet (32/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:31.424Z"}
+{"level":"info","message":"Extracting details for Oerrock Festival (41/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:31.948Z"}
+{"level":"info","message":"Extracting details for Urpop (33/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:33.521Z"}
+{"level":"info","message":"Extracting details for Yes In My Backyard (42/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:33.809Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Dordrecht (34/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:35.105Z"}
+{"level":"info","message":"Extracting details for Slam Dunk Festival Netherlands (43/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:35.828Z"}
+{"level":"info","message":"Extracting details for Double D Festival (35/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:36.961Z"}
+{"level":"info","message":"Extracting details for Randrock (44/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:37.723Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Zwolle (36/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:39.047Z"}
+{"level":"info","message":"Extracting details for Mijl op Zeven Festival (45/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:39.577Z"}
+{"level":"info","message":"Extracting details for TREK Maastricht (46/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:40.669Z"}
+{"level":"info","message":"Extracting details for Green Vibrations (37/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:41.181Z"}
+{"level":"info","message":"Extracting details for Twister Fest (47/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:41.744Z"}
+{"level":"info","message":"Extracting details for 3e Klaphekfestival (38/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:42.247Z"}
+{"level":"info","message":"Extracting details for Zomerfeesten de Hoeve (48/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:42.950Z"}
+{"level":"info","message":"Extracting details for Breda Jazz Festival (39/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:43.472Z"}
+{"level":"info","message":"Extracting details for Helmond Live (49/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:44.043Z"}
+{"level":"info","message":"Extracting details for Graauwrock (40/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:44.576Z"}
+{"level":"info","message":"Extracting details for TAPT Festival Amersfoort (50/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:45.105Z"}
+{"level":"info","message":"Extracting details for Oerrock Festival (41/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:45.627Z"}
+{"level":"info","message":"Saving 82 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.164Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo-test/festivalinfo_2025-05-15T07-02-46.164Z_82festivals.json","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.166Z"}
+{"level":"info","message":"Scrape completed in 1m 21s","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.166Z"}
+{"level":"info","message":"Total festivals found: 163","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.167Z"}
+{"level":"info","message":"Unique festivals: 82","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.167Z"}
+{"level":"info","message":"Duplicates: 81","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.167Z"}
+{"level":"info","message":"Extracting details for Yes In My Backyard (42/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:46.689Z"}
+{"level":"info","message":"Extracting details for Slam Dunk Festival Netherlands (43/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:47.751Z"}
+{"level":"info","message":"Extracting details for Randrock (44/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:48.802Z"}
+{"level":"info","message":"Extracting details for Mijl op Zeven Festival (45/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:49.852Z"}
+{"level":"info","message":"Extracting details for TREK Maastricht (46/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:51.669Z"}
+{"level":"info","message":"Extracting details for Twister Fest (47/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:53.152Z"}
+{"level":"info","message":"Extracting details for Zomerfeesten de Hoeve (48/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:55.019Z"}
+{"level":"info","message":"Extracting details for Helmond Live (49/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:56.899Z"}
+{"level":"info","message":"Extracting details for TAPT Festival Amersfoort (50/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:02:58.374Z"}
+{"level":"info","message":"Saving 82 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:00.471Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo-test/festivalinfo_2025-05-15T07-03-00.471Z_82festivals.json","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:00.472Z"}
+{"level":"info","message":"Scrape completed in 1m 18s","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:00.472Z"}
+{"level":"info","message":"Total festivals found: 163","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:00.472Z"}
+{"level":"info","message":"Unique festivals: 82","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:00.472Z"}
+{"level":"info","message":"Duplicates: 81","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:00.472Z"}
+{"level":"info","message":"Starting FestivalInfo scraper","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:07.759Z"}
+{"level":"info","message":"Running in local environment","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:07.760Z"}
+{"level":"info","message":"Using browser at: default location","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:07.761Z"}
+{"level":"info","message":"Starting scrape of festivalinfo.nl","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:07.926Z"}
+{"level":"info","message":"Loaded festivals page, detecting pagination","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.832Z"}
+{"level":"info","message":"Detected 1 total pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.837Z"}
+{"level":"info","message":"Pagination check result: 0","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.840Z"}
+{"level":"info","message":"Using minimum page count (40) since detection found only 1 pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.841Z"}
+{"level":"info","message":"Will scrape 40 pages of festivals","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.841Z"}
+{"level":"info","message":"Processing page 1/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.841Z"}
+{"level":"info","message":"Navigating to page 1: https://www.festivalinfo.nl/festivals/","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:09.841Z"}
+{"level":"info","message":"Found 41 festivals on page 1","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:10.868Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:10.869Z"}
+{"level":"info","message":"Processing page 2/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:12.870Z"}
+{"level":"info","message":"Navigating to page 2: https://www.festivalinfo.nl/festivals/?page=2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:12.872Z"}
+{"level":"info","message":"Found 122 festivals on page 2","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:14.036Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:14.037Z"}
+{"level":"info","message":"Processing page 3/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:16.038Z"}
+{"level":"info","message":"Navigating to page 3: https://www.festivalinfo.nl/festivals/?page=3","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:16.039Z"}
+{"level":"info","message":"Found 148 festivals on page 3","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:17.290Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:17.291Z"}
+{"level":"info","message":"Processing page 4/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:19.292Z"}
+{"level":"info","message":"Navigating to page 4: https://www.festivalinfo.nl/festivals/?page=4","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:19.292Z"}
+{"level":"info","message":"Found 108 festivals on page 4","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:20.376Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:20.377Z"}
+{"level":"info","message":"Processing page 5/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:22.379Z"}
+{"level":"info","message":"Navigating to page 5: https://www.festivalinfo.nl/festivals/?page=5","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:22.379Z"}
+{"level":"info","message":"Found 103 festivals on page 5","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:23.504Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:23.505Z"}
+{"level":"info","message":"Processing page 6/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:25.505Z"}
+{"level":"info","message":"Navigating to page 6: https://www.festivalinfo.nl/festivals/?page=6","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:25.505Z"}
+{"level":"info","message":"Found 131 festivals on page 6","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:26.651Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:26.652Z"}
+{"level":"info","message":"Processing page 7/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:28.653Z"}
+{"level":"info","message":"Navigating to page 7: https://www.festivalinfo.nl/festivals/?page=7","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:28.653Z"}
+{"level":"info","message":"Found 151 festivals on page 7","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:29.840Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:29.841Z"}
+{"level":"info","message":"Processing page 8/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:31.842Z"}
+{"level":"info","message":"Navigating to page 8: https://www.festivalinfo.nl/festivals/?page=8","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:31.843Z"}
+{"level":"info","message":"Found 123 festivals on page 8","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:32.951Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:32.952Z"}
+{"level":"info","message":"Processing page 9/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:34.952Z"}
+{"level":"info","message":"Navigating to page 9: https://www.festivalinfo.nl/festivals/?page=9","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:34.954Z"}
+{"level":"info","message":"Found 88 festivals on page 9","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:36.024Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:36.025Z"}
+{"level":"info","message":"Processing page 10/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:38.026Z"}
+{"level":"info","message":"Navigating to page 10: https://www.festivalinfo.nl/festivals/?page=10","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:38.026Z"}
+{"level":"info","message":"Found 63 festivals on page 10","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:39.122Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:39.123Z"}
+{"level":"info","message":"Processing page 11/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:41.125Z"}
+{"level":"info","message":"Navigating to page 11: https://www.festivalinfo.nl/festivals/?page=11","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:41.125Z"}
+{"level":"info","message":"Found 80 festivals on page 11","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:42.113Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:42.114Z"}
+{"level":"info","message":"Processing page 12/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:44.115Z"}
+{"level":"info","message":"Navigating to page 12: https://www.festivalinfo.nl/festivals/?page=12","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:44.115Z"}
+{"level":"info","message":"Found 73 festivals on page 12","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:45.198Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:45.198Z"}
+{"level":"info","message":"Processing page 13/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:47.199Z"}
+{"level":"info","message":"Navigating to page 13: https://www.festivalinfo.nl/festivals/?page=13","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:47.200Z"}
+{"level":"info","message":"Found 73 festivals on page 13","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:48.274Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:48.275Z"}
+{"level":"info","message":"Processing page 14/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:50.276Z"}
+{"level":"info","message":"Navigating to page 14: https://www.festivalinfo.nl/festivals/?page=14","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:50.276Z"}
+{"level":"info","message":"Found 70 festivals on page 14","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:52.306Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:52.314Z"}
+{"level":"info","message":"Processing page 15/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:54.316Z"}
+{"level":"info","message":"Navigating to page 15: https://www.festivalinfo.nl/festivals/?page=15","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:54.316Z"}
+{"level":"info","message":"Found 62 festivals on page 15","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:59.609Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:03:59.610Z"}
+{"level":"info","message":"Processing page 16/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:01.611Z"}
+{"level":"info","message":"Navigating to page 16: https://www.festivalinfo.nl/festivals/?page=16","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:01.611Z"}
+{"level":"info","message":"Found 49 festivals on page 16","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:07.646Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:07.646Z"}
+{"level":"info","message":"Processing page 17/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:09.646Z"}
+{"level":"info","message":"Navigating to page 17: https://www.festivalinfo.nl/festivals/?page=17","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:09.647Z"}
+{"level":"info","message":"Found 52 festivals on page 17","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:12.149Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:12.149Z"}
+{"level":"info","message":"Processing page 18/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:14.151Z"}
+{"level":"info","message":"Navigating to page 18: https://www.festivalinfo.nl/festivals/?page=18","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:14.151Z"}
+{"level":"info","message":"Found 19 festivals on page 18","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:17.532Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:17.532Z"}
+{"level":"info","message":"Processing page 19/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:19.533Z"}
+{"level":"info","message":"Navigating to page 19: https://www.festivalinfo.nl/festivals/?page=19","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:19.534Z"}
+{"level":"info","message":"Found 26 festivals on page 19","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:20.583Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:20.583Z"}
+{"level":"info","message":"Processing page 20/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:22.585Z"}
+{"level":"info","message":"Navigating to page 20: https://www.festivalinfo.nl/festivals/?page=20","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:22.585Z"}
+{"level":"info","message":"Found 15 festivals on page 20","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:23.490Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:23.491Z"}
+{"level":"info","message":"Processing page 21/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:25.490Z"}
+{"level":"info","message":"Navigating to page 21: https://www.festivalinfo.nl/festivals/?page=21","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:25.491Z"}
+{"level":"info","message":"Found 17 festivals on page 21","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:30.508Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:30.508Z"}
+{"level":"info","message":"Processing page 22/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:32.510Z"}
+{"level":"info","message":"Navigating to page 22: https://www.festivalinfo.nl/festivals/?page=22","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:32.511Z"}
+{"level":"info","message":"Found 18 festivals on page 22","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:40.959Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:40.960Z"}
+{"level":"info","message":"Processing page 23/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:42.961Z"}
+{"level":"info","message":"Navigating to page 23: https://www.festivalinfo.nl/festivals/?page=23","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:42.961Z"}
+{"level":"info","message":"Found 20 festivals on page 23","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:51.802Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:51.802Z"}
+{"level":"info","message":"Processing page 24/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:53.804Z"}
+{"level":"info","message":"Navigating to page 24: https://www.festivalinfo.nl/festivals/?page=24","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:04:53.806Z"}
+{"level":"info","message":"Found 8 festivals on page 24","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:01.435Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:01.435Z"}
+{"level":"info","message":"Processing page 25/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:03.437Z"}
+{"level":"info","message":"Navigating to page 25: https://www.festivalinfo.nl/festivals/?page=25","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:03.437Z"}
+{"level":"info","message":"Found 27 festivals on page 25","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:11.459Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:11.460Z"}
+{"level":"info","message":"Processing page 26/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:13.462Z"}
+{"level":"info","message":"Navigating to page 26: https://www.festivalinfo.nl/festivals/?page=26","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:13.462Z"}
+{"level":"info","message":"Found 11 festivals on page 26","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:18.185Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:18.185Z"}
+{"level":"info","message":"Processing page 27/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:20.186Z"}
+{"level":"info","message":"Navigating to page 27: https://www.festivalinfo.nl/festivals/?page=27","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:20.186Z"}
+{"level":"info","message":"Found 11 festivals on page 27","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:27.396Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:27.396Z"}
+{"level":"info","message":"Processing page 28/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:29.398Z"}
+{"level":"info","message":"Navigating to page 28: https://www.festivalinfo.nl/festivals/?page=28","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:29.399Z"}
+{"level":"info","message":"Found 3 festivals on page 28","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:34.105Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:34.105Z"}
+{"level":"info","message":"Processing page 29/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:36.106Z"}
+{"level":"info","message":"Navigating to page 29: https://www.festivalinfo.nl/festivals/?page=29","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:36.108Z"}
+{"level":"info","message":"Found 1 festivals on page 29","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:42.029Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:42.029Z"}
+{"level":"info","message":"Processing page 30/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:44.029Z"}
+{"level":"info","message":"Navigating to page 30: https://www.festivalinfo.nl/festivals/?page=30","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:44.029Z"}
+{"level":"info","message":"Found 3 festivals on page 30","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:52.103Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:52.103Z"}
+{"level":"info","message":"Processing page 31/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:54.104Z"}
+{"level":"info","message":"Navigating to page 31: https://www.festivalinfo.nl/festivals/?page=31","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:54.105Z"}
+{"level":"info","message":"Found 7 festivals on page 31","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:55.194Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:55.194Z"}
+{"level":"info","message":"Processing page 32/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:57.195Z"}
+{"level":"info","message":"Navigating to page 32: https://www.festivalinfo.nl/festivals/?page=32","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:57.196Z"}
+{"level":"info","message":"Found 9 festivals on page 32","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:58.302Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:05:58.302Z"}
+{"level":"info","message":"Processing page 33/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:00.303Z"}
+{"level":"info","message":"Navigating to page 33: https://www.festivalinfo.nl/festivals/?page=33","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:00.304Z"}
+{"level":"info","message":"Found 5 festivals on page 33","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:01.387Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:01.387Z"}
+{"level":"info","message":"Processing page 34/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:03.388Z"}
+{"level":"info","message":"Navigating to page 34: https://www.festivalinfo.nl/festivals/?page=34","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:03.388Z"}
+{"level":"info","message":"Found 2 festivals on page 34","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:04.469Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:04.470Z"}
+{"level":"info","message":"Processing page 35/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:06.470Z"}
+{"level":"info","message":"Navigating to page 35: https://www.festivalinfo.nl/festivals/?page=35","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:06.470Z"}
+{"level":"info","message":"Found 8 festivals on page 35","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:07.533Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:07.533Z"}
+{"level":"info","message":"Processing page 36/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:09.534Z"}
+{"level":"info","message":"Navigating to page 36: https://www.festivalinfo.nl/festivals/?page=36","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:09.535Z"}
+{"level":"info","message":"Found 1 festivals on page 36","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:10.655Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:10.655Z"}
+{"level":"info","message":"Processing page 37/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:12.656Z"}
+{"level":"info","message":"Navigating to page 37: https://www.festivalinfo.nl/festivals/?page=37","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:12.656Z"}
+{"level":"info","message":"Found 1 festivals on page 37","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:13.814Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:13.814Z"}
+{"level":"info","message":"Processing page 38/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:15.815Z"}
+{"level":"info","message":"Navigating to page 38: https://www.festivalinfo.nl/festivals/?page=38","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:15.815Z"}
+{"level":"info","message":"Found 7 festivals on page 38","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:17.077Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:17.078Z"}
+{"level":"info","message":"Processing page 39/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:19.078Z"}
+{"level":"info","message":"Navigating to page 39: https://www.festivalinfo.nl/festivals/?page=39","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:19.078Z"}
+{"level":"info","message":"Found 1 festivals on page 39","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:20.122Z"}
+{"level":"info","message":"Waiting 2000ms before next page","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:20.123Z"}
+{"level":"info","message":"Processing page 40/40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:22.124Z"}
+{"level":"info","message":"Navigating to page 40: https://www.festivalinfo.nl/festivals/?page=40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:22.124Z"}
+{"level":"info","message":"Found 1 festivals on page 40","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:23.246Z"}
+{"level":"info","message":"Extracting details from 50 festival pages","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:23.246Z"}
+{"level":"info","message":"Extracting details for The Great Escape Festival (1/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:23.246Z"}
+{"level":"info","message":"Extracting details for Les Nuits Botanique (2/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:29.040Z"}
+{"level":"info","message":"Extracting details for FRISFEST (3/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:32.382Z"}
+{"level":"info","message":"Extracting details for London Calling #1 (4/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:35.458Z"}
+{"level":"info","message":"Extracting details for TREK Tilburg (5/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:38.535Z"}
+{"level":"info","message":"Extracting details for Sonic Whip (6/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:41.794Z"}
+{"level":"info","message":"Extracting details for Ik Zie U Graag ... (7/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:45.205Z"}
+{"level":"info","message":"Extracting details for LEGENDS of ROCK Tribute Festival (8/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:48.115Z"}
+{"level":"info","message":"Extracting details for Midnight Masquerade (9/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:51.207Z"}
+{"level":"info","message":"Extracting details for Ibiza festival (10/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:06:54.328Z"}
+{"level":"info","message":"Extracting details for Awakenings Upclose (11/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:15.393Z"}
+{"level":"info","message":"Extracting details for Snertpop (12/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:20.803Z"}
+{"level":"info","message":"Extracting details for Lakedance #1 (13/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:23.792Z"}
+{"level":"info","message":"Extracting details for Groove Garden (14/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:28.452Z"}
+{"level":"info","message":"Extracting details for London Calling Maastricht (15/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:31.589Z"}
+{"level":"info","message":"Extracting details for Supercharged Festival (16/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:34.205Z"}
+{"level":"info","message":"Extracting details for Too Many Keys (17/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:37.216Z"}
+{"level":"info","message":"Extracting details for ASM Festival (18/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:39.851Z"}
+{"level":"info","message":"Extracting details for Peteyfest (19/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:43.034Z"}
+{"level":"info","message":"Extracting details for Storioni Festival (20/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:45.658Z"}
+{"level":"info","message":"Extracting details for South OfHeaven OpenAir (21/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:48.862Z"}
+{"level":"info","message":"Extracting details for Spring Performing Arts Festival (22/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:51.518Z"}
+{"level":"info","message":"Extracting details for For Every Young (23/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:54.655Z"}
+{"level":"info","message":"Extracting details for Meifestival (24/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:07:57.783Z"}
+{"level":"info","message":"Extracting details for Lolliepop rock 'n' roll festival (25/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:00.473Z"}
+{"level":"info","message":"Extracting details for BRIDGE (26/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:03.560Z"}
+{"level":"info","message":"Extracting details for Heaven Open Air (27/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:06.931Z"}
+{"level":"info","message":"Extracting details for Het Weekend van de Rollende Keukens (28/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:10.373Z"}
+{"level":"info","message":"Extracting details for KOZ Festival (29/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:13.061Z"}
+{"level":"info","message":"Extracting details for Schanspop Siddeburen (30/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:16.126Z"}
+{"level":"info","message":"Extracting details for Bronckhorster Farm Festival (31/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:19.330Z"}
+{"level":"info","message":"Extracting details for Festival RockStreet (32/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:22.427Z"}
+{"level":"info","message":"Extracting details for Urpop (33/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:25.570Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Dordrecht (34/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:28.203Z"}
+{"level":"info","message":"Extracting details for Double D Festival (35/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:31.330Z"}
+{"level":"info","message":"Extracting details for Lepeltje Lepeltje Zwolle (36/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:34.502Z"}
+{"level":"info","message":"Extracting details for Green Vibrations (37/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:37.638Z"}
+{"level":"info","message":"Extracting details for 3e Klaphekfestival (38/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:40.221Z"}
+{"level":"info","message":"Extracting details for Breda Jazz Festival (39/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:43.479Z"}
+{"level":"info","message":"Extracting details for Graauwrock (40/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:47.592Z"}
+{"level":"info","message":"Extracting details for Oerrock Festival (41/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:50.790Z"}
+{"level":"info","message":"Extracting details for Yes In My Backyard (42/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:54.117Z"}
+{"level":"info","message":"Extracting details for Slam Dunk Festival Netherlands (43/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:08:57.425Z"}
+{"level":"info","message":"Extracting details for Randrock (44/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:00.716Z"}
+{"level":"info","message":"Extracting details for Mijl op Zeven Festival (45/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:03.930Z"}
+{"level":"info","message":"Extracting details for TREK Maastricht (46/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:07.228Z"}
+{"level":"info","message":"Extracting details for Twister Fest (47/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:09.900Z"}
+{"level":"info","message":"Extracting details for Zomerfeesten de Hoeve (48/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:12.828Z"}
+{"level":"info","message":"Extracting details for Helmond Live (49/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:16.145Z"}
+{"level":"info","message":"Extracting details for TAPT Festival Amersfoort (50/50)","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:18.814Z"}
+{"level":"info","message":"Saving 709 unique festivals to output directory","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:21.725Z"}
+{"level":"info","message":"Successfully saved festivals to /Users/danieldrunen/FestiFind2025/data/festivalinfo/festivalinfo_2025-05-15T07-09-21.724Z_709festivals.json","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:21.734Z"}
+{"level":"info","message":"Scrape completed in 6m 13s","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:21.734Z"}
+{"level":"info","message":"Total festivals found: 1758","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:21.734Z"}
+{"level":"info","message":"Unique festivals: 709","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:21.734Z"}
+{"level":"info","message":"Duplicates: 1049","service":"festivalinfo-scraper","timestamp":"2025-05-15T07:09:21.734Z"}

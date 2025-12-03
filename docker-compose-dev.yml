@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  nextjs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_SUPABASE_URL=https://sxdbptmmvhluyxrlzgmh.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY
+      - NEXT_TELEMETRY_DISABLED=1
+      - NODE_OPTIONS=--max_old_space_size=4096
+      - CHROME_BIN=/usr/bin/chromium-browser
+      - PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+    restart: always
+    stdin_open: true
+    tty: true
+    networks:
+      - festifind-net
+
+networks:
+  festifind-net:
+    driver: bridge 

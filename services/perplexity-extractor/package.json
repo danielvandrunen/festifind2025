@@ -1,0 +1,36 @@
+{
+  "name": "festifind-perplexity-extractor",
+  "version": "1.0.0",
+  "description": "AI-powered event data extraction service using Perplexity AI",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "perplexity",
+    "ai",
+    "web-scraping",
+    "event-extraction",
+    "festival-data"
+  ],
+  "author": "FestiFind Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "jsdom": "^23.0.1",
+    "node-abort-controller": "^3.1.1",
+    "node-fetch": "^2.6.7",
+    "openai": "^4.20.1",
+    "rate-limiter-flexible": "^2.4.1",
+    "turndown": "^7.1.2",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

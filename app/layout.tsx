@@ -1,40 +1,49 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Inter } from "next/font/google";
+import React from 'react';
+import './globals.css';
+import { StorageProvider } from './contexts/StorageContext';
+import { NotificationProvider } from './contexts/NotificationContext';
+import { FestivalProvider } from './contexts/FestivalContext';
+import { AuthProvider } from './contexts/AuthContext';
+import StagewiseToolbarWrapper from '../components/StagewiseToolbar';
+import LayoutWrapper from '../components/LayoutWrapper';
+import AuthDebugger from '../components/AuthDebugger';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: "FestiFind",
-  description: "Your gateway to festivals around the world",
+export const metadata = {
+  title: 'FestiFind',
+  description: 'Track and discover festivals around the world',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen`} suppressHydrationWarning>
-        <header className="border-b border-gray-200">
-          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div className="font-bold text-xl">
-              <a href="/" className="text-purple-700 hover:text-purple-900 transition">FestiFind</a>
-            </div>
-            <nav>
-              <ul className="flex gap-6 list-none">
-                <li>
-                  <a href="/festivals" className="text-gray-700 hover:text-purple-700 transition">Festivals</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-        <main className="container mx-auto px-4 py-8">
-          {children}
-        </main>
+    <html lang="en">
+      <body className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+        <AuthProvider>
+          <StorageProvider>
+            <NotificationProvider>
+              <FestivalProvider>
+                <LayoutWrapper>
+                  {children}
+                </LayoutWrapper>
+                <StagewiseToolbarWrapper />
+                <AuthDebugger />
+              </FestivalProvider>
+            </NotificationProvider>
+          </StorageProvider>
+        </AuthProvider>
       </body>
     </html>
   );
-}
+} 

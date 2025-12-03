@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  supatest:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - NEXT_PUBLIC_SUPABASE_URL=https://sxdbptmmvhluyxrlzgmh.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY
+    command: >
+      sh -c "npm install @supabase/supabase-js && node test-supabase-connection.js" 

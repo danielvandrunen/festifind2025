@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Polling Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .log {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 3px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .primary { background: #007bff; color: white; }
+        .success { background: #28a745; color: white; }
+        .danger { background: #dc3545; color: white; }
+        .warning { background: #ffc107; color: black; }
+    </style>
+</head>
+<body>
+    <h1>Research Polling Test Dashboard</h1>
+    
+    <div class="test-section">
+        <h2>Test Festival Research Flow</h2>
+        <p>Use this to test the complete research button polling flow.</p>
+        
+        <div>
+            <button class="primary" onclick="startResearch('openai')">Start OpenAI Research</button>
+            <button class="primary" onclick="startResearch('perplexity')">Start Perplexity Research</button>
+            <button class="success" onclick="checkStatus()">Check Status</button>
+            <button class="warning" onclick="clearLogs()">Clear Logs</button>
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <label for="festivalSelect">Test Festival:</label>
+            <select id="festivalSelect">
+                <option value="">Loading festivals...</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Polling Status Monitor</h2>
+        <div id="status-display" style="padding: 10px; background: #e9ecef; border-radius: 3px;">
+            <strong>Status:</strong> <span id="current-status">Not started</span><br>
+            <strong>Button State:</strong> <span id="button-state">Unknown</span><br>
+            <strong>Last Update:</strong> <span id="last-update">Never</span>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Console Logs</h2>
+        <div id="console-log" class="log">
+            Waiting for activity...
+        </div>
+    </div>
+
+    <script>
+        let selectedFestivalId = null;
+        let pollingInterval = null;
+        
+        // Override console.log to capture logs
+        const originalConsoleLog = console.log;
+        console.log = function(...args) {
+            originalConsoleLog.apply(console, args);
+            logToDisplay('[LOG] ' + args.join(' '));
+        };
+        
+        function logToDisplay(message) {
+            const logDiv = document.getElementById('console-log');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function clearLogs() {
+            document.getElementById('console-log').innerHTML = 'Logs cleared...';
+        }
+        
+        async function loadFestivals() {
+            try {
+                logToDisplay('Loading festivals...');
+                const response = await fetch('/api/festivals?limit=10');
+                const festivals = await response.json();
+                
+                const select = document.getElementById('festivalSelect');
+                select.innerHTML = '';
+                
+                festivals.slice(0, 10).forEach(festival => {
+                    const option = document.createElement('option');
+                    option.value = festival.id;
+                    option.textContent = `${festival.name} (${festival.location})`;
+                    select.appendChild(option);
+                });
+                
+                // Select first festival by default
+                if (festivals.length > 0) {
+                    selectedFestivalId = festivals[0].id;
+                    select.value = selectedFestivalId;
+                    logToDisplay(`Selected festival: ${festivals[0].name}`);
+                }
+                
+                select.addEventListener('change', (e) => {
+                    selectedFestivalId = e.target.value;
+                    const selectedFestival = festivals.find(f => f.id === selectedFestivalId);
+                    logToDisplay(`Selected festival: ${selectedFestival?.name}`);
+                });
+                
+            } catch (error) {
+                logToDisplay(`Error loading festivals: ${error.message}`);
+            }
+        }
+        
+        async function startResearch(aiService) {
+            if (!selectedFestivalId) {
+                logToDisplay('ERROR: No festival selected');
+                return;
+            }
+            
+            try {
+                logToDisplay(`Starting ${aiService} research for festival ${selectedFestivalId}...`);
+                updateStatus('Initiating research...', 'Requesting...', new Date().toLocaleTimeString());
+                
+                const response = await fetch(`/api/festivals/${selectedFestivalId}/research`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ aiService })
+                });
+                
+                const data = await response.json();
+                logToDisplay(`Research response: ${JSON.stringify(data)}`);
+                
+                if (data.status === 'pending') {
+                    updateStatus('Research in progress', 'Researching...', new Date().toLocaleTimeString());
+                    startPolling();
+                } else {
+                    updateStatus(data.status, 'Unknown', new Date().toLocaleTimeString());
+                }
+                
+            } catch (error) {
+                logToDisplay(`ERROR starting research: ${error.message}`);
+                updateStatus('Error', 'Failed', new Date().toLocaleTimeString());
+            }
+        }
+        
+        async function checkStatus() {
+            if (!selectedFestivalId) {
+                logToDisplay('ERROR: No festival selected');
+                return;
+            }
+            
+            try {
+                logToDisplay(`Checking research status for festival ${selectedFestivalId}...`);
+                
+                const response = await fetch(`/api/festivals/${selectedFestivalId}/research`);
+                const data = await response.json();
+                
+                logToDisplay(`Status check response: ${JSON.stringify(data)}`);
+                
+                const status = data.status || 'not found';
+                const buttonState = status === 'complete' ? 'View Research' : 
+                                  status === 'pending' ? 'Researching...' : 
+                                  status === 'failed' ? 'Retry Research' : 'Research';
+                
+                updateStatus(status, buttonState, new Date().toLocaleTimeString());
+                
+                if (status === 'complete') {
+                    stopPolling();
+                    logToDisplay('✅ Research completed! Button should show "View Research"');
+                }
+                
+            } catch (error) {
+                logToDisplay(`ERROR checking status: ${error.message}`);
+            }
+        }
+        
+        function updateStatus(status, buttonState, timestamp) {
+            document.getElementById('current-status').textContent = status;
+            document.getElementById('button-state').textContent = buttonState;
+            document.getElementById('last-update').textContent = timestamp;
+        }
+        
+        function startPolling() {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+            }
+            
+            logToDisplay('🔄 Starting polling every 3 seconds...');
+            pollingInterval = setInterval(checkStatus, 3000);
+            
+            // Stop polling after 60 seconds
+            setTimeout(() => {
+                stopPolling();
+                logToDisplay('⏰ Polling timeout reached (60 seconds)');
+            }, 60000);
+        }
+        
+        function stopPolling() {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+                logToDisplay('🛑 Polling stopped');
+            }
+        }
+        
+        // Initialize
+        loadFestivals();
+        logToDisplay('Test page loaded. Ready to test research polling.');
+    </script>
+</body>
+</html> 

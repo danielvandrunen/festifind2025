@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Festival Scan - Tomorrowland 2025</title>
+</head>
+<body>
+    <h1>Tomorrowland 2025</h1>
+    <p><strong>Date:</strong> July 18-20, 2025</p>
+    <p><strong>Location:</strong> Boom, Belgium</p>
+    <p><strong>Contact:</strong> info@tomorrowland.com</p>
+    <p>The world's biggest electronic music festival returns to Belgium!</p>
+    
+    <script>
+        console.log('🎵 Test page loaded for FestiFind extension testing');
+        console.log('📍 URL:', window.location.href);
+        
+        // Check if content script is loaded
+        setTimeout(() => {
+            if (window.festifindContentScriptLoaded) {
+                console.log('✅ FestiFind content script is loaded and ready');
+            } else {
+                console.log('❌ FestiFind content script NOT loaded - extension may not be installed or enabled');
+            }
+        }, 2000);
+        
+        // Manual test function to simulate what the popup does
+        window.testScanWebsite = function() {
+            console.log('🧪 Testing scan website functionality...');
+            
+            // This simulates what the popup does when clicking "Scan Website"
+            if (typeof chrome !== 'undefined' && chrome.runtime) {
+                chrome.runtime.sendMessage({
+                    action: 'extractData'
+                }, (response) => {
+                    console.log('🔍 Scan result:', response);
+                });
+            } else {
+                console.log('❌ Chrome extension API not available (this test only works in extension context)');
+            }
+        };
+        
+        console.log('💡 Instructions:');
+        console.log('1. Make sure FestiFind extension is loaded');
+        console.log('2. Click the extension icon and press "Scan Website"');
+        console.log('3. Check console logs for detailed debugging info');
+        console.log('4. You can also run testScanWebsite() in console (but this won\'t work from page context)');
+    </script>
+</body>
+</html> 

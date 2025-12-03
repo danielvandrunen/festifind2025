@@ -1,0 +1,244 @@
+// @ts-nocheck
+// Force ESM mode
+
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execPromise = promisify(exec);
+
+// Function to validate a JSON file
+function validateJSONFile(filePath) {
+  console.log(`Validating file: ${filePath}`);
+  try {
+    if (!fs.existsSync(filePath)) {
+      console.error(`File does not exist: ${filePath}`);
+      return {
+        isValid: false,
+        error: 'File does not exist',
+        preview: ''
+      };
+    }
+    
+    const filename = path.basename(filePath);
+    // Check if this is a mock data file or a metrics file
+    const isMockFile = filename.includes('_mock_');
+    const isMetricsFile = filename.includes('_metrics_');
+    
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const data = JSON.parse(fileContent);
+    
+    // Metadata about the file type
+    const fileType = {
+      isMockData: isMockFile,
+      isMetricsFile: isMetricsFile,
+      isRealData: !isMockFile && !isMetricsFile
+    };
+    
+    // Check if it contains festival data
+    if (Array.isArray(data)) {
+      console.log(`Array data found with ${data.length} items`);
+      
+      if (data.length === 0) {
+        console.log("Empty array, not valid festival data");
+        return {
+          isValid: false,
+          festivalCount: 0,
+          error: 'Array is empty',
+          preview: '[]',
+          ...fileType
+        };
+      }
+      
+      // Check if the first few items look like festival data
+      const firstItems = data.slice(0, 3);
+      const isFestivalData = firstItems.some(item => 
+        (item.name && item.source === 'festivalinfo.nl') || 
+        (item.name && item.url && item.url.includes('festivalinfo.nl')) ||
+        (item.name && (item.location || item.city) && (item.startDate || item.dates))
+      );
+      
+      if (isFestivalData) {
+        console.log(`Valid festival data detected with ${data.length} festivals`);
+        return {
+          isValid: true,
+          festivalCount: data.length,
+          type: 'array',
+          preview: JSON.stringify(firstItems),
+          ...fileType
+        };
+      } else {
+        console.log("Array does not appear to contain festival data");
+        return {
+          isValid: false,
+          error: 'Array does not contain festival data',
+          preview: JSON.stringify(data.slice(0, 2)),
+          ...fileType
+        };
+      }
+    } else if (typeof data === 'object' && data !== null && Array.isArray(data.festivals)) {
+      console.log(`Object with festivals array found: ${data.festivals.length} festivals`);
+      return {
+        isValid: true,
+        festivalCount: data.festivals.length,
+        type: 'object.festivals',
+        ...fileType
+      };
+    } else if (typeof data === 'object' && data !== null && data.success === true && data.festivals) {
+      console.log(`API response object found with festivals data`);
+      return {
+        isValid: true,
+        festivalCount: Array.isArray(data.festivals) ? data.festivals.length : 'unknown',
+        type: 'api.response',
+        ...fileType
+      };
+    } else if (typeof data === 'object' && data !== null && typeof data.totalFestivals === 'number') {
+      // This is likely a metrics file, not actual festival data
+      console.log(`Metrics file detected with ${data.totalFestivals} total festivals referenced`);
+      return {
+        isValid: false, // Mark as invalid for festival data display purposes
+        festivalCount: 0,
+        type: 'metrics',
+        totalTracked: data.totalFestivals || 0,
+        error: 'Metrics file, not festival data',
+        ...fileType
+      };
+    } else {
+      console.log(`Expected array or object with festivals but got ${typeof data}`);
+      return {
+        isValid: false,
+        error: `Expected array but got ${typeof data}`,
+        preview: JSON.stringify(data).substring(0, 100) + '...',
+        ...fileType
+      };
+    }
+  } catch (error) {
+    console.error(`Error validating file ${filePath}:`, error);
+    return {
+      isValid: false,
+      error: error.message,
+      preview: fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8').substring(0, 100) + '...' : 'File not readable'
+    };
+  }
+}
+
+export async function GET() {
+  try {
+    const dataDir = path.join(process.cwd(), 'data');
+    
+    // Check if the directory exists
+    if (!fs.existsSync(dataDir)) {
+      console.log('Data directory not found:', dataDir);
+      return NextResponse.json({ 
+        success: false, 
+        error: 'Data directory not found',
+        path: dataDir
+      }, { status: 404 });
+    }
+    
+    console.log(`Searching for festival data files in: ${dataDir}`);
+    
+    try {
+      // For debug: List all files in the data directory
+      const allFilesInDir = fs.readdirSync(dataDir);
+      console.log(`All files in data directory (${allFilesInDir.length} files):`, JSON.stringify(allFilesInDir));
+    } catch (err) {
+      console.error('Error listing all files in data directory:', err);
+    }
+    
+    // Check festivalinfo subdirectory as well
+    const festivalinfoDir = path.join(dataDir, 'festivalinfo');
+    if (fs.existsSync(festivalinfoDir)) {
+      console.log(`Festivalinfo subdirectory exists: ${festivalinfoDir}`);
+      try {
+        const festivalinfoFiles = fs.readdirSync(festivalinfoDir);
+        console.log(`Files in festivalinfo subdirectory (${festivalinfoFiles.length} files):`, JSON.stringify(festivalinfoFiles));
+      } catch (err) {
+        console.error('Error listing festivalinfo subdirectory:', err);
+      }
+    } else {
+      console.log(`Festivalinfo subdirectory does not exist: ${festivalinfoDir}`);
+    }
+    
+    // Get a list of all festivalinfo JSON files, sorted by modification time (newest first)
+    // Use fs directly to avoid shell command issues
+    const allFiles = fs.readdirSync(dataDir)
+      .filter(filename => filename.endsWith('.json') && filename.includes('festivalinfo_'))
+      .map(filename => {
+        const filePath = path.join(dataDir, filename);
+        const stats = fs.statSync(filePath);
+        return { 
+          name: filename, 
+          path: filePath,
+          mtime: stats.mtime.getTime()
+        };
+      })
+      .sort((a, b) => b.mtime - a.mtime); // Sort newest first
+    
+    console.log(`Found ${allFiles.length} festivalinfo JSON files in main directory`);
+    if (allFiles.length > 0) {
+      console.log('First few files found:', JSON.stringify(allFiles.slice(0, 3)));
+    }
+    
+    // Also check the subdirectory if it exists
+    let subDirFiles = [];
+    if (fs.existsSync(festivalinfoDir)) {
+      subDirFiles = fs.readdirSync(festivalinfoDir)
+        .filter(filename => filename.endsWith('.json') && filename.includes('festivalinfo_'))
+        .map(filename => {
+          const filePath = path.join(festivalinfoDir, filename);
+          const stats = fs.statSync(filePath);
+          return { 
+            name: `festivalinfo/${filename}`, 
+            path: filePath,
+            mtime: stats.mtime.getTime()
+          };
+        })
+        .sort((a, b) => b.mtime - a.mtime);
+        
+      console.log(`Found ${subDirFiles.length} festivalinfo JSON files in subdirectory`);
+      if (subDirFiles.length > 0) {
+        console.log('First few subdirectory files found:', JSON.stringify(subDirFiles.slice(0, 3)));
+      }
+    }
+    
+    // Combine files from both locations
+    const combinedFiles = [...allFiles, ...subDirFiles].sort((a, b) => b.mtime - a.mtime);
+    console.log(`Found ${combinedFiles.length} festivalinfo JSON files in total`);
+    
+    // Get file stats for each file
+    const fileDetails = combinedFiles.map(file => {
+      // Validate JSON file structure
+      const validation = validateJSONFile(file.path);
+      
+      return {
+        name: file.name,
+        lastModified: fs.statSync(file.path).mtime,
+        size: fs.statSync(file.path).size,
+        isValid: validation.isValid,
+        festivalCount: validation.festivalCount || 0,
+        type: validation.type || 'unknown',
+        error: validation.error || null,
+        ...validation
+      };
+    });
+    
+    // For debugging - print out the file details to help diagnose issues
+    console.log(`File details: ${JSON.stringify(fileDetails.slice(0, 3))}`);
+    
+    return NextResponse.json({ 
+      success: true, 
+      files: fileDetails,
+      dataDir
+    });
+  } catch (error) {
+    console.error('Error listing festivalinfo files:', error);
+    return NextResponse.json({ 
+      success: false, 
+      error: error.message || 'Failed to list files',
+      stack: error.stack
+    }, { status: 500 });
+  }
+} 

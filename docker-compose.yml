@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  nextjs-dev:
+    build:
+      context: .
+      target: development
+    ports:
+      - "3005:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+      - ./output:/app/output
+      - /tmp/festifind_temp_data:/tmp/festifind_temp_data
+      - /var/run/docker.sock:/var/run/docker.sock
+    privileged: true
+    # Remove user directive as it's causing permission issues
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_SUPABASE_URL=https://sxdbptmmvhluyxrlzgmh.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY
+      - NEXT_TELEMETRY_DISABLED=1
+      - NODE_OPTIONS=--max_old_space_size=4096
+      - PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - CHROME_BIN=/usr/bin/chromium-browser
+      - HOST_ROOT=/app
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    command: npm run dev
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Commenting out eblive-scraper as the directory doesn't exist
+  # eblive-scraper:
+  #   build:
+  #     context: ./scrapers/eblive
+  #     dockerfile: Dockerfile
+  #   image: eblive-scraper:latest
+  #   volumes:
+  #     - ./scrapers/eblive:/app
+  #     - ./scrapers/eblive/logs:/app/logs
+  #     - ./scrapers/eblive/output:/app/output
+  #   environment:
+  #     - SUPABASE_URL=${SUPABASE_URL:-}
+  #     - SUPABASE_KEY=${SUPABASE_KEY:-}
+  #     - PYTHONUNBUFFERED=1
+  #   # Using direct python command with headless flag
+  #   entrypoint: ["python", "scraper.py"]
+  #   command: ["--headless", "--verify-only", "--output", "output/festivals.json"]
+
+  festivalinfo-scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile.festivalinfo
+    volumes:
+      - ./data:/app/data
+      - /tmp/festifind_temp_data:/tmp/festifind_temp_data
+    environment:
+      - FESTIVALINFO_MAX_PAGES=0
+      - FESTIVALINFO_DELAY=3000
+      - FESTIVALINFO_DETAIL_DELAY=2000
+      - LOG_LEVEL=info
+      - DOCKER=true
+    command: node scrapers/festivalinfo/run.js
+    init: true
+    tty: true
+
+  nextjs-prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "3006:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_SUPABASE_URL=https://sxdbptmmvhluyxrlzgmh.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4ZGJwdG1tdmhsdXl4cmx6Z21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTYwMDUsImV4cCI6MjA2MDk5MjAwNX0.asGZCsnEHuxMd09FrH-bPHGhs99Z0s5RE7kIz087kkY
+      - NEXT_TELEMETRY_DISABLED=1
+      - NODE_OPTIONS=--max_old_space_size=4096
+      - PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+      - PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+      - CHROME_BIN=/usr/bin/chromium-browser
+    command: npm run start
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

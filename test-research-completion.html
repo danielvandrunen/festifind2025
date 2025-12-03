@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Completion Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        button { margin: 5px; padding: 10px; }
+        #log { background: #f5f5f5; padding: 10px; height: 300px; overflow-y: scroll; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <h1>Research Completion & Email Display Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Festival Data</h2>
+        <p><strong>Festival:</strong> Nieuwjaars Concert André Rieu</p>
+        <p><strong>ID:</strong> fb92b0c5-e2b0-479f-8ab7-8e65b09ec776</p>
+        <p><strong>Expected Email:</strong> adnre@asd.nl</p>
+        <p><strong>Research Status:</strong> Complete</p>
+    </div>
+
+    <div class="test-section">
+        <h2>API Tests</h2>
+        <button onclick="testFestivalAPI()">Test Festival API</button>
+        <button onclick="testResearchAPI()">Test Research API</button>
+        <button onclick="testEmailDisplay()">Test Email Display Logic</button>
+        <button onclick="simulateResearchCompletion()">Simulate Research Completion</button>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <div id="log"></div>
+    </div>
+
+    <script>
+        const festivalId = 'fb92b0c5-e2b0-479f-8ab7-8e65b09ec776';
+        const festivalName = 'Nieuwjaars Concert André Rieu';
+        
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type === 'success' ? 'success' : type === 'error' ? 'error' : 'info';
+            logDiv.innerHTML += `<div class="${className}">[${timestamp}] ${message}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+        }
+
+        async function testFestivalAPI() {
+            log('Testing Festival API...', 'info');
+            try {
+                const response = await fetch('/api/festivals');
+                const festivals = await response.json();
+                const testFestival = festivals.find(f => f.id === festivalId);
+                
+                if (testFestival) {
+                    log(`✅ Festival found: ${testFestival.name}`, 'success');
+                    log(`📧 Emails: ${JSON.stringify(testFestival.emails)}`, 'info');
+                    log(`⭐ Favorite: ${testFestival.favorite}`, 'info');
+                    log(`📝 Sales Stage: ${testFestival.sales_stage}`, 'info');
+                } else {
+                    log(`❌ Festival not found in API response`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Festival API Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testResearchAPI() {
+            log('Testing Research API...', 'info');
+            try {
+                const response = await fetch('/api/festivals/research');
+                const research = await response.json();
+                const testResearch = research.find(r => r.festival_id === festivalId);
+                
+                if (testResearch) {
+                    log(`✅ Research found: ${testResearch.status}`, 'success');
+                    log(`🤖 AI Service: ${testResearch.ai_service}`, 'info');
+                    log(`📅 Updated: ${testResearch.updated_at}`, 'info');
+                } else {
+                    log(`❌ Research not found for festival`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Research API Error: ${error.message}`, 'error');
+            }
+        }
+
+        function testEmailDisplay() {
+            log('Testing Email Display Logic...', 'info');
+            
+            // Simulate festival data with emails
+            const testFestival = {
+                id: festivalId,
+                name: festivalName,
+                emails: ['adnre@asd.nl', 'test@example.com', 'verylongemailaddress@example.com']
+            };
+            
+            // Test email display logic (similar to FestivalTable.tsx)
+            const emails = testFestival.emails || [];
+            log(`📧 Raw emails: ${JSON.stringify(emails)}`, 'info');
+            
+            if (emails.length === 0) {
+                log(`📭 Display: "No emails"`, 'info');
+            } else {
+                const displayEmails = emails.slice(0, 3);
+                const hasMore = emails.length > 3;
+                
+                log(`📧 Display emails (first 3): ${JSON.stringify(displayEmails)}`, 'success');
+                if (hasMore) {
+                    log(`➕ Additional: +${emails.length - 3} more`, 'info');
+                }
+                
+                // Test email truncation
+                displayEmails.forEach((email, index) => {
+                    const truncated = email.length > 20 ? email.substring(0, 17) + '...' : email;
+                    log(`📧 Email ${index + 1}: ${email} → Display: ${truncated}`, 'info');
+                });
+            }
+        }
+
+        function simulateResearchCompletion() {
+            log('🔄 Simulating research completion scenario...', 'info');
+            
+            // Simulate the polling detection of research completion
+            log('1. Research status changes from "pending" to "complete"', 'info');
+            log('2. Custom event "festival-research-completed" is dispatched', 'info');
+            log('3. fetchFestivals(true) is called to force refresh data', 'info');
+            log('4. Email addresses should appear in UI immediately', 'info');
+            
+            // Dispatch the actual event that our components listen for
+            const event = new CustomEvent('festival-research-completed', {
+                detail: { 
+                    festivalId: festivalId,
+                    status: { id: 'test-research-id', status: 'complete' },
+                    timestamp: Date.now()
+                }
+            });
+            document.dispatchEvent(event);
+            log('✅ Custom event dispatched', 'success');
+            
+            // Test if the event listener would trigger
+            setTimeout(() => {
+                log('⏰ Simulated delay for email extraction completion', 'info');
+                log('🔄 Force refresh should now fetch updated festival data with emails', 'success');
+            }, 1000);
+        }
+
+        // Listen for the custom event to verify it works
+        document.addEventListener('festival-research-completed', (event) => {
+            log(`🎉 Received festival-research-completed event for: ${event.detail.festivalId}`, 'success');
+            log(`📊 Event details: ${JSON.stringify(event.detail)}`, 'info');
+        });
+
+        // Auto-run basic tests on load
+        window.addEventListener('load', () => {
+            log('🚀 Research Completion Test Page Loaded', 'success');
+            log('Click buttons above to run specific tests', 'info');
+        });
+    </script>
+</body>
+</html> 

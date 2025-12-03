@@ -1,136 +1,119 @@
-import { useState, useEffect } from "react";
-import { Check, Filter } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+'use client';
 
-export type SourceOption = {
-  id: string;
-  name: string; 
-  count?: number;
-};
+import React, { useState } from 'react';
+import { Filter, Check } from 'lucide-react';
 
 interface SourceFilterProps {
-  sources: SourceOption[];
+  sources: string[];
   selectedSources: string[];
   onSourcesChange: (sources: string[]) => void;
 }
 
-export default function SourceFilter({
+const SourceFilter: React.FC<SourceFilterProps> = ({
   sources,
   selectedSources,
   onSourcesChange,
-}: SourceFilterProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  // Calculate how many filters are active
-  const activeFiltersCount = selectedSources.length;
-  const allSelected = activeFiltersCount === sources.length;
-  
+}) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   // Toggle a single source
-  const toggleSource = (sourceId: string) => {
-    if (selectedSources.includes(sourceId)) {
-      onSourcesChange(selectedSources.filter(id => id !== sourceId));
+  const toggleSource = (source: string) => {
+    if (selectedSources.includes(source)) {
+      // Remove the source if it's already selected
+      onSourcesChange(selectedSources.filter((s) => s !== source));
     } else {
-      onSourcesChange([...selectedSources, sourceId]);
+      // Add the source if it's not selected
+      onSourcesChange([...selectedSources, source]);
     }
   };
-  
+
   // Select all sources
-  const selectAll = () => {
-    onSourcesChange(sources.map(source => source.id));
+  const selectAll = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onSourcesChange([...sources]);
   };
-  
+
   // Clear all selections
-  const clearAll = () => {
+  const clearAll = (e: React.MouseEvent) => {
+    e.stopPropagation();
     onSourcesChange([]);
   };
 
+  // Capitalize first letter of source
+  const formatSourceName = (source: string) => {
+    return source.charAt(0).toUpperCase() + source.slice(1);
+  };
+
   return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="h-9 gap-1">
-          <Filter className="h-4 w-4" />
-          Sources
-          {activeFiltersCount > 0 && (
-            <span className="ml-1 rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-800">
-              {activeFiltersCount}
-            </span>
-          )}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>Filter by Source</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem 
-            onSelect={(e) => { 
-              e.preventDefault();
-              allSelected ? clearAll() : selectAll();
-            }}
-            className="flex items-center gap-2"
-          >
-            <Checkbox 
-              checked={allSelected} 
-              id="select-all"
-              onCheckedChange={selectAll}
-            />
-            <label htmlFor="select-all" className="flex-1 cursor-pointer">
-              Select All
-            </label>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          {sources.map((source) => (
-            <DropdownMenuItem
-              key={source.id}
-              onSelect={(e) => {
-                e.preventDefault();
-                toggleSource(source.id);
-              }}
-              className="flex items-center gap-2"
+    <div className="relative">
+      <button
+        className={`px-3 py-2 rounded-md border text-sm flex items-center space-x-1 ${dropdownOpen ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+        onClick={() => setDropdownOpen(!dropdownOpen)}
+      >
+        <Filter className="h-4 w-4 mr-1" />
+        <span className="hidden md:inline">Sources</span>
+        {selectedSources.length > 0 && (
+          <span className="ml-1 rounded-full bg-blue-600 w-5 h-5 text-xs flex items-center justify-center text-white">
+            {selectedSources.length}
+          </span>
+        )}
+      </button>
+
+      {dropdownOpen && (
+        <div 
+          className="absolute right-0 mt-1 w-56 bg-white rounded-md shadow-lg py-1 z-10 dark:bg-gray-800 border dark:border-gray-700"
+        >
+          <div className="flex justify-between items-center px-4 py-2 border-b dark:border-gray-700">
+            <button
+              type="button"
+              onClick={selectAll}
+              className="text-xs text-blue-600 hover:underline dark:text-blue-400"
             >
-              <Checkbox 
-                checked={selectedSources.includes(source.id)} 
-                id={`source-${source.id}`}
-                onCheckedChange={() => toggleSource(source.id)}
-              />
-              <label htmlFor={`source-${source.id}`} className="flex-1 cursor-pointer">
-                {source.name}
-              </label>
-              {source.count !== undefined && (
-                <span className="text-xs text-gray-500">
-                  {source.count}
-                </span>
-              )}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <div className="flex justify-between p-2">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={clearAll}
-            disabled={activeFiltersCount === 0}
-          >
-            Clear
-          </Button>
-          <Button 
-            size="sm" 
-            onClick={() => setIsOpen(false)}
-          >
-            Apply
-          </Button>
+              Select All
+            </button>
+            <button
+              type="button"
+              onClick={clearAll}
+              className="text-xs text-blue-600 hover:underline dark:text-blue-400"
+            >
+              Clear All
+            </button>
+          </div>
+          
+          <div className="max-h-60 overflow-y-auto">
+            {sources.map((source) => (
+              <div 
+                key={source}
+                className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                onClick={() => toggleSource(source)}
+              >
+                <div 
+                  className={`w-4 h-4 mr-3 rounded border flex items-center justify-center ${
+                    selectedSources.includes(source) 
+                      ? 'bg-blue-600 border-blue-600' 
+                      : 'border-gray-300 dark:border-gray-500'
+                  }`}
+                >
+                  {selectedSources.includes(source) && (
+                    <Check className="h-3 w-3 text-white" />
+                  )}
+                </div>
+                <span className="text-sm">{formatSourceName(source)}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      )}
+      
+      {/* Close dropdown when clicking outside */}
+      {dropdownOpen && (
+        <div 
+          className="fixed inset-0 z-0" 
+          onClick={() => setDropdownOpen(false)}
+        />
+      )}
+    </div>
   );
-} 
+};
+
+export default SourceFilter; 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FestiFind Scanner</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Main Controls -->
+    <div class="main-controls">
+      <button id="scanBtn" class="btn btn-primary btn-full">
+        <span class="btn-icon">🔍</span>
+        Scan Website
+      </button>
+      <button id="testBtn" class="btn btn-outline btn-full" style="margin-top: 8px;">
+        <span class="btn-icon">🧪</span>
+        Test Connection
+      </button>
+    </div>
+
+    <!-- Status Messages -->
+    <div id="statusContainer" class="status-container" style="display: none;">
+      <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading" style="display: none;">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Scanning website...</div>
+    </div>
+
+    <!-- Extracted Data Form -->
+    <div id="extractedDataContainer" class="form-container" style="display: none;">
+      <h3 class="form-title">Festival Information</h3>
+      
+      <div class="form-group">
+        <label for="festivalName" class="form-label">Festival Name:</label>
+        <input type="text" id="festivalName" class="form-input" placeholder="Enter festival name">
+        <div class="field-hint">The name of the festival or event</div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="startDate" class="form-label">Start Date:</label>
+          <input type="date" id="startDate" class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="endDate" class="form-label">End Date:</label>
+          <input type="date" id="endDate" class="form-input">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" class="form-input" placeholder="City, Country or Venue">
+        <div class="field-hint">Where the festival takes place</div>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Email Addresses:</label>
+        <div id="emailContainer" class="email-container">
+          <div id="emailList" class="email-list"></div>
+          <div class="email-controls">
+            <input type="email" id="newEmail" class="form-input" placeholder="Add email address">
+            <button id="addEmailBtn" class="btn btn-small">Add</button>
+          </div>
+        </div>
+        <div class="field-hint">Contact email addresses found on the website</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="notes" class="form-label">Notes (Optional):</label>
+        <textarea id="notes" class="form-textarea" rows="3" placeholder="Add any additional notes..."></textarea>
+        <div class="field-hint">Personal notes about this festival</div>
+      </div>
+      
+      <div class="form-actions">
+        <button id="saveBtn" class="btn btn-success">
+          <span class="btn-icon">💾</span>
+          Save to FestiFind
+        </button>
+        <button id="clearBtn" class="btn btn-outline">
+          <span class="btn-icon">🗑️</span>
+          Clear
+        </button>
+      </div>
+    </div>
+
+    <!-- Success Confirmation -->
+    <div id="successContainer" class="success-container" style="display: none;">
+      <div class="success-content">
+        <div class="success-icon">✅</div>
+        <h3 class="success-title">Festival Saved Successfully!</h3>
+        <p class="success-message">Your festival has been added to FestiFind.</p>
+        <button id="scanAnotherBtn" class="btn btn-primary btn-full">
+          <span class="btn-icon">🔍</span>
+          Scan Another Website
+        </button>
+      </div>
+    </div>
+
+    <!-- Website Info -->
+    <div id="websiteInfo" class="website-info">
+      <div class="info-item">
+        <span class="info-label">Current Page:</span>
+        <span id="currentUrl" class="info-value">Loading...</span>
+      </div>
+      <div id="extractionMethod" class="info-item" style="display: none;">
+        <span class="info-label">Extraction Method:</span>
+        <span id="extractionMethodValue" class="info-value"></span>
+      </div>
+      <div id="extractionConfidence" class="info-item" style="display: none;">
+        <span class="info-label">Confidence:</span>
+        <span id="extractionConfidenceValue" class="info-value"></span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

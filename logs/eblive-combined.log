@@ -1,0 +1,1100 @@
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:41:26.659Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:41:27.192Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:41:40.130Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:41:40.133Z"}
+{"level":"info","message":"Scraping page 1 of 1","service":"eblive-scraper","timestamp":"2025-05-14T13:41:40.133Z"}
+{"level":"info","message":"Found 0 festivals on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:41:41.425Z"}
+{"level":"info","message":"Page 1 completed in 7ms. Found 0 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:41:41.426Z"}
+{"level":"info","message":"Scraping completed. Summary: 0 unique festivals found, 0 duplicates, 0 errors in 15.43s","service":"eblive-scraper","timestamp":"2025-05-14T13:41:42.428Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-41-42.428Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:41:42.432Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:41:42.469Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:42:57.060Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:42:57.488Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:43:08.090Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:43:08.096Z"}
+{"level":"info","message":"Scraping page 1 of 1","service":"eblive-scraper","timestamp":"2025-05-14T13:43:08.096Z"}
+{"level":"info","message":"Found 0 festivals on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.154Z"}
+{"level":"info","message":"No festivals found with primary selector, trying alternative selector","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.155Z"}
+{"level":"info","message":"Found 50 festivals with alternative selector","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.169Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.185Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.188Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.190Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.193Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.195Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.199Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.201Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.203Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.206Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.208Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.210Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.213Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.216Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.218Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.221Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.223Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.225Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.227Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.229Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.231Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.233Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.235Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.237Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.239Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.241Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.243Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.245Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.247Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.249Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.251Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.253Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.255Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.258Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.259Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.261Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.264Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.266Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.267Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.270Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.271Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.273Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.275Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.277Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.279Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.281Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.283Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.285Z"}
+{"level":"error","message":"Error processing festival element: nameElement.textContent is not a function","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.287Z"}
+{"level":"info","message":"Page 1 completed in 139ms. Found 2 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:43:09.287Z"}
+{"level":"info","message":"Scraping completed. Summary: 2 unique festivals found, 0 duplicates, 48 errors in 12.98s","service":"eblive-scraper","timestamp":"2025-05-14T13:43:10.288Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-43-10.289Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:43:10.290Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:43:10.328Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:43:26.929Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:43:27.338Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:43:37.778Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:43:37.785Z"}
+{"level":"info","message":"Scraping page 1 of 1","service":"eblive-scraper","timestamp":"2025-05-14T13:43:37.785Z"}
+{"level":"info","message":"Found 0 festivals on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.933Z"}
+{"level":"info","message":"No festivals found with primary selector, trying alternative selector","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.933Z"}
+{"level":"info","message":"Found 50 festivals with alternative selector","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.948Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.964Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.967Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.969Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.971Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10243","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.973Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10243","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.974Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10940","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.976Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10940","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.979Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.981Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.983Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 11233","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.985Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 11233","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.988Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10777","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.990Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10777","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.992Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.994Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.996Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.998Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:43:38.999Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.001Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.003Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 11116","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.005Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 11116","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.006Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10367","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.008Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10367","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.010Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10286","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.012Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10286","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.013Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.015Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.017Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.018Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.020Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10282","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.022Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10282","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.024Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.026Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.028Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.030Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.031Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.033Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.035Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10039","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.037Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10039","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.038Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.040Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.042Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.044Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.046Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.049Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.050Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.052Z"}
+{"level":"warn","message":"Could not extract festival name for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.053Z"}
+{"level":"info","message":"Page 1 completed in 127ms. Found 2 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:43:39.053Z"}
+{"level":"info","message":"Scraping completed. Summary: 2 unique festivals found, 0 duplicates, 0 errors in 12.89s","service":"eblive-scraper","timestamp":"2025-05-14T13:43:40.054Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-43-40.055Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:43:40.057Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:43:40.100Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:46:35.114Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:46:35.548Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:46:46.205Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:46:46.211Z"}
+{"level":"info","message":"Scraping page 1 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:46:46.212Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:46:47.180Z"}
+{"level":"error","message":"Error with targeted extraction: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.event-card, .events-list-item, .card-item') to be visible\u001b[22m\n","service":"eblive-scraper","timestamp":"2025-05-14T13:46:52.181Z"}
+{"level":"info","message":"Page 1 completed in 5001ms. Found 0 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:46:52.181Z"}
+{"level":"info","message":"Scraping page 2 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:46:53.184Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:46:54.425Z"}
+{"level":"error","message":"Error with targeted extraction: page.waitForSelector: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.event-card, .events-list-item, .card-item') to be visible\u001b[22m\n","service":"eblive-scraper","timestamp":"2025-05-14T13:46:59.426Z"}
+{"level":"info","message":"Page 2 completed in 5001ms. Found 0 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:46:59.426Z"}
+{"level":"info","message":"Scraping completed. Summary: 0 unique festivals found, 0 duplicates, 2 errors in 25.07s","service":"eblive-scraper","timestamp":"2025-05-14T13:47:00.427Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-47-00.428Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:47:00.432Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:47:00.473Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:47:45.438Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:47:45.845Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:47:59.276Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:47:59.279Z"}
+{"level":"info","message":"Scraping page 1 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:47:59.279Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:48:00.993Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.028Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.034Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.039Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.042Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.046Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.050Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.055Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.063Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.074Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.084Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.095Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.102Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.112Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.119Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.130Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.147Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.155Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.169Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.173Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.175Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.178Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.181Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.188Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #10\n             (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.194Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.198Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.201Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.204Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.206Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.209Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.211Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.213Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.215Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.217Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #30\n             (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.219Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.221Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.223Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.225Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.227Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.229Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.231Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.233Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #3\n             (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.235Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.238Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.239Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.241Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.243Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.245Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.247Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.248Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.250Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.252Z"}
+{"level":"info","message":"Page 1 completed in 259ms. Found 35 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:48:01.252Z"}
+{"level":"info","message":"Scraping page 2 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:48:02.254Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.686Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.724Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.738Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.741Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #26\n             (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.743Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.747Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.749Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.751Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.753Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.756Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.758Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.761Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.763Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.765Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #42\n             (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.767Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.769Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #24\n             (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.771Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.773Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.774Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.777Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.779Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.781Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.782Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.784Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.786Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.788Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #28\n             (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.790Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.793Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.794Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.796Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.798Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.800Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #4\n             (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.802Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.803Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.805Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.807Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.809Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.812Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.814Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.815Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #11\n             (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.817Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.819Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.821Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.823Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #12\n             (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.825Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.827Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.829Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.831Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #17\n             (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.833Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.834Z"}
+{"level":"info","message":"Page 2 completed in 148ms. Found 37 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:48:03.834Z"}
+{"level":"info","message":"Scraping completed. Summary: 72 unique festivals found, 2 duplicates, 0 errors in 19.16s","service":"eblive-scraper","timestamp":"2025-05-14T13:48:04.836Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-48-04.836Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:48:04.838Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:48:04.869Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:48:22.843Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:48:23.319Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:48:33.925Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:48:33.928Z"}
+{"level":"info","message":"Scraping page 1 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:48:33.928Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.087Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.106Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.113Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.120Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.144Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.153Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.165Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.172Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.180Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.184Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.192Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.203Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.217Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.227Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.234Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.237Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.240Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.243Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.248Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.252Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.256Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.260Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.262Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.264Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #10\n             (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.266Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.269Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.271Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.273Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.275Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.277Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.279Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.281Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.283Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.285Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #30\n             (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.287Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.289Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.291Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.293Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.295Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.297Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.299Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.301Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #3\n             (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.302Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.304Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.306Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.308Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.310Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.312Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.314Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.316Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.318Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.320Z"}
+{"level":"info","message":"Page 1 completed in 233ms. Found 35 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:48:35.320Z"}
+{"level":"info","message":"Scraping page 2 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:48:36.322Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.662Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.679Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.688Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.692Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #26\n             (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.695Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.698Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.700Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.703Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.705Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.709Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.712Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.713Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.715Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.717Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #42\n             (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.718Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.720Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #24\n             (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.721Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.723Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.725Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.728Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.730Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.733Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.735Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.737Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.739Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.742Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #28\n             (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.744Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.746Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.748Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.750Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.752Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.753Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #4\n             (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.755Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.757Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.759Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.761Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.763Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.765Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.767Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.769Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #11\n             (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.771Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.773Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.775Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.777Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #12\n             (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.779Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.781Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.782Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.785Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #17\n             (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.787Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.788Z"}
+{"level":"info","message":"Page 2 completed in 126ms. Found 37 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:48:37.788Z"}
+{"level":"info","message":"Scraping completed. Summary: 72 unique festivals found, 2 duplicates, 0 errors in 15.68s","service":"eblive-scraper","timestamp":"2025-05-14T13:48:38.790Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-48-38.790Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:48:38.792Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:48:38.821Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:49:33.224Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:49:33.526Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:49:43.581Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:49:43.584Z"}
+{"level":"info","message":"Scraping page 1 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:49:43.584Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.556Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.578Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.587Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.591Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.594Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.597Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.600Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.602Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.605Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.607Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.609Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.611Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.615Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.618Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.620Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.622Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.624Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.626Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.628Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.631Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.634Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.636Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.638Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.641Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #10\n             (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.643Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.645Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.647Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.649Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.651Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.652Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.654Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.656Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.658Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.660Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #30\n             (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.662Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.664Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.666Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.668Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.670Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.672Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.674Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.676Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #3\n             (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.678Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.679Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.681Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.683Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.685Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.687Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.689Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.693Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.695Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.697Z"}
+{"level":"info","message":"Page 1 completed in 141ms. Found 35 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:49:44.697Z"}
+{"level":"info","message":"Scraping page 2 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:49:45.698Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.875Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.896Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.905Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.907Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #26\n             (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.909Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.912Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.913Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.916Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.918Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.921Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.924Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.926Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.928Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.929Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #42\n             (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.931Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.933Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #24\n             (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.935Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.937Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.939Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.941Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.943Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.945Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.946Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.948Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.950Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.952Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #28\n             (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.954Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.956Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.958Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.960Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.963Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.964Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #4\n             (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.966Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.968Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.970Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.972Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.974Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.975Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.977Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.979Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #11\n             (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.980Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.982Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.984Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.986Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #12\n             (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.988Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.990Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.994Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:46.998Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #17\n             (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:47.000Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:49:47.002Z"}
+{"level":"info","message":"Page 2 completed in 127ms. Found 37 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:49:47.002Z"}
+{"level":"info","message":"Scraping completed. Summary: 72 unique festivals found, 2 duplicates, 0 errors in 14.58s","service":"eblive-scraper","timestamp":"2025-05-14T13:49:48.004Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-49-48.004Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:49:48.006Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:49:48.052Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:50:20.462Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:50:20.922Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:50:31.151Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:50:31.158Z"}
+{"level":"info","message":"Scraping page 1 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:50:31.158Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.661Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.681Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.687Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.692Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.696Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.699Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.703Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.705Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.708Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.710Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.712Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.714Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.717Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.719Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.721Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.723Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.726Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.728Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.731Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.734Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.736Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.738Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.741Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.743Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #10\n             (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.746Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.747Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.749Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.751Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #5\n             (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.753Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.755Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.757Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.759Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.762Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.764Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #30\n             (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.766Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.768Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.770Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.772Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.774Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.776Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.778Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.780Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #3\n             (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.782Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.785Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.786Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.788Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.790Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.792Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.794Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.796Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.798Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.800Z"}
+{"level":"info","message":"Page 1 completed in 139ms. Found 35 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:50:32.800Z"}
+{"level":"info","message":"Scraping page 2 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:50:33.802Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.810Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.830Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.840Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.843Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #26\n             (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.845Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.847Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.850Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.853Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.855Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.857Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.859Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.861Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.863Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.865Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #42\n             (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.867Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.869Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #24\n             (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.871Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.873Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.875Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.877Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.879Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.880Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.882Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.884Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.886Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.888Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #28\n             (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.890Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.892Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.894Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.896Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.898Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.901Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #4\n             (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.903Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.906Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.908Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.910Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.911Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.914Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #22\n             (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.916Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.918Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #11\n             (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.920Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.921Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.923Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.925Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #12\n             (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.927Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.929Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.930Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.932Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #17\n             (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.935Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.936Z"}
+{"level":"info","message":"Page 2 completed in 126ms. Found 37 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:50:34.936Z"}
+{"level":"info","message":"Scraping page 3 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:50:35.938Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.037Z"}
+{"level":"info","message":"Found 50 festival links on page 3","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.050Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10232","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.059Z"}
+{"level":"info","message":"Added festival: Breda Jazz Festival (10232)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.061Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11139","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.063Z"}
+{"level":"info","message":"Added festival: Spring Break Island (11139)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.065Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10028","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.068Z"}
+{"level":"info","message":"Added festival: Intents Festival (10028)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.070Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #10\n             (11231)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.072Z"}
+{"level":"info","message":"Added festival: Hoppig Bierfestival (11231)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.074Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10450","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.075Z"}
+{"level":"info","message":"Added festival: Nijmegen Klinkt! (10450)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.077Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10171","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.079Z"}
+{"level":"info","message":"Added festival: Skive Festival (10171)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.081Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10174","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.084Z"}
+{"level":"info","message":"Added festival: Sweden Rock Festival (10174)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.086Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #25\n             (10280)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.088Z"}
+{"level":"info","message":"Added festival: Gladiolen festival (10280)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.090Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #6\n             (10879)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.091Z"}
+{"level":"info","message":"Added festival: Lansingerland Live  (10879)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.093Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #16\n             (10766)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.095Z"}
+{"level":"info","message":"Added festival: Orange Warsaw Festival (10766)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.096Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (11214)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.098Z"}
+{"level":"info","message":"Added festival: Schemerstad (11214)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.101Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10866)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.102Z"}
+{"level":"info","message":"Added festival: Harmony of Hardcore (10866)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.104Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11075","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.106Z"}
+{"level":"info","message":"Added festival: Kaaspop festival (11075)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.108Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #18\n             (10922)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.110Z"}
+{"level":"info","message":"Added festival: Korenfestival Amusing Hengelo (10922)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.112Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #14\n             (10780)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.114Z"}
+{"level":"info","message":"Added festival: Delft Fringe Festival (10780)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.117Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10186","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.119Z"}
+{"level":"info","message":"Added festival: Copenhagen Distortion Festival (10186)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.120Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10173","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.123Z"}
+{"level":"info","message":"Added festival: Primavera Sound (10173)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.124Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #40\n             (10298)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.126Z"}
+{"level":"info","message":"Added festival: Belgium Rhythm 'n Bluesfestival Peer (10298)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.128Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #14\n             (10800)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.129Z"}
+{"level":"info","message":"Added festival: Extrema Outdoor (10800)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.132Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #15\n             (10786)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.135Z"}
+{"level":"info","message":"Added festival: Freshtival Weekend (10786)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.137Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10447","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.139Z"}
+{"level":"info","message":"Added festival: Jazz in Duketown (10447)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.141Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10159","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.143Z"}
+{"level":"info","message":"Added festival: Rock am Ring (10159)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.145Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10161","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.146Z"}
+{"level":"info","message":"Added festival: Rock im Park (10161)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.148Z"}
+{"level":"info","message":"Added festival: \n        \n                    Editie #11\n             (10925)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.151Z"}
+{"level":"info","message":"Added festival: Zomerspektakel aan het meer (10925)","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.153Z"}
+{"level":"info","message":"Page 3 completed in 116ms. Found 36 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:50:37.153Z"}
+{"level":"info","message":"Scraping completed. Summary: 108 unique festivals found, 4 duplicates, 0 errors in 17.45s","service":"eblive-scraper","timestamp":"2025-05-14T13:50:38.154Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-50-38.155Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:50:38.159Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:50:38.187Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:51:08.935Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:51:09.343Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:51:18.972Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:51:18.976Z"}
+{"level":"info","message":"Scraping page 1 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:51:18.976Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.473Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.492Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.500Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.504Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.509Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.512Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.515Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.518Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10243","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.520Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.522Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10940","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.524Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.527Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.529Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.532Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11233","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.534Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.536Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10777","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.538Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.540Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.542Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.544Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.546Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.549Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.551Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.553Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11116","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.556Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.557Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10367","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.559Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.561Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10286","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.563Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.565Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.567Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.569Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.571Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.573Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10282","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.575Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.577Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.579Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.581Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.583Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.585Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.587Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.589Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10039","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.590Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.592Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.594Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.596Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.598Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.600Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.602Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.604Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.606Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.607Z"}
+{"level":"info","message":"Page 1 completed in 134ms. Found 26 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:51:20.607Z"}
+{"level":"info","message":"Scraping page 2 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:51:21.608Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.839Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.853Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.861Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.863Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10275","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.866Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.868Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.871Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.873Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.875Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.877Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10251","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.887Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.902Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10853","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.910Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.916Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11026","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.923Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.928Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11027","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.951Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.959Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.968Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.976Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.985Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:22.993Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.001Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.003Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.005Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.008Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10911","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.011Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.014Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.016Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.020Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11029","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.024Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.029Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10084","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.034Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.037Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.039Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.041Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10273","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.043Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.045Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10733","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.047Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.049Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11173","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.050Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.052Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.054Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.056Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10759","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.059Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.060Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.062Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.064Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10487","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.066Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.068Z"}
+{"level":"info","message":"Page 2 completed in 229ms. Found 24 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:51:23.068Z"}
+{"level":"info","message":"Scraping page 3 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:51:24.069Z"}
+{"level":"info","message":"Using more robust festival extraction approach","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.107Z"}
+{"level":"info","message":"Found 50 festival links on page 3","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.128Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10232","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.136Z"}
+{"level":"info","message":"Added festival: Breda Jazz Festival (10232)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.139Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11139","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.141Z"}
+{"level":"info","message":"Added festival: Spring Break Island (11139)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.143Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10028","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.145Z"}
+{"level":"info","message":"Added festival: Intents Festival (10028)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.148Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11231","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.150Z"}
+{"level":"info","message":"Added festival: Hoppig Bierfestival (11231)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.152Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10450","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.154Z"}
+{"level":"info","message":"Added festival: Nijmegen Klinkt! (10450)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.156Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10171","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.158Z"}
+{"level":"info","message":"Added festival: Skive Festival (10171)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.160Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10174","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.162Z"}
+{"level":"info","message":"Added festival: Sweden Rock Festival (10174)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.164Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10280","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.167Z"}
+{"level":"info","message":"Added festival: Gladiolen festival (10280)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.169Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10879","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.171Z"}
+{"level":"info","message":"Added festival: Lansingerland Live  (10879)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.174Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10766","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.176Z"}
+{"level":"info","message":"Added festival: Orange Warsaw Festival (10766)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.178Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11214","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.180Z"}
+{"level":"info","message":"Added festival: Schemerstad (11214)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.182Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10866","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.184Z"}
+{"level":"info","message":"Added festival: Harmony of Hardcore (10866)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.186Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11075","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.188Z"}
+{"level":"info","message":"Added festival: Kaaspop festival (11075)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.190Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10922","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.193Z"}
+{"level":"info","message":"Added festival: Korenfestival Amusing Hengelo (10922)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.194Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10780","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.196Z"}
+{"level":"info","message":"Added festival: Delft Fringe Festival (10780)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.199Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10186","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.200Z"}
+{"level":"info","message":"Added festival: Copenhagen Distortion Festival (10186)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.202Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10173","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.204Z"}
+{"level":"info","message":"Added festival: Primavera Sound (10173)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.206Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10298","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.207Z"}
+{"level":"info","message":"Added festival: Belgium Rhythm 'n Bluesfestival Peer (10298)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.209Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10800","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.210Z"}
+{"level":"info","message":"Added festival: Extrema Outdoor (10800)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.212Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10786","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.214Z"}
+{"level":"info","message":"Added festival: Freshtival Weekend (10786)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.216Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10447","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.218Z"}
+{"level":"info","message":"Added festival: Jazz in Duketown (10447)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.219Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10159","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.221Z"}
+{"level":"info","message":"Added festival: Rock am Ring (10159)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.223Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10161","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.225Z"}
+{"level":"info","message":"Added festival: Rock im Park (10161)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.226Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10925","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.228Z"}
+{"level":"info","message":"Added festival: Zomerspektakel aan het meer (10925)","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.231Z"}
+{"level":"info","message":"Page 3 completed in 124ms. Found 24 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:51:25.231Z"}
+{"level":"info","message":"Scraping completed. Summary: 74 unique festivals found, 4 duplicates, 0 errors in 17.07s","service":"eblive-scraper","timestamp":"2025-05-14T13:51:26.232Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-51-26.232Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:51:26.237Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:51:26.264Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:56:49.636Z"}
+{"level":"info","message":"Running in local environment","service":"eblive-scraper","timestamp":"2025-05-14T13:56:49.638Z"}
+{"level":"info","message":"Launching browser (attempt 1/3)","service":"eblive-scraper","timestamp":"2025-05-14T13:56:49.638Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:56:50.080Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:57:02.007Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:57:02.012Z"}
+{"level":"info","message":"Will scrape 2 pages in total","service":"eblive-scraper","timestamp":"2025-05-14T13:57:02.012Z"}
+{"level":"info","message":"Scraping page 1 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:57:02.012Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.868Z"}
+{"level":"info","message":"Final count: 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.892Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.900Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.906Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.912Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.919Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.922Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.925Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10243","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.927Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.930Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10940","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.932Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.935Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.937Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.939Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11233","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.941Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.944Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10777","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.946Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.948Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.950Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.952Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.954Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.956Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.957Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.959Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11116","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.961Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.963Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10367","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.965Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.967Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10286","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.969Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.970Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.972Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.974Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.976Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.978Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10282","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.980Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.981Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.983Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.985Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.988Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.991Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.995Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:04.997Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10039","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.003Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.007Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.009Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.010Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.012Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.014Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.015Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.017Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.019Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.021Z"}
+{"level":"info","message":"Page 1 completed in 1178ms. Found 26 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:57:05.021Z"}
+{"level":"info","message":"Scraping page 2 of 2","service":"eblive-scraper","timestamp":"2025-05-14T13:57:06.522Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.066Z"}
+{"level":"info","message":"Final count: 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.081Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.089Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.091Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10275","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.093Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.095Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.097Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.099Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.101Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.103Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10251","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.104Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.106Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10853","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.108Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.110Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11026","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.112Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.114Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11027","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.116Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.118Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.120Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.122Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.124Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.126Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.128Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.130Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.131Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.133Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10911","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.135Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.137Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.139Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.141Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11029","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.143Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.145Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10084","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.148Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.150Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.152Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.154Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10273","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.156Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.158Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10733","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.160Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.162Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11173","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.164Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.173Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.175Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.177Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10759","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.179Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.180Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.182Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.183Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10487","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.185Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.187Z"}
+{"level":"info","message":"Page 2 completed in 1139ms. Found 24 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:57:10.187Z"}
+{"level":"info","message":"Progress saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-progress-2025-05-14T13-57-11.687Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:57:11.688Z"}
+{"level":"info","message":"Scraping completed. Summary: 50 unique festivals found, 2 duplicates, 0 errors in 22.05s","service":"eblive-scraper","timestamp":"2025-05-14T13:57:11.689Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-57-11.689Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:57:11.690Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:57:11.742Z"}
+{"level":"info","message":"Starting EB Live scraper","service":"eblive-scraper","timestamp":"2025-05-14T13:57:25.361Z"}
+{"level":"info","message":"Running in local environment","service":"eblive-scraper","timestamp":"2025-05-14T13:57:25.362Z"}
+{"level":"info","message":"Launching browser (attempt 1/3)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:25.362Z"}
+{"level":"info","message":"Navigating to EB Live festivals page","service":"eblive-scraper","timestamp":"2025-05-14T13:57:25.759Z"}
+{"level":"info","message":"No cookie banner found or already accepted","service":"eblive-scraper","timestamp":"2025-05-14T13:57:37.106Z"}
+{"level":"info","message":"Found approximately 975 festivals across 41 pages","service":"eblive-scraper","timestamp":"2025-05-14T13:57:37.109Z"}
+{"level":"info","message":"Will scrape 3 pages in total","service":"eblive-scraper","timestamp":"2025-05-14T13:57:37.109Z"}
+{"level":"info","message":"Scraping page 1 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:57:37.110Z"}
+{"level":"info","message":"Found 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.857Z"}
+{"level":"info","message":"Final count: 50 festival links on page 1","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.871Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                Paaspop\n                                Vr 18 apr t/m zo 20 apr\n                            \n                         (10031)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.876Z"}
+{"level":"info","message":"Added festival: \n                            \n                                Uitgelicht\n                                REBiRTH Festival\n                                Vr 11 apr t/m zo 13 apr\n                            \n                         (10320)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.880Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10743","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.882Z"}
+{"level":"info","message":"Added festival: The Great Escape (10743)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.885Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10290","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.888Z"}
+{"level":"info","message":"Added festival: Antwerp Metal Fest (10290)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.890Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10243","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.892Z"}
+{"level":"info","message":"Added festival: ASM Festival  (10243)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.895Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10940","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.898Z"}
+{"level":"info","message":"Added festival: Snertpop (10940)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.900Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10043","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.903Z"}
+{"level":"info","message":"Added festival: Awakenings Upclose (10043)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.905Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11233","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.907Z"}
+{"level":"info","message":"Added festival: Groove Garden (11233)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.909Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10777","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.911Z"}
+{"level":"info","message":"Added festival: Kokopelli Festival (10777)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.913Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10355","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.915Z"}
+{"level":"info","message":"Added festival: Peteyfest (10355)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.917Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10098","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.919Z"}
+{"level":"info","message":"Added festival: BAM! Festival (10098)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.921Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10662","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.923Z"}
+{"level":"info","message":"Added festival: Sniester (10662)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.925Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11116","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.927Z"}
+{"level":"info","message":"Added festival: Steenbergen Live (11116)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.929Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10367","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.930Z"}
+{"level":"info","message":"Added festival: TAPT Festival Leiden (10367)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.932Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10286","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.934Z"}
+{"level":"info","message":"Added festival: Afrikadag Festival (10286)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.936Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10492","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.938Z"}
+{"level":"info","message":"Added festival: Buttonpop Tribute Festival (10492)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.940Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10418","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.942Z"}
+{"level":"info","message":"Added festival: CUBE Outdoor (10418)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.944Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10282","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.946Z"}
+{"level":"info","message":"Added festival: Dag van de Muziek (10282)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.948Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10583","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.950Z"}
+{"level":"info","message":"Added festival: Emporium Festival  (10583)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.952Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10203","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.954Z"}
+{"level":"info","message":"Added festival: Field Day London (10203)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.956Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10689","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.958Z"}
+{"level":"info","message":"Added festival: Lost Memories Outdoor (10689)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.960Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10039","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.962Z"}
+{"level":"info","message":"Added festival: ZevenPop (10039)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.964Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10577","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.966Z"}
+{"level":"info","message":"Added festival: Brussels Jazz Marathon (10577)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.968Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10790","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.970Z"}
+{"level":"info","message":"Added festival: Klomppop  (10790)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.972Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11142","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.974Z"}
+{"level":"info","message":"Added festival: Pigpop Festival (11142)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.976Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10092","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.977Z"}
+{"level":"info","message":"Added festival: GraauwRock for Specials (10092)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.979Z"}
+{"level":"info","message":"Page 1 completed in 1236ms. Found 26 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:57:39.979Z"}
+{"level":"info","message":"Scraping page 2 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:57:41.481Z"}
+{"level":"info","message":"Found 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.147Z"}
+{"level":"info","message":"Final count: 50 festival links on page 2","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.169Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10066","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.184Z"}
+{"level":"info","message":"Added festival: Storioni International Chamber Music Festival (10066)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.187Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10275","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.189Z"}
+{"level":"info","message":"Added festival: Graauwrock (10275)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.191Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10117","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.193Z"}
+{"level":"info","message":"Added festival: Heaven Open Air (10117)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.195Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10697","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.197Z"}
+{"level":"info","message":"Added festival: Heechspanning (10697)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.199Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10251","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.201Z"}
+{"level":"info","message":"Added festival: Helmond Live (10251)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.202Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10853","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.204Z"}
+{"level":"info","message":"Added festival: Randrock (10853)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.206Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11026","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.208Z"}
+{"level":"info","message":"Added festival: Urpop (11026)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.210Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11027","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.212Z"}
+{"level":"info","message":"Added festival: Green Vibrations (11027)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.214Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10850","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.215Z"}
+{"level":"info","message":"Added festival: SPRING Performing Arts Festival (10850)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.217Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10183","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.219Z"}
+{"level":"info","message":"Added festival: Jelling Musikfestival (10183)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.221Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10906","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.223Z"}
+{"level":"info","message":"Added festival: Oerrock (10906)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.224Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10708","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.226Z"}
+{"level":"info","message":"Added festival: Schanspop Siddeburen (10708)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.228Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10911","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.230Z"}
+{"level":"info","message":"Added festival: Clamotte Rock (10911)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.233Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10799","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.235Z"}
+{"level":"info","message":"Added festival: Dauwpop (10799)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.237Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11029","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.239Z"}
+{"level":"info","message":"Added festival: EGOpop (11029)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.241Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10084","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.242Z"}
+{"level":"info","message":"Added festival: IDDF In Concert (10084)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.244Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10776","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.246Z"}
+{"level":"info","message":"Added festival: Pop on Top  (10776)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.248Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10273","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.249Z"}
+{"level":"info","message":"Added festival: VESTROCK (10273)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.251Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10733","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.253Z"}
+{"level":"info","message":"Added festival: Duvelblues (10733)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.255Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11173","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.257Z"}
+{"level":"info","message":"Added festival: Festifest (11173)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.258Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10077","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.260Z"}
+{"level":"info","message":"Added festival: Soenda Festival (10077)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.262Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10759","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.263Z"}
+{"level":"info","message":"Added festival: SPY Festival (10759)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.265Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10576","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.267Z"}
+{"level":"info","message":"Added festival: BR~DGE Eindhoven Guitar Festival (10576)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.269Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10487","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.271Z"}
+{"level":"info","message":"Added festival: Het Weekend van de Rollende Keukens (10487)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.272Z"}
+{"level":"info","message":"Page 2 completed in 1255ms. Found 24 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:57:45.272Z"}
+{"level":"info","message":"Progress saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-progress-2025-05-14T13-57-46.773Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:57:46.775Z"}
+{"level":"info","message":"Scraping page 3 of 3","service":"eblive-scraper","timestamp":"2025-05-14T13:57:46.775Z"}
+{"level":"info","message":"Found 50 festival links on page 3","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.161Z"}
+{"level":"info","message":"Final count: 50 festival links on page 3","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.181Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10232","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.188Z"}
+{"level":"info","message":"Added festival: Breda Jazz Festival (10232)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.190Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11139","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.192Z"}
+{"level":"info","message":"Added festival: Spring Break Island (11139)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.194Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10028","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.196Z"}
+{"level":"info","message":"Added festival: Intents Festival (10028)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.198Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11231","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.200Z"}
+{"level":"info","message":"Added festival: Hoppig Bierfestival (11231)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.202Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10450","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.204Z"}
+{"level":"info","message":"Added festival: Nijmegen Klinkt! (10450)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.206Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10171","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.208Z"}
+{"level":"info","message":"Added festival: Skive Festival (10171)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.209Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10174","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.211Z"}
+{"level":"info","message":"Added festival: Sweden Rock Festival (10174)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.213Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10280","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.216Z"}
+{"level":"info","message":"Added festival: Gladiolen festival (10280)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.220Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10879","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.224Z"}
+{"level":"info","message":"Added festival: Lansingerland Live  (10879)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.228Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10766","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.231Z"}
+{"level":"info","message":"Added festival: Orange Warsaw Festival (10766)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.238Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11214","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.239Z"}
+{"level":"info","message":"Added festival: Schemerstad (11214)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.241Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10866","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.243Z"}
+{"level":"info","message":"Added festival: Harmony of Hardcore (10866)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.245Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 11075","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.247Z"}
+{"level":"info","message":"Added festival: Kaaspop festival (11075)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.249Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10922","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.251Z"}
+{"level":"info","message":"Added festival: Korenfestival Amusing Hengelo (10922)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.253Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10780","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.257Z"}
+{"level":"info","message":"Added festival: Delft Fringe Festival (10780)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.260Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10186","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.262Z"}
+{"level":"info","message":"Added festival: Copenhagen Distortion Festival (10186)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.265Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10173","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.267Z"}
+{"level":"info","message":"Added festival: Primavera Sound (10173)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.270Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10298","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.272Z"}
+{"level":"info","message":"Added festival: Belgium Rhythm 'n Bluesfestival Peer (10298)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.275Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10800","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.278Z"}
+{"level":"info","message":"Added festival: Extrema Outdoor (10800)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.281Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10786","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.283Z"}
+{"level":"info","message":"Added festival: Freshtival Weekend (10786)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.287Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10447","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.290Z"}
+{"level":"info","message":"Added festival: Jazz in Duketown (10447)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.293Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10159","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.295Z"}
+{"level":"info","message":"Added festival: Rock am Ring (10159)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.298Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10161","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.300Z"}
+{"level":"info","message":"Added festival: Rock im Park (10161)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.303Z"}
+{"level":"warn","message":"Incomplete festival data for ID: 10925","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.306Z"}
+{"level":"info","message":"Added festival: Zomerspektakel aan het meer (10925)","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.308Z"}
+{"level":"info","message":"Page 3 completed in 1258ms. Found 24 new festivals.","service":"eblive-scraper","timestamp":"2025-05-14T13:57:50.308Z"}
+{"level":"info","message":"Scraping completed. Summary: 74 unique festivals found, 4 duplicates, 0 errors in 26.45s","service":"eblive-scraper","timestamp":"2025-05-14T13:57:51.809Z"}
+{"level":"info","message":"Data saved to /Users/danieldrunen/FestiFind2025/data/eblive2/eblive-festivals-2025-05-14T13-57-51.809Z.json","service":"eblive-scraper","timestamp":"2025-05-14T13:57:51.812Z"}
+{"level":"info","message":"Browser closed","service":"eblive-scraper","timestamp":"2025-05-14T13:57:52.193Z"}

@@ -1,0 +1,50 @@
+# Use Alpine for smaller image size and faster downloads
+FROM node:18-alpine AS base
+
+# Install only essential system dependencies
+FROM base AS deps
+WORKDIR /app
+
+# Install minimal system dependencies for Node.js and browsers
+RUN apk add --no-cache \
+    libc6-compat \
+    chromium \
+    && rm -rf /var/cache/apk/*
+
+# Set browser environment variables
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser \
+    PLAYWRIGHT_BROWSERS_PATH=/usr/bin \
+    PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
+    CHROME_BIN=/usr/bin/chromium-browser
+
+# Copy package files first for better caching
+COPY package.json package-lock.json ./
+
+# Install dependencies with optimizations (including devDependencies for development)
+ENV NODE_ENV=development
+RUN npm ci --legacy-peer-deps --prefer-offline --no-audit --silent
+
+# Development stage - optimized for speed
+FROM deps AS development
+WORKDIR /app
+
+# Set development environment variables
+ENV NODE_ENV=development \
+    NEXT_TELEMETRY_DISABLED=1 \
+    NODE_OPTIONS="--max_old_space_size=2048" \
+    CHOKIDAR_USEPOLLING=true \
+    WATCHPACK_POLLING=true
+
+# Create necessary directories
+RUN mkdir -p .next output logs
+
+# Expose port
+EXPOSE 3000
+
+# Health check for faster startup detection
+HEALTHCHECK --interval=10s --timeout=5s --start-period=10s --retries=3 \
+    CMD wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1
+
+# Start command with optimizations
+CMD ["npm", "run", "dev"] 

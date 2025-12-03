@@ -1,0 +1,75 @@
+{
+  "name": "Next.js Project Structure Rules",
+  "description": "Rules to enforce best practices for Next.js projects and prevent common issues",
+  "rules": [
+    {
+      "name": "no-duplicate-page-files",
+      "description": "Prevent duplicate page files that could cause routing conflicts",
+      "pattern": {
+        "type": "file",
+        "glob": "**/{page,route}.{js,jsx,ts,tsx}"
+      },
+      "on_match": {
+        "prevent_duplicates_in": {
+          "glob": "**/app/**",
+          "by_path": true,
+          "message": "Duplicate page file detected: both ${path1} and ${path2} resolve to the same route. This will cause Next.js warnings and unexpected behavior."
+        }
+      }
+    },
+    {
+      "name": "enforce-env-template",
+      "description": "Ensure .env files are never committed and have templates",
+      "pattern": {
+        "type": "file",
+        "glob": "**/.env*"
+      },
+      "on_match": {
+        "enforce_companion": {
+          "glob": "${dirname}/.env.example",
+          "message": ".env files should have a companion .env.example template file that is committed to git"
+        }
+      }
+    },
+    {
+      "name": "next-config-valid",
+      "description": "Warn about common Next.js config issues",
+      "pattern": {
+        "type": "file",
+        "glob": "**/next.config.{js,mjs,ts}"
+      },
+      "on_match": {
+        "content_check": {
+          "patterns": [
+            {
+              "regex": "transpilePackages.*serverExternalPackages",
+              "message": "transpilePackages and serverExternalPackages can conflict when used together"
+            },
+            {
+              "regex": "serverComponentsExternalPackages",
+              "message": "serverComponentsExternalPackages is deprecated, use serverExternalPackages instead"
+            },
+            {
+              "regex": "appDir",
+              "message": "appDir is no longer needed, the App Router is enabled by default in Next.js 13+"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "single-nextjs-project",
+      "description": "Prevent multiple Next.js projects in the same repository",
+      "pattern": {
+        "type": "file",
+        "glob": "**/next.config.{js,mjs,ts}"
+      },
+      "on_match": {
+        "limit_occurrences": {
+          "max": 1,
+          "message": "Multiple Next.js projects detected in the same repository. This can cause confusion and configuration conflicts."
+        }
+      }
+    }
+  ]
+} 

@@ -1,59 +1,61 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../../../../../lib/supabase-client';
+
+interface Params {
+  id: string;
+}
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<Params> }
 ) {
+  const { id } = await params;
+  
   try {
-    const { id } = await params;
-    const { isArchived } = await request.json();
+    // Parse the request body
+    const body = await request.json();
     
-    // Validate input
-    if (typeof isArchived !== 'boolean') {
-      return NextResponse.json(
-        { error: 'Invalid input: isArchived must be a boolean' },
-        { status: 400 }
-      );
+    // Support both parameter formats
+    const archived = body.archived !== undefined ? body.archived : body.isArchived;
+    
+    if (typeof archived !== 'boolean') {
+      console.error('Invalid input type for archived:', archived);
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Invalid input. "archived" must be a boolean value.' 
+      }, { status: 400 });
     }
     
-    // Check if Supabase environment variables are set
-    const isSupabaseConfigured = 
-      process.env.NEXT_PUBLIC_SUPABASE_URL && 
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    
-    // If Supabase is not configured, return mock success for deployment
-    if (!isSupabaseConfigured) {
-      console.log('API: Supabase is not configured, returning mock success');
-      return NextResponse.json(
-        { success: true, mockResponse: true },
-        { status: 200 }
-      );
-    }
-    
-    // Update the archived status in database
-    const { error } = await supabase
+    // Update the festival archive status in the database
+    const { data, error } = await supabase
       .from('festivals')
-      .update({ archived: isArchived })
-      .eq('id', id);
+      .update({ archived })
+      .eq('id', id)
+      .select()
+      .single();
     
     if (error) {
-      console.error('Error updating archived status:', error);
-      return NextResponse.json(
-        { error: 'Failed to update archived status' },
-        { status: 500 }
-      );
+      console.error('Error updating archive status:', error);
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Database error when updating archive status',
+        error: error.message,
+        details: error
+      }, { status: 500 });
     }
     
-    return NextResponse.json(
-      { success: true },
-      { status: 200 }
-    );
-  } catch (err) {
-    console.error('Exception in archive endpoint:', err);
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ 
+      success: true, 
+      message: `Festival ${archived ? 'archived' : 'unarchived'}`,
+      data 
+    });
+    
+  } catch (error: any) {
+    console.error('Error processing archive update:', error);
+    return NextResponse.json({ 
+      success: false, 
+      message: 'Error processing request',
+      error: error.message
+    }, { status: 500 });
   }
 } 
