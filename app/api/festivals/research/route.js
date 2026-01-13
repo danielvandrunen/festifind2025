@@ -4,10 +4,17 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// Get Supabase client - initialize lazily to ensure env vars are available
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  
+  if (!supabaseUrl || !supabaseKey) {
+    throw new Error('Supabase environment variables not configured');
+  }
+  
+  return createClient(supabaseUrl, supabaseKey);
+}
 
 /**
  * GET handler to retrieve all research data
@@ -16,6 +23,8 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 export async function GET(req) {
   try {
     console.log('Fetching all research data from database');
+    
+    const supabase = getSupabaseClient();
     
     // Try to fetch all research entries from the database
     const { data, error } = await supabase
@@ -45,6 +54,8 @@ export async function GET(req) {
 export async function DELETE(req) {
   try {
     console.log('🗑️ DEV TOOLS: Clearing all research data from database...');
+    
+    const supabase = getSupabaseClient();
     
     // Delete all research entries from the database
     const { error } = await supabase

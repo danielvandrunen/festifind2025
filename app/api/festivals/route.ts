@@ -40,7 +40,12 @@ export async function GET(request) {
       favorite,
       archived,
       notes,
-      sales_stage
+      sales_stage,
+      linkedin_url,
+      research_data,
+      homepage_url,
+      organizing_company,
+      last_verified
     `;
     
     // If search query is provided, search across all festivals

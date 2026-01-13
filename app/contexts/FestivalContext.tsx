@@ -15,11 +15,18 @@ interface Festival {
   country: string;
   source: string;
   source_url?: string;
+  url?: string;
   emails?: string[];
+  linkedin_url?: string;
   rate_card_requested?: boolean;
   rate_card_received?: boolean;
   rate_card_date?: string | null;
   rate_card_notes?: string | null;
+  // Research and company discovery fields
+  research_data?: any;
+  organizing_company?: string;
+  homepage_url?: string;
+  last_verified?: string;
   // Add user preference fields that now come from database
   favorite?: boolean;
   archived?: boolean;
@@ -62,6 +69,7 @@ interface FestivalContextType {
   updateSalesStage: (festivalId: string, salesStage: string) => void;
   updateRateCard: (festivalId: string, updates: RateCardUpdatePayload) => Promise<boolean>;
   updateEmails: (festivalId: string, email: string) => Promise<void>;
+  updateLinkedIn: (festivalId: string, linkedinUrl: string) => Promise<void>;
   initiateResearch: (festivalId: string, aiService?: string) => Promise<ResearchStatus>;
   getResearchStatus: (festivalId: string) => ResearchStatus | null;
   refreshResearchStatus: (festivalId: string, showNotifications?: boolean) => Promise<ResearchStatus | null>;
@@ -1328,6 +1336,53 @@ export const FestivalProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   };
 
+  // Update festival LinkedIn URL
+  const updateLinkedIn = async (festivalId: string, linkedinUrl: string): Promise<void> => {
+    try {
+      // Validate festival ID
+      if (!isValidUUID(festivalId)) {
+        console.error(`Invalid festival ID format: ${festivalId}`);
+        showError(`Error updating LinkedIn: Invalid festival ID format`);
+        return;
+      }
+
+      // Call API to update LinkedIn URL
+      const response = await fetch(`/api/festivals/${festivalId}/linkedin`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ linkedin_url: linkedinUrl }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to update LinkedIn URL');
+      }
+
+      const result = await response.json();
+      
+      // Update the festival in local state with new LinkedIn URL
+      setFestivals(prevFestivals => 
+        prevFestivals.map(f => 
+          f.id === festivalId 
+            ? { ...f, linkedin_url: result.data.linkedin_url }
+            : f
+        )
+      );
+
+      if (linkedinUrl) {
+        showSuccess('LinkedIn URL updated successfully');
+      } else {
+        showSuccess('LinkedIn URL removed');
+      }
+    } catch (error) {
+      console.error('Error updating LinkedIn URL:', error);
+      showError(`Error updating LinkedIn: ${error.message}`);
+      throw error;
+    }
+  };
+
   // Get research status for a festival
   const getResearchStatus = (festivalId: string): ResearchStatus | null => {
     return researchStatus[festivalId] || null;
@@ -1704,6 +1759,7 @@ export const FestivalProvider: React.FC<{ children: ReactNode }> = ({ children }
         updateSalesStage,
         updateRateCard,
         updateEmails,
+        updateLinkedIn,
         initiateResearch,
         getResearchStatus,
         refreshResearchStatus,

@@ -2,13 +2,17 @@ import React from 'react';
 
 export default function Settings() {
   return (
-    <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8">Settings</h1>
-      
-      <div className="space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6">
+      <div className="max-w-3xl mx-auto space-y-8">
+        {/* Page Header */}
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+          <p className="text-gray-600 mt-2">Customize your FestiFind experience</p>
+        </div>
+        
         {/* Display Preferences */}
-        <section className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-          <h2 className="text-xl font-semibold mb-4">Display Preferences</h2>
+        <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Display Preferences</h2>
           
           <div className="space-y-4">
             <div>
@@ -57,8 +61,8 @@ export default function Settings() {
         </section>
         
         {/* Festival Sources */}
-        <section className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-          <h2 className="text-xl font-semibold mb-4">Festival Sources</h2>
+        <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Festival Sources</h2>
           
           <div className="space-y-3">
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
@@ -81,8 +85,8 @@ export default function Settings() {
         </section>
         
         {/* Notification Settings */}
-        <section className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6">
-          <h2 className="text-xl font-semibold mb-4">Notifications</h2>
+        <section className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Notifications</h2>
           
           <div className="space-y-3">
             <label className="flex items-center justify-between">
@@ -139,7 +143,7 @@ export default function Settings() {
         
         {/* Save Button */}
         <div className="flex justify-end">
-          <button className="px-5 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition-colors">
+          <button className="px-6 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
             Save Settings
           </button>
         </div>

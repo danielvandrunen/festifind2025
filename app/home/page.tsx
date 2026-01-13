@@ -51,99 +51,110 @@ export default function Home() {
   }, [festivals.length, loading, fetchFestivals]); // Removed fetchFestivalsWithResearch from dependencies
   
   return (
-    <div className="max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4 hidden">Welcome to FestiFind</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6">
+      <div className="max-w-7xl mx-auto space-y-8">
+        {/* Page Header */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+            <p className="text-gray-600 mt-2">Overview of your festival discovery pipeline</p>
+          </div>
+        </div>
       
-      <p className="text-lg mb-6 hidden">
-        Your ultimate tool for tracking and discovering festivals around the world.
-      </p>
-      
-      {/* Festival Loading Progress */}
-      {loadingProgress && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-4 flex items-center">
-            <Database className="h-6 w-6 text-blue-500 mr-3" />
-            Loading Festival Database
-          </h2>
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-            <div className="mb-4">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Loading festivals...
-                </span>
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  {loadingProgress.percentage}%
-                </span>
+        {/* Festival Loading Progress */}
+        {loadingProgress && (
+          <section>
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+              <div className="p-6 border-b border-gray-200">
+                <h2 className="text-lg font-semibold text-gray-900 flex items-center">
+                  <Database className="h-5 w-5 text-blue-600 mr-3" />
+                  Loading Festival Database
+                </h2>
               </div>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                <div 
-                  className="bg-blue-600 h-2 rounded-full transition-all duration-300 ease-out"
-                  style={{ width: `${loadingProgress.percentage}%` }}
-                ></div>
-              </div>
-              <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {loadingProgress.loaded.toLocaleString()} of {loadingProgress.total.toLocaleString()} festivals loaded
+              <div className="p-6">
+                <div className="mb-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium text-gray-700">
+                      Loading festivals...
+                    </span>
+                    <span className="text-sm font-medium text-gray-900">
+                      {loadingProgress.percentage}%
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div 
+                      className="bg-blue-600 h-2.5 rounded-full transition-all duration-300 ease-out"
+                      style={{ width: `${loadingProgress.percentage}%` }}
+                    ></div>
+                  </div>
+                  <div className="mt-2 text-sm text-gray-600">
+                    {loadingProgress.loaded.toLocaleString()} of {loadingProgress.total.toLocaleString()} festivals loaded
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  Please wait while we load the festival database. This may take a few moments...
+                </p>
               </div>
             </div>
-            <p className="text-gray-600 dark:text-gray-300">
-              Please wait while we load the festival database. This may take a few moments...
-            </p>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
       
-      {/* Festival Statistics Dashboard */}
-      {!loadingProgress && festivals.length > 0 && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-6">Festival Statistics</h2>
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+        {/* Festival Statistics Dashboard */}
+        {!loadingProgress && festivals.length > 0 && (
+          <section>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Statistics Overview</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                  {festivals.length.toLocaleString()}
+              <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600">
+                    {festivals.length.toLocaleString()}
+                  </div>
+                  <div className="text-sm text-gray-500 mt-1">Total Festivals</div>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Total Festivals</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 dark:text-orange-400">
-                  {(() => {
-                    // Deduplicate festivals based on similar names
-                    const uniqueFestivals = festivals.filter((festival, index, arr) => {
-                      const festivalName = festival.name?.toLowerCase().trim() || '';
-                      if (!festivalName) return true;
-                      
-                      // Check if there's an earlier festival with a similar name
-                      return !arr.slice(0, index).some(other => {
-                        const otherName = other.name?.toLowerCase().trim() || '';
-                        if (!otherName) return false;
+              <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-600">
+                    {(() => {
+                      // Deduplicate festivals based on similar names
+                      const uniqueFestivals = festivals.filter((festival, index, arr) => {
+                        const festivalName = festival.name?.toLowerCase().trim() || '';
+                        if (!festivalName) return true;
                         
-                        // Simple similarity check: if names are very similar or one contains the other
-                        return festivalName === otherName || 
-                               festivalName.includes(otherName) || 
-                               otherName.includes(festivalName);
+                        // Check if there's an earlier festival with a similar name
+                        return !arr.slice(0, index).some(other => {
+                          const otherName = other.name?.toLowerCase().trim() || '';
+                          if (!otherName) return false;
+                          
+                          // Simple similarity check: if names are very similar or one contains the other
+                          return festivalName === otherName || 
+                                 festivalName.includes(otherName) || 
+                                 otherName.includes(festivalName);
+                        });
                       });
-                    });
-                    return uniqueFestivals.length.toLocaleString();
-                  })()}
+                      return uniqueFestivals.length.toLocaleString();
+                    })()}
+                  </div>
+                  <div className="text-sm text-gray-500 mt-1">Festivals Filtered</div>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Festivals Filtered</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400">
-                  {festivals.filter(f => f.favorite && !f.archived).length.toLocaleString()}
+              <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600">
+                    {festivals.filter(f => f.favorite && !f.archived).length.toLocaleString()}
+                  </div>
+                  <div className="text-sm text-gray-500 mt-1">Favorites</div>
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Favorites</div>
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {/* Festivals Per Month Chart */}
-      {!loadingProgress && festivals.length > 0 && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-6">Festivals Per Month (Deduplicated)</h2>
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+        {/* Festivals Per Month Chart */}
+        {!loadingProgress && festivals.length > 0 && (
+          <section>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Festivals Per Month (Deduplicated)</h2>
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
             {(() => {
               // Apply same deduplication logic
               const uniqueFestivals = festivals.filter((festival, index, arr) => {
@@ -208,11 +219,11 @@ export default function Home() {
         </section>
       )}
 
-      {/* Sales Funnel Visualization */}
-      {!loadingProgress && festivals.length > 0 && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-6">Sales Funnel</h2>
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+        {/* Sales Funnel Visualization */}
+        {!loadingProgress && festivals.length > 0 && (
+          <section>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Sales Funnel</h2>
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
             {(() => {
               // Sales stages in funnel order
               const salesStages = [
@@ -313,11 +324,11 @@ export default function Home() {
         </section>
       )}
 
-      {/* Monthly Sales State Distribution */}
-      {!loadingProgress && festivals.length > 0 && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-6">Monthly Sales State Distribution</h2>
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
+        {/* Monthly Sales State Distribution */}
+        {!loadingProgress && festivals.length > 0 && (
+          <section>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Monthly Sales State Distribution</h2>
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
             {(() => {
               // Sales stages with colors (same as funnel)
               const salesStages = [
@@ -493,53 +504,54 @@ export default function Home() {
         </section>
       )}
       
-      {/* Loading State */}
-      {!loadingProgress && loading && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-6">Festival Statistics</h2>
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm">
-            <div className="animate-pulse">
-              <div className="h-4 bg-gray-300 dark:bg-gray-600 rounded w-3/4 mb-4"></div>
-              <div className="h-4 bg-gray-300 dark:bg-gray-600 rounded w-1/2"></div>
+        {/* Loading State */}
+        {!loadingProgress && loading && (
+          <section>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Festival Statistics</h2>
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+              <div className="animate-pulse">
+                <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+              </div>
             </div>
+          </section>
+        )}
+        
+        {/* Quick Links Section */}
+        <section className="hidden">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/festivals" className="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md hover:border-blue-200 transition-all">
+              <div className="flex items-center mb-4">
+                <Calendar className="h-6 w-6 text-blue-600 mr-3" />
+                <h3 className="text-lg font-semibold text-gray-900">Festivals</h3>
+              </div>
+              <p className="text-gray-600">Browse and manage your festival collection</p>
+              {festivals.length > 0 && (
+                <div className="mt-3 text-sm font-medium text-blue-600">
+                  {festivals.length.toLocaleString()} festivals available
+                </div>
+              )}
+            </Link>
+            
+            <Link href="/scrapers" className="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md hover:border-blue-200 transition-all">
+              <div className="flex items-center mb-4">
+                <Wrench className="h-6 w-6 text-blue-600 mr-3" />
+                <h3 className="text-lg font-semibold text-gray-900">Import Data</h3>
+              </div>
+              <p className="text-gray-600">Manage data collection from various sources</p>
+            </Link>
+            
+            <Link href="/settings" className="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:shadow-md hover:border-blue-200 transition-all">
+              <div className="flex items-center mb-4">
+                <Settings className="h-6 w-6 text-blue-600 mr-3" />
+                <h3 className="text-lg font-semibold text-gray-900">Settings</h3>
+              </div>
+              <p className="text-gray-600">Configure your preferences and sources</p>
+            </Link>
           </div>
         </section>
-      )}
-      
-      {/* Quick Links Section */}
-      <section className="mt-12 hidden">
-        <h2 className="text-2xl font-semibold mb-4">Quick Links</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Link href="/festivals" className="block p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-center mb-4">
-              <Calendar className="h-6 w-6 text-blue-500 mr-3" />
-              <h3 className="text-xl font-semibold">Festivals</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300">Browse and manage your festival collection</p>
-            {festivals.length > 0 && (
-              <div className="mt-2 text-sm text-blue-600 dark:text-blue-400">
-                {festivals.length.toLocaleString()} festivals available
-              </div>
-            )}
-          </Link>
-          
-          <Link href="/scrapers" className="block p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-center mb-4">
-              <Wrench className="h-6 w-6 text-blue-500 mr-3" />
-              <h3 className="text-xl font-semibold">Import Data</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300">Manage data collection from various sources</p>
-          </Link>
-          
-          <Link href="/settings" className="block p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex items-center mb-4">
-              <Settings className="h-6 w-6 text-blue-500 mr-3" />
-              <h3 className="text-xl font-semibold">Settings</h3>
-            </div>
-            <p className="text-gray-600 dark:text-gray-300">Configure your preferences and sources</p>
-          </Link>
-        </div>
-      </section>
+      </div>
     </div>
   );
 } 

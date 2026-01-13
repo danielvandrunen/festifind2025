@@ -41,27 +41,27 @@ const DevToolsPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6">
+      <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">
             🛠️ Developer Tools
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600 mt-2">
             Administrative tools for development and debugging purposes.
           </p>
         </div>
 
         {/* Warning Banner */}
-        <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-8">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
           <div className="flex items-start">
-            <AlertTriangle className="h-5 w-5 text-yellow-600 dark:text-yellow-400 mt-0.5 mr-3 flex-shrink-0" />
+            <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 mr-3 flex-shrink-0" />
             <div>
-              <h3 className="text-sm font-medium text-yellow-800 dark:text-yellow-200 mb-1">
+              <h3 className="text-sm font-medium text-yellow-800 mb-1">
                 Development Environment Only
               </h3>
-              <p className="text-sm text-yellow-700 dark:text-yellow-300">
+              <p className="text-sm text-yellow-700">
                 These tools are intended for development and debugging purposes only. 
                 Use with caution as some actions cannot be undone.
               </p>
@@ -70,8 +70,8 @@ const DevToolsPage: React.FC = () => {
         </div>
 
         {/* Research Data Management */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
             🔬 Research Data Management
           </h2>
           
@@ -129,29 +129,29 @@ const DevToolsPage: React.FC = () => {
         </div>
 
         {/* System Information */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
             ℹ️ System Information
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Environment:</span>
-              <span className="ml-2 text-gray-600 dark:text-gray-400">Development</span>
+              <span className="font-medium text-gray-700">Environment:</span>
+              <span className="ml-2 text-gray-600">Development</span>
             </div>
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Build Time:</span>
-              <span className="ml-2 text-gray-600 dark:text-gray-400">{new Date().toLocaleString()}</span>
+              <span className="font-medium text-gray-700">Build Time:</span>
+              <span className="ml-2 text-gray-600">{new Date().toLocaleString()}</span>
             </div>
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">User Agent:</span>
-              <span className="ml-2 text-gray-600 dark:text-gray-400 break-all">
+              <span className="font-medium text-gray-700">User Agent:</span>
+              <span className="ml-2 text-gray-600 break-all">
                 {typeof window !== 'undefined' ? window.navigator.userAgent.substring(0, 50) + '...' : 'N/A'}
               </span>
             </div>
             <div>
-              <span className="font-medium text-gray-700 dark:text-gray-300">Local Storage:</span>
-              <span className="ml-2 text-gray-600 dark:text-gray-400">
+              <span className="font-medium text-gray-700">Local Storage:</span>
+              <span className="ml-2 text-gray-600">
                 {typeof window !== 'undefined' ? 'Available' : 'N/A'}
               </span>
             </div>

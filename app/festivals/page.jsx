@@ -41,6 +41,7 @@ function FestivalsContent() {
     updateSalesStage,
     updateRateCard,
     updateEmails,
+    updateLinkedIn,
     initiateResearch,
     refreshResearchStatus,
     fetchFestivalsWithResearch,
@@ -51,7 +52,6 @@ function FestivalsContent() {
   const [loading, setLoading] = useState(true);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
   const [showAllFestivals, setShowAllFestivals] = useState(false); // Start with date navigation instead of all festivals
-  const [selectedAiService, setSelectedAiService] = useState('exa');
   const [filter, setFilter] = useState('all'); // 'all', 'favorites', 'archived'
   const [searchTerm, setSearchTerm] = useState('');
   const [isSearching, setIsSearching] = useState(false);
@@ -411,20 +411,30 @@ function FestivalsContent() {
     }
   };
 
+  // Handle LinkedIn update
+  const handleLinkedInUpdate = async (festivalId, linkedinUrl) => {
+    try {
+      await updateLinkedIn(festivalId, linkedinUrl);
+    } catch (error) {
+      console.error('Error updating LinkedIn URL:', error);
+      // Error handling is done in the context function
+    }
+  };
+
   // Handle initiating research
   const handleResearch = async (festivalId) => {
     try {
       const festival = allFestivals.find(f => f.id === festivalId);
       if (!festival) return;
       
-      showInfo(`Initiating research for ${festival.name} using ${selectedAiService.toUpperCase()}...`);
+      showInfo(`Initiating research for ${festival.name}...`);
       
       // No more optimistic UI updates - trust the context to handle state
       // Call the API to initiate research - this will update the context's festivals array automatically
-      await initiateResearch(festivalId, selectedAiService);
+      await initiateResearch(festivalId, 'apify');
       
       // No more manual polling - let the context handle research status updates
-      console.log(`Research initiated for ${festival.name} using ${selectedAiService}, context will handle status updates`);
+      console.log(`Research initiated for ${festival.name}, context will handle status updates`);
     } catch (error) {
       console.error('Error handling research:', error);
       showError(`Failed to initiate research: ${error.message || 'Unknown error'}`);
@@ -434,257 +444,226 @@ function FestivalsContent() {
   // Loading state
   if (isLoading && allFestivals.length === 0) {
     return (
-      <div className="flex justify-center items-center min-h-[50vh]">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex justify-center items-center">
         <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
-          <p className="mt-2">Loading festivals...</p>
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+          <p className="mt-4 text-gray-600">Loading festivals...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-full mx-auto py-4 px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Festivals
-        </h1>
-        
-        <div className="flex flex-col w-full md:w-auto space-y-2">
-          {/* AI Service Toggle */}
-          <div className="flex items-center justify-end space-x-2 mb-2">
-            <span className="text-sm text-gray-600 dark:text-gray-400">AI Research:</span>
-            <div className="flex items-center bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
-              <button
-                type="button"
-                onClick={() => setSelectedAiService('openai')}
-                className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-                  selectedAiService === 'openai'
-                    ? 'bg-blue-500 text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100'
-                }`}
-              >
-                OpenAI
-              </button>
-              <button
-                type="button"
-                onClick={() => setSelectedAiService('perplexity')}
-                className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-                  selectedAiService === 'perplexity'
-                    ? 'bg-purple-500 text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100'
-                }`}
-              >
-                Perplexity
-              </button>
-              <button
-                type="button"
-                onClick={() => setSelectedAiService('exa')}
-                className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-                  selectedAiService === 'exa'
-                    ? 'bg-green-500 text-white shadow-sm'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100'
-                }`}
-              >
-                EXA
-              </button>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6">
+      <div className="max-w-7xl mx-auto space-y-6">
+        {/* Page Header */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">
+              Festivals
+            </h1>
+            <p className="text-gray-600 mt-2">Discover and manage festival opportunities</p>
           </div>
-          
-          {/* Search form */}
-          <form onSubmit={handleSearch} className="w-full md:w-auto flex">
-            <div className="relative flex-grow w-full">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-4 w-4 text-gray-400" />
-              </div>
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-10 py-2 text-sm border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Search festivals..."
-              />
-              {isSearching && (
-                <div className="absolute inset-y-0 right-12 flex items-center">
-                  <button
-                    type="button"
-                    onClick={clearSearch}
-                    className="text-gray-400 hover:text-gray-500 px-2"
-                  >
-                    &times;
-                  </button>
-                </div>
-              )}
-            </div>
-            <button
-              type="submit"
-              className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-r-md hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-      </div>
-      
-      {/* Month Navigation */}
-      <div className="mb-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
-        <div className="flex items-center justify-center mb-4">
-          {/* Removed previous month button, month/year heading, and next month button */}
-        </div>
         
-        {/* Month Shortcuts */}
-        <div className="flex flex-wrap gap-2 justify-center mb-4">
-          <button
-            onClick={() => setShowAllFestivals(true)}
-            className={`px-3 py-1 text-sm rounded transition-colors ${
-              showAllFestivals
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
-            }`}
-          >
-            Show All
-          </button>
+          <div className="flex flex-col w-full lg:w-auto space-y-3">
+            {/* Search form */}
+            <form onSubmit={handleSearch} className="w-full lg:w-auto flex">
+              <div className="relative flex-grow w-full">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="h-4 w-4 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full px-10 py-2 text-sm border border-gray-200 bg-white text-gray-900 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm"
+                  placeholder="Search festivals..."
+                />
+                {isSearching && (
+                  <div className="absolute inset-y-0 right-12 flex items-center">
+                    <button
+                      type="button"
+                      onClick={clearSearch}
+                      className="text-gray-400 hover:text-gray-500 px-2"
+                    >
+                      &times;
+                    </button>
+                  </div>
+                )}
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-r-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-sm"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      
+        {/* Month Navigation Card */}
+        <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Date Navigation</h3>
           
-          {availableMonths.map((month, index) => (
+          {/* Month Shortcuts */}
+          <div className="flex flex-wrap gap-2 justify-center mb-4">
             <button
-              key={index}
+              onClick={() => setShowAllFestivals(true)}
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                showAllFestivals
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-gray-100 hover:bg-blue-50 hover:text-blue-700 text-gray-700'
+              }`}
+            >
+              Show All
+            </button>
+            
+            {availableMonths.map((month, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentMonth(month);
+                  setShowAllFestivals(false);
+                  setWeekFilterActive(false);
+                  setSelectedWeek(null);
+                }}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  !showAllFestivals && !showNullDates && !weekFilterActive && 
+                  month.getMonth() === currentMonth.getMonth() && 
+                  month.getFullYear() === currentMonth.getFullYear()
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'bg-gray-100 hover:bg-blue-50 hover:text-blue-700 text-gray-700'
+                }`}
+              >
+                {format(month, 'MMM')}
+              </button>
+            ))}
+            
+            <button
               onClick={() => {
-                setCurrentMonth(month);
+                setShowNullDates(true);
                 setShowAllFestivals(false);
                 setWeekFilterActive(false);
                 setSelectedWeek(null);
               }}
-              className={`px-3 py-1 text-sm rounded transition-colors ${
-                !showAllFestivals && !showNullDates && !weekFilterActive && 
-                month.getMonth() === currentMonth.getMonth() && 
-                month.getFullYear() === currentMonth.getFullYear()
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                showNullDates
+                  ? 'bg-blue-600 text-white shadow-sm'
+                  : 'bg-gray-100 hover:bg-blue-50 hover:text-blue-700 text-gray-700'
               }`}
             >
-              {format(month, 'MMM')}
+              Unknown Dates
             </button>
-          ))}
+          </div>
           
-          <button
-            onClick={() => {
-              setShowNullDates(true);
-              setShowAllFestivals(false);
-              setWeekFilterActive(false);
-              setSelectedWeek(null);
-            }}
-            className={`px-3 py-1 text-sm rounded transition-colors ${
-              showNullDates
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
-            }`}
-          >
-            Unknown Dates
-          </button>
+          {/* Week Number Shortcuts - Only show when not in "Unknown" section */}
+          {!showNullDates && !showAllFestivals && (
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Week Filter</span>
+                {weekFilterActive && selectedWeek && (
+                  <button 
+                    onClick={resetWeekFilter}
+                    className="text-xs text-blue-600 hover:underline font-medium"
+                  >
+                    Show all in {format(currentMonth, 'MMMM')}
+                  </button>
+                )}
+              </div>
+              
+              {/* Force display of all week buttons, regardless of filter status */}
+              <div className="flex flex-wrap gap-2 justify-center">
+                {weeksInCurrentMonth.map((week, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleWeekSelect(week.weekNumber)}
+                    className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                      weekFilterActive && selectedWeek === week.weekNumber
+                        ? 'bg-blue-600 text-white shadow-sm'
+                        : 'bg-gray-100 hover:bg-blue-50 hover:text-blue-700 text-gray-700'
+                    }`}
+                  >
+                    {week.display}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      
+        {/* Filter bar */}
+        <div className="bg-white border border-gray-200 p-4 rounded-xl shadow-sm">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Filter:</span>
+            <div className="flex items-center space-x-2">
+              <button
+                type="button"
+                onClick={() => setFilter('all')}
+                className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  filter === 'all'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                }`}
+              >
+                All
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilter('favorites')}
+                className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  filter === 'favorites'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                }`}
+              >
+                Favorites
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilter('archived')}
+                className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  filter === 'archived'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                }`}
+              >
+                Archived
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        {/* Loading spinner or table */}
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+          {loading ? (
+            <div className="flex justify-center p-8">
+              <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"></div>
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <FestivalTable
+                festivals={displayedFestivals}
+                onFavoriteToggle={handleFavoriteToggle}
+                onArchiveToggle={handleArchiveToggle}
+                onNoteSave={handleNoteSave}
+                onUpdateDates={handleUpdateDates}
+                onUpdateRateCard={handleUpdateRateCard}
+                onEmailUpdate={handleEmailUpdate}
+                onLinkedInUpdate={handleLinkedInUpdate}
+                onResearch={handleResearch}
+              />
+            </div>
+          )}
         </div>
         
-        {/* Week Number Shortcuts - Only show when not in "Unknown" section */}
-        {!showNullDates && !showAllFestivals && (
-          <div className="mt-4">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex-grow"></div>
-              {weekFilterActive && selectedWeek && (
-                <button 
-                  onClick={resetWeekFilter}
-                  className="text-xs text-blue-600 hover:underline dark:text-blue-400"
-                >
-                  Show all in {format(currentMonth, 'MMMM')}
-                </button>
-              )}
-            </div>
-            
-            {/* Force display of all week buttons, regardless of filter status */}
-            <div className="flex flex-wrap gap-2 justify-center">
-              {weeksInCurrentMonth.map((week, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleWeekSelect(week.weekNumber)}
-                  className={`px-3 py-1 text-xs rounded transition-colors ${
-                    weekFilterActive && selectedWeek === week.weekNumber
-                      ? 'bg-blue-600 text-white font-bold'
-                      : 'bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
-                  }`}
-                >
-                  {week.display}
-                </button>
-              ))}
-            </div>
+        {/* Stats footer */}
+        <div className="flex justify-between items-center py-2">
+          <div className="text-sm text-gray-600">
+            Showing <span className="font-semibold text-gray-900">{displayedFestivals.length}</span> festivals
+            {!showAllFestivals && (
+              <span> from <span className="font-semibold text-gray-900">{format(currentMonth, 'MMMM yyyy')}</span></span>
+            )}
           </div>
-        )}
-      </div>
-      
-      {/* Filter bar */}
-      <div className="flex flex-wrap gap-2 mb-4 bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-        {/* Filter buttons */}
-        <div className="flex items-center space-x-2">
-          <button
-            type="button"
-            onClick={() => setFilter('all')}
-            className={`flex items-center px-3 py-1 text-sm rounded-md ${
-              filter === 'all'
-                ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
-            }`}
-          >
-            All
-          </button>
-          <button
-            type="button"
-            onClick={() => setFilter('favorites')}
-            className={`flex items-center px-3 py-1 text-sm rounded-md ${
-              filter === 'favorites'
-                ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
-            }`}
-          >
-            Favorites
-          </button>
-          <button
-            type="button"
-            onClick={() => setFilter('archived')}
-            className={`flex items-center px-3 py-1 text-sm rounded-md ${
-              filter === 'archived'
-                ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
-            }`}
-          >
-            Archived
-          </button>
-        </div>
-      </div>
-      
-      {/* Loading spinner or table */}
-      <div className="overflow-x-auto">
-        {loading ? (
-          <div className="flex justify-center p-8">
-            <div className="spinner"></div>
-          </div>
-        ) : (
-          <FestivalTable
-            festivals={displayedFestivals}
-            onFavoriteToggle={handleFavoriteToggle}
-            onArchiveToggle={handleArchiveToggle}
-            onNoteSave={handleNoteSave}
-            onUpdateDates={handleUpdateDates}
-            onUpdateRateCard={handleUpdateRateCard}
-            onEmailUpdate={handleEmailUpdate}
-            onResearch={handleResearch}
-          />
-        )}
-      </div>
-      
-      {/* Pagination or stats */}
-      <div className="mt-4 flex justify-between items-center">
-        <div className="text-sm text-gray-700 dark:text-gray-300">
-          Showing <span className="font-medium">{displayedFestivals.length}</span> festivals
-          {!showAllFestivals && (
-            <span> from <span className="font-medium">{format(currentMonth, 'MMMM yyyy')}</span></span>
-          )}
         </div>
       </div>
     </div>
