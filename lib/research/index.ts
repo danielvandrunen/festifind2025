@@ -27,4 +27,26 @@ export {
   ResearchPhase,
   type ResearchState,
   type OrchestratorOptions,
+  type LinkedInConnection,
+  type EmploymentVerification,
 } from './self-healing-orchestrator';
+
+export {
+  verifyEmployment,
+  determineRole,
+  parseLinkedInProfile,
+  sortConnectionsByRelevance,
+  getVerifiedConnections,
+  groupConnectionsByRole,
+  type LinkedInConnection as LinkedInConnectionType,
+  type EmploymentVerification as EmploymentVerificationType,
+} from './employment-validator';
+
+export {
+  calculateQualityScore,
+  getQualityIndicator,
+  getImprovementSuggestions,
+  formatQualityScoreForDisplay,
+  type ResearchQualityScore,
+  type QualityIndicator,
+} from './quality-metrics';

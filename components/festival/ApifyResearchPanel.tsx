@@ -19,8 +19,10 @@ import {
   AlertTriangle,
   Zap,
   Shield,
-  TrendingUp
+  TrendingUp,
+  BarChart3
 } from 'lucide-react';
+import LinkedInConnectionsBox, { type LinkedInConnection, type CompanyLinkedIn } from './LinkedInConnectionsBox';
 
 interface ApifyResearchPanelProps {
   festivalId: string;
@@ -79,6 +81,8 @@ interface ResearchData {
     source?: string;
     allMatches?: Array<{ name: string; count: number; sources: string[] }>;
   };
+  companyLinkedIn?: CompanyLinkedIn | null;
+  linkedInConnections?: LinkedInConnection[];
   linkedin?: {
     people: LinkedInPerson[];
     companies: LinkedInCompany[];
@@ -100,6 +104,12 @@ interface ResearchData {
     homepageUrl?: string;
     discovered?: boolean;
     lastScraped?: string;
+  };
+  qualityScore?: {
+    overall: number;
+    companyDiscovery: number;
+    linkedinConnections: number;
+    dataCompleteness: number;
   };
 }
 
@@ -543,7 +553,7 @@ const ApifyResearchPanel: React.FC<ApifyResearchPanelProps> = ({
               setOverallConfidence(result.overallConfidence || 0);
               setConfidenceLevel(result.confidenceLevel || 'low');
               
-              // Update research data state
+              // Update research data state with enhanced LinkedIn data
               const newResearchData: ResearchData = {
                 companyDiscovery: result.organizingCompany ? {
                   companyName: result.organizingCompany.name,
@@ -551,6 +561,8 @@ const ApifyResearchPanel: React.FC<ApifyResearchPanelProps> = ({
                   confidence: result.organizingCompany.confidence >= 0.7 ? 'high' : 
                               result.organizingCompany.confidence >= 0.4 ? 'medium' : 'low',
                 } : undefined,
+                companyLinkedIn: result.companyLinkedIn || null,
+                linkedInConnections: result.linkedInConnections || [],
                 linkedin: result.linkedInResults ? {
                   people: result.linkedInResults.people || [],
                   companies: [],
@@ -573,6 +585,7 @@ const ApifyResearchPanel: React.FC<ApifyResearchPanelProps> = ({
                   discovered: true,
                   lastScraped: new Date().toISOString(),
                 } : undefined,
+                qualityScore: result.qualityScore || undefined,
               };
               
               setResearchData(newResearchData);
@@ -767,6 +780,19 @@ const ApifyResearchPanel: React.FC<ApifyResearchPanelProps> = ({
           )}
         </div>
         <div className="flex items-center space-x-2">
+          {/* Quality Score indicator */}
+          {researchData?.qualityScore?.overall !== undefined && !isRunningPipeline && (
+            <div className="flex items-center space-x-1" title="Research Quality Score">
+              <BarChart3 size={12} className="text-gray-500" />
+              <span className={`text-[10px] px-1.5 py-0.5 rounded ${
+                researchData.qualityScore.overall >= 70 ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' :
+                researchData.qualityScore.overall >= 40 ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300' :
+                'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
+              }`}>
+                Q: {researchData.qualityScore.overall}%
+              </span>
+            </div>
+          )}
           {/* Confidence indicator */}
           {overallConfidence > 0 && !isRunningPipeline && (
             <div className="flex items-center space-x-1">
@@ -893,72 +919,40 @@ const ApifyResearchPanel: React.FC<ApifyResearchPanelProps> = ({
           )}
         </div>
 
-        {/* LinkedIn Research */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Linkedin size={16} className="text-[#0A66C2]" />
-              <span className="text-sm font-medium">LinkedIn Connections</span>
-              <StatusIcon status={results.linkedin?.status} />
-            </div>
-            <button
-              onClick={() => runLinkedInSearch()}
-              disabled={results.linkedin?.status === 'loading'}
-              className="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 disabled:opacity-50"
-            >
-              Search
-            </button>
+        {/* LinkedIn Connections Box - Enhanced Component */}
+        <LinkedInConnectionsBox
+          connections={researchData?.linkedInConnections || []}
+          companyLinkedIn={researchData?.companyLinkedIn}
+          companyName={discoveredCompany}
+          isLoading={results.linkedin?.status === 'loading'}
+        />
+        
+        {/* Fallback for legacy LinkedIn data if no connections yet */}
+        {!researchData?.linkedInConnections?.length && results.linkedin?.status === 'success' && results.linkedin.data && (
+          <div className="ml-6 text-xs space-y-2 mt-2 p-2 bg-gray-50 dark:bg-gray-750 rounded">
+            <div className="text-gray-500 font-medium text-[10px] uppercase">Legacy Search Results</div>
+            {results.linkedin.data.people?.length > 0 && (
+              <div className="space-y-1">
+                {results.linkedin.data.people.slice(0, 3).map((person: LinkedInPerson, i: number) => (
+                  <a 
+                    key={i}
+                    href={person.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start text-blue-600 hover:underline"
+                  >
+                    <ExternalLink size={10} className="mr-1 mt-0.5 flex-shrink-0" />
+                    <span className="truncate">{person.name}</span>
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
-          {results.linkedin?.status === 'success' && results.linkedin.data && (
-            <div className="ml-6 text-xs space-y-2">
-              {/* People */}
-              {results.linkedin.data.people?.length > 0 && (
-                <div className="space-y-1">
-                  <div className="text-gray-500 font-medium">People ({results.linkedin.data.people.length})</div>
-                  {results.linkedin.data.people.slice(0, 5).map((person: LinkedInPerson, i: number) => (
-                    <a 
-                      key={i}
-                      href={person.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-start text-blue-600 hover:underline"
-                    >
-                      <ExternalLink size={10} className="mr-1 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium">{person.name}</span>
-                        {person.title && <span className="text-gray-500 ml-1">• {person.title}</span>}
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              )}
-              {/* Companies */}
-              {results.linkedin.data.companies?.length > 0 && (
-                <div className="space-y-1">
-                  <div className="text-gray-500 font-medium">Companies ({results.linkedin.data.companies.length})</div>
-                  {results.linkedin.data.companies.slice(0, 3).map((company: LinkedInCompany, i: number) => (
-                    <a 
-                      key={i}
-                      href={company.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-blue-600 hover:underline"
-                    >
-                      <ExternalLink size={10} className="mr-1" />
-                      {company.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-              {(!results.linkedin.data.people?.length && !results.linkedin.data.companies?.length) && (
-                <span className="text-gray-500">No LinkedIn profiles found</span>
-              )}
-            </div>
-          )}
-          {results.linkedin?.status === 'error' && (
-            <div className="ml-6 text-xs text-red-500">{results.linkedin.error}</div>
-          )}
-        </div>
+        )}
+        
+        {results.linkedin?.status === 'error' && (
+          <div className="ml-6 text-xs text-red-500">{results.linkedin.error}</div>
+        )}
 
         {/* News Research */}
         <div className="space-y-2">
