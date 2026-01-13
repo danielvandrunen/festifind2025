@@ -57,7 +57,7 @@ export const ActorRunResultSchema = z.object({
 export type ActorRunResult = z.infer<typeof ActorRunResultSchema>;
 
 // Dataset item schema (generic)
-export const DatasetItemSchema = z.record(z.any());
+export const DatasetItemSchema = z.record(z.string(), z.any());
 export type DatasetItem = z.infer<typeof DatasetItemSchema>;
 
 /**

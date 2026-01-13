@@ -48,11 +48,11 @@ export const linkedInCompanySearchTool: ToolDefinition = {
     const client = getApifyClient();
     
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
         results: [],
-      };
+      });
     }
 
     console.log(`Searching LinkedIn for company: "${companyName}"`);
@@ -84,20 +84,20 @@ export const linkedInCompanySearchTool: ToolDefinition = {
           description: item.description || item.snippet,
         }));
 
-      return {
+      return JSON.stringify({
         success: true,
         query: companyName,
         resultsCount: linkedInResults.length,
         results: linkedInResults,
         message: `Found ${linkedInResults.length} LinkedIn company pages for "${companyName}"`,
-      };
+      });
     } catch (error: any) {
       console.error('LinkedIn company search error:', error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         results: [],
-      };
+      });
     }
   },
 };
@@ -134,11 +134,11 @@ export const websiteContentCrawlerTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
         results: [],
-      };
+      });
     }
 
     console.log(`Crawling websites: ${startUrls.join(', ')}`);
@@ -172,19 +172,19 @@ export const websiteContentCrawlerTool: ToolDefinition = {
         metadata: item.metadata,
       }));
 
-      return {
+      return JSON.stringify({
         success: true,
         pagesExtracted: results.length,
         results,
         message: `Extracted content from ${results.length} pages`,
-      };
+      });
     } catch (error: any) {
       console.error('Website crawler error:', error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         results: [],
-      };
+      });
     }
   },
 };
@@ -220,11 +220,11 @@ export const googleSearchTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
         results: [],
-      };
+      });
     }
 
     console.log(`Google search: "${query}" (type: ${searchType})`);
@@ -254,21 +254,21 @@ export const googleSearchTool: ToolDefinition = {
         displayedUrl: item.displayedUrl,
       }));
 
-      return {
+      return JSON.stringify({
         success: true,
         query,
         searchType,
         resultsCount: results.length,
         results,
         message: `Found ${results.length} ${searchType} results for "${query}"`,
-      };
+      });
     } catch (error: any) {
       console.error('Google search error:', error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         results: [],
-      };
+      });
     }
   },
 };
@@ -295,11 +295,11 @@ export const ragWebBrowserTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
         results: [],
-      };
+      });
     }
 
     console.log(`RAG Web Browser: "${query}"`);
@@ -315,20 +315,20 @@ export const ragWebBrowserTool: ToolDefinition = {
         { waitForFinish: 120 }
       );
 
-      return {
+      return JSON.stringify({
         success: true,
         query,
         pagesExtracted: (items as DatasetItem[]).length,
         results: items,
         message: `Extracted content from ${(items as DatasetItem[]).length} pages for "${query}"`,
-      };
+      });
     } catch (error: any) {
       console.error('RAG Web Browser error:', error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         results: [],
-      };
+      });
     }
   },
 };
@@ -355,11 +355,11 @@ export const instagramScraperTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
         results: [],
-      };
+      });
     }
 
     console.log(`Instagram scraper: "${searchQuery}" (type: ${searchType})`);
@@ -385,21 +385,21 @@ export const instagramScraperTool: ToolDefinition = {
         type: item.type,
       }));
 
-      return {
+      return JSON.stringify({
         success: true,
         searchQuery,
         searchType,
         postsFound: results.length,
         results,
         message: `Found ${results.length} Instagram posts for "${searchQuery}"`,
-      };
+      });
     } catch (error: any) {
       console.error('Instagram scraper error:', error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         results: [],
-      };
+      });
     }
   },
 };

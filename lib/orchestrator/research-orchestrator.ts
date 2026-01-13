@@ -97,10 +97,11 @@ export class ResearchOrchestrator {
   /**
    * Convert Zod schema to JSON Schema for Anthropic
    */
-  private zodToJsonSchema(schema: z.ZodType<unknown>): Record<string, unknown> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private zodToJsonSchema(schema: any): Record<string, unknown> {
     // Simple conversion - in production, use zod-to-json-schema library
     if (schema instanceof z.ZodObject) {
-      const shape = schema.shape as Record<string, z.ZodType<unknown>>;
+      const shape = schema.shape as Record<string, unknown>;
       const properties: Record<string, unknown> = {};
       const required: string[] = [];
 
@@ -127,23 +128,23 @@ export class ResearchOrchestrator {
     }
 
     if (schema instanceof z.ZodEnum) {
-      return { type: 'string', enum: schema.options, description: schema.description };
+      return { type: 'string', enum: (schema as any).options, description: schema.description };
     }
 
     if (schema instanceof z.ZodArray) {
       return {
         type: 'array',
-        items: this.zodToJsonSchema(schema.element),
+        items: this.zodToJsonSchema((schema as any).element),
         description: schema.description,
       };
     }
 
     if (schema instanceof z.ZodOptional) {
-      return this.zodToJsonSchema(schema.unwrap());
+      return this.zodToJsonSchema((schema as any).unwrap());
     }
 
     if (schema instanceof z.ZodDefault) {
-      return this.zodToJsonSchema(schema.removeDefault());
+      return this.zodToJsonSchema((schema as any).removeDefault());
     }
 
     return { type: 'string' };

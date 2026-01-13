@@ -141,11 +141,11 @@ export const verifyFestivalOnCalendarsTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
         results: null,
-      };
+      });
     }
 
     console.log(`Verifying "${festivalName}" across calendar sources`);
@@ -223,11 +223,11 @@ export const verifyFestivalOnCalendarsTool: ToolDefinition = {
       isActive: foundCount > 0,
     };
 
-    return {
+    return JSON.stringify({
       success: true,
       result: fullResult,
       message: `"${festivalName}" found on ${foundCount}/${results.length} calendar sources`,
-    };
+    });
   },
 };
 
@@ -254,10 +254,10 @@ export const lookupFestivalOnSourceTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
-      };
+      });
     }
 
     const sourceConfig = FESTIVAL_CALENDAR_SOURCES[source];
@@ -276,18 +276,18 @@ export const lookupFestivalOnSourceTool: ToolDefinition = {
       );
 
       if ((items as any[]).length === 0) {
-        return {
+        return JSON.stringify({
           success: true,
           found: false,
           source: sourceConfig.name,
           message: `"${festivalName}" not found on ${sourceConfig.name}`,
-        };
+        });
       }
 
       // Extract relevant information from the first result
       const firstResult = (items as any[])[0];
       
-      return {
+      return JSON.stringify({
         success: true,
         found: true,
         source: sourceConfig.name,
@@ -295,14 +295,14 @@ export const lookupFestivalOnSourceTool: ToolDefinition = {
         festivalUrl: firstResult?.url,
         content: firstResult?.markdown?.substring(0, 3000),
         message: `Found "${festivalName}" on ${sourceConfig.name}`,
-      };
+      });
     } catch (error: any) {
       console.error(`Error looking up on ${sourceConfig.name}:`, error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         source: sourceConfig.name,
-      };
+      });
     }
   },
 };
@@ -330,10 +330,10 @@ export const scrapeCalendarSourceTool: ToolDefinition = {
     const client = getApifyClient();
 
     if (!client.isConfigured()) {
-      return {
+      return JSON.stringify({
         success: false,
         error: 'Apify API token not configured',
-      };
+      });
     }
 
     const sourceConfig = FESTIVAL_CALENDAR_SOURCES[source];
@@ -351,21 +351,21 @@ export const scrapeCalendarSourceTool: ToolDefinition = {
         { waitForFinish: 120 }
       );
 
-      return {
+      return JSON.stringify({
         success: true,
         source: sourceConfig.name,
         sourceUrl: sourceConfig.url,
         pagesScraped: (items as any[]).length,
         results: items,
         message: `Scraped ${(items as any[]).length} pages from ${sourceConfig.name}`,
-      };
+      });
     } catch (error: any) {
       console.error(`Error scraping ${sourceConfig.name}:`, error);
-      return {
+      return JSON.stringify({
         success: false,
         error: error.message,
         source: sourceConfig.name,
-      };
+      });
     }
   },
 };
